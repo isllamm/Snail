@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/about_us"
+            android:icon="@drawable/ic_info_square"
+            android:title="@string/about_us" />
+    </group>
+
+
+
+
+
+    <group>
+        <item
+            android:id="@+id/suggestion"
+            android:icon="@drawable/ic_message"
+            android:title="@string/suggestions" />
+    </group>
+
+
+
+    <group>
+        <item
+            android:id="@+id/t_c"
+            android:icon="@drawable/ic_doc"
+            android:title="@string/t_amp_c" />
+
+    </group>
+
+    <group>
+        <item
+            android:id="@+id/settings"
+            android:icon="@drawable/ic_setting"
+            android:title="@string/settings" />
+
+    </group>
+
+
+
+    <item
+        android:id="@+id/logout_menu"
+        android:title="@null"
+        app:actionLayout="@layout/logout_menu" />
+</menu>

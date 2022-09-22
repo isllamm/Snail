@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/drawable/beige_bg.xml" value="0.215" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/drawable/full_border_radius_8.xml" value="0.215" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/drawable/ic_close.xml" value="0.215" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/drawable/menu_divider.xml" value="0.215" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/drawable/top_border_radius_12.xml" value="0.215" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/beige_divider.xml" value="0.3296296296296296" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_search_result.xml" value="0.33055555555555555" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/item_clinic.xml" value="0.33055555555555555" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/logout_menu.xml" value="0.3296296296296296" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/nav_header_main.xml" value="0.33055555555555555" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/toolbar.xml" value="0.33055555555555555" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/menu/drawer_menu.xml" value="0.33055555555555555" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/menu/visitor_menu.xml" value="0.33055555555555555" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable-ar/end_radius.xml" value="0.1975" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable-v24/top_border_radius_12.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/bottom_nav_bg.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/bottom_radius_16.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/clinic_ratingbar_full_empty.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/clinic_ratingbar_full_filled.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/custom_ratingbar_selector.xml" value="0.1975" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/end_radius.xml" value="0.1975" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/full_border_radius_12.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/full_border_radius_24.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/full_border_radius_24_white.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/full_border_radius_36.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/full_border_radius_4.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/full_border_radius_4_blank.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/full_border_radius_8.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/full_border_radius_8_white.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/ic_back.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/ic_star.xml" value="0.1975" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/ic_star_selected.xml" value="0.1975" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/round_bg.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/selected_tab.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/tab_selector.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/top_radius.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/top_radius_24.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/top_radius_4.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/drawable/un_selected_tab.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/activity_main.xml" value="0.17" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/activity_onboard.xml" value="0.15" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/activity_splash.xml" value="0.11" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/clinic_location.xml" value="0.25" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/fragment_first.xml" value="0.15" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/fragment_home.xml" value="0.18" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/fragment_login.xml" value="0.25" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/fragment_map.xml" value="0.22" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/fragment_my_consultants.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/fragment_new_pass.xml" value="0.22" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/fragment_onboard.xml" value="0.22" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/fragment_phone.xml" value="0.67" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/fragment_register.xml" value="0.12" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/fragment_search_sheet.xml" value="0.22" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/fragment_store.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/fragment_verification.xml" value="0.25" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/item_clinic.xml" value="0.5527272727272727" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/item_slider.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/login_toolbar.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/map_toolbar.xml" value="0.18" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/nav_header_main.xml" value="0.2" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/sheet_enable_gps.xml" value="0.2" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/layout/toolbar.xml" value="0.1" />
+        <entry key="..\:/tawajood/Snail/app/src/main/res/menu/main_menu.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
