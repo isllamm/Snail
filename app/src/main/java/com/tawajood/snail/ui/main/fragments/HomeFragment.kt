@@ -37,12 +37,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         onClick()
     }
 
-    private fun setupUI(){
+    private fun setupUI() {
         parent.showToolbar(true)
         parent.showBottomNav(true)
     }
 
-    private fun setupClinicsRecycler(){
+    private fun setupClinicsRecycler() {
         clinics.add(Clinic("فيتنيس كلينك", 4f, R.drawable.test1))
         clinics.add(Clinic("دكتور زوو", 3f, R.drawable.test2))
         clinics.add(Clinic("سول كلينك", 5f, R.drawable.test3))
@@ -52,7 +52,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         binding.clinicsRv.adapter = clinicsAdapter
     }
 
-    private fun setupTopClinics(){
+    private fun setupTopClinics() {
         sliderItems.add(Slider("https://www.fischerveterinaryclinic.com//images/home/building-2.jpg"))
         sliderItems.add(Slider("https://www.fischerveterinaryclinic.com//images/home/building-2.jpg"))
         sliderItems.add(Slider("https://www.fischerveterinaryclinic.com//images/home/building-2.jpg"))
@@ -62,9 +62,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         binding.slider.setSliderAdapter(sliderAdapter)
     }
 
-    private fun onClick(){
+    private fun onClick() {
         binding.locImg.setOnClickListener {
-            if (!SmartLocation.with(requireContext()).location().state().locationServicesEnabled()) {
+            if (!SmartLocation.with(requireContext()).location().state()
+                    .locationServicesEnabled()
+            ) {
                 parent.navController.navigate(R.id.action_homeFragment_to_enableGpsSheet)
             } else {
                 locationPermissionResult.launch(Manifest.permission.ACCESS_FINE_LOCATION)
@@ -74,6 +76,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         binding.filterIcon.setOnClickListener {
             parent.navController.navigate(R.id.action_homeFragment_to_searchSheet)
         }
+
+        binding.tv1.setOnClickListener {
+            parent.navController.navigate(R.id.clinicInfoFragment)
+        }
+
     }
 
     private val locationPermissionResult = registerForActivityResult(

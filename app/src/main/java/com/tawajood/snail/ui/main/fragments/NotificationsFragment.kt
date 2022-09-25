@@ -6,20 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tawajood.snail.R
-import com.tawajood.snail.databinding.FragmentHomeBinding
+import com.tawajood.snail.databinding.FragmentNotificationsBinding
 import com.tawajood.snail.databinding.FragmentSearchResultBinding
 import com.tawajood.snail.ui.main.MainActivity
 
 
-class SearchResultFragment : Fragment() {
+class NotificationsFragment : Fragment() {
 
-    private lateinit var binding: FragmentSearchResultBinding
+    private lateinit var binding: FragmentNotificationsBinding
     private lateinit var parent: MainActivity
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentSearchResultBinding.bind(requireView())
+        binding = FragmentNotificationsBinding.bind(requireView())
         parent = requireActivity() as MainActivity
 
         setupUI()
@@ -34,6 +34,7 @@ class SearchResultFragment : Fragment() {
 
     private fun setupUI() {
         parent.showBottomNav(false)
+
     }
 
 

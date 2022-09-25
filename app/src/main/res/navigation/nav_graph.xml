@@ -63,4 +63,29 @@
         android:name="com.tawajood.snail.ui.main.fragments.SearchResultFragment"
         android:label="fragment_search_result"
         tools:layout="@layout/fragment_search_result" />
+    <fragment
+        android:id="@+id/clinicInfoFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.ClinicInfoFragment"
+        android:label="fragment_clinic_info"
+        tools:layout="@layout/fragment_clinic_info" />
+    <dialog
+        android:id="@+id/loginFirstSheet"
+        android:name="com.tawajood.snail.ui.main.fragments.LoginFirstSheet"
+        android:label="fragment_login_first_sheet"
+        tools:layout="@layout/fragment_login_first_sheet" />
+    <fragment
+        android:id="@+id/makeReservationFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.MakeReservationFragment"
+        android:label="fragment_make_reservation"
+        tools:layout="@layout/fragment_make_reservation" />
+    <dialog
+        android:id="@+id/cancelReservationSheetFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.CancelReservationSheetFragment"
+        android:label="fragment_cancel_reservation_sheet"
+        tools:layout="@layout/fragment_cancel_reservation_sheet" />
+    <dialog
+        android:id="@+id/successfulOrderSheetFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.SuccessfulOrderSheetFragment"
+        android:label="fragment_successful_order_sheet"
+        tools:layout="@layout/fragment_successful_order_sheet" />
 </navigation>

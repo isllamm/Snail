@@ -20,5 +20,15 @@
         <item name="android:background">@android:color/transparent</item>
     </style>
 
+    <style name="customRatingBar"
+        parent="android:style/Widget.Material.RatingBar.Small">
+    </style>
+
+    <style name="RatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingbar_full</item>
+        <item name="android:indeterminateDrawable">@drawable/ratingbar_full</item>
+        <item name="android:minHeight">13.4dp</item>
+        <item name="android:maxHeight">13.4dp</item>
+    </style>
 
 </resources>
