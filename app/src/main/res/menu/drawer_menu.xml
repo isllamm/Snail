@@ -6,7 +6,7 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/about_us"
+            android:id="@+id/aboutUsFragment"
             android:icon="@drawable/ic_info_square"
             android:title="@string/about_us" />
     </group>
@@ -19,14 +19,14 @@
     </group>
     <group>
         <item
-            android:id="@+id/profile"
+            android:id="@+id/profileFragment"
             android:icon="@drawable/ic_profile"
             android:title="@string/profile" />
     </group>
 
     <group>
         <item
-            android:id="@+id/notifications"
+            android:id="@+id/notificationsFragment"
             android:icon="@drawable/ic_notification"
             android:title="@string/ntifications" />
     </group>
@@ -34,7 +34,7 @@
     <group>
         <item
             android:id="@+id/suggestion"
-            android:icon="@drawable/ic_message"
+            android:icon="@drawable/ic_message2"
             android:title="@string/suggestions" />
     </group>
 
@@ -54,7 +54,7 @@
     </group>
     <group>
         <item
-            android:id="@+id/t_c"
+            android:id="@+id/termsAndConditionsFragment"
             android:icon="@drawable/ic_doc"
             android:title="@string/t_amp_c" />
 
@@ -62,7 +62,7 @@
 
     <group>
         <item
-            android:id="@+id/settings"
+            android:id="@+id/settingsFragment"
             android:icon="@drawable/ic_setting"
             android:title="@string/settings" />
 

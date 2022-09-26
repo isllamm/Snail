@@ -50,6 +50,9 @@ class SuccessfulPaymentSheetFragment : BottomSheetDialogFragment() {
     }
 
     private fun onClick() {
+        binding.btnBill.setOnClickListener {
+            parent.navController.navigate(R.id.action_successfulPaymentSheetFragment_to_receiptSheetFragment)
+        }
 
     }
 

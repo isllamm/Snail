@@ -120,4 +120,17 @@
     <string name="clinic_rate">Clinic Rate</string>
     <string name="notes">Notes</string>
     <string name="save_review">Save Review</string>
+    <string name="complaint_mail">Complaint mail</string>
+    <string name="suggestion_mail">Suggestion mail</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="are_you_sure_you_want_to_delete_the_account">Are you sure you want to delete the account?</string>
+    <string name="save">Save</string>
+    <string name="old_password">Old Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="t_c">تطبيق استشارات بيطرية يهدف الى توصيل العملاء بالعيادات البيطرية و متجر الادوية لتسهيل عملية الاستشارة للعميل و سهولة طلب الادوية و الحصول عليها تطبيق استشارات بيطرية يهدف الى توصيل العملاء بالعيادات البيطرية و متجر الادوية لتسهيل عملية الاستشارة للعميل و سهولة طلب الادوية و الحصول عليها تطبيق استشارات بيطرية يهدف الى توصيل العملاء بالعيادات البيطرية و متجر الادوية لتسهيل عملية الاستشارة للعميل و سهولة طلب الادوية و الحصول عليها</string>
+    <string name="language">Language</string>
+    <string name="ar">عربى</string>
+    <string name="en">EN</string>
 </resources>

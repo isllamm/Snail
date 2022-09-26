@@ -22,8 +22,18 @@ class MakeReservationFragment : Fragment(R.layout.fragment_make_reservation) {
         binding = FragmentMakeReservationBinding.inflate(inflater)
         parent = requireActivity() as MainActivity
 
+        onClick()
 
         return binding.root
+    }
+
+    private fun onClick() {
+        binding.cancelBtn.setOnClickListener {
+            parent.navController.navigate(R.id.action_makeReservationFragment_to_cancelReservationSheetFragment)
+        }
+        binding.nextBtn.setOnClickListener {
+            parent.navController.navigate(R.id.action_makeReservationFragment_to_successfulOrderSheetFragment)
+        }
     }
 
 

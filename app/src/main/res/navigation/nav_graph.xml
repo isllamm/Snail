@@ -9,14 +9,14 @@
         android:id="@+id/homeFragment"
         android:name="com.tawajood.snail.ui.main.fragments.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_mapFragment"
             app:destination="@id/mapFragment"
             app:enterAnim="@anim/enter"
             app:exitAnim="@anim/exit"
             app:popEnterAnim="@anim/pop_enter"
-            app:popExitAnim="@anim/pop_exit"/>
+            app:popExitAnim="@anim/pop_exit" />
         <action
             android:id="@+id/action_homeFragment_to_enableGpsSheet"
             app:destination="@id/enableGpsSheet" />
@@ -24,21 +24,6 @@
             android:id="@+id/action_homeFragment_to_searchSheet"
             app:destination="@id/searchSheet" />
     </fragment>
-    <fragment
-        android:id="@+id/storeFragment"
-        android:name="com.tawajood.snail.StoreFragment"
-        android:label="fragment_store"
-        tools:layout="@layout/fragment_store" />
-    <fragment
-        android:id="@+id/myConsultantsFragment"
-        android:name="com.tawajood.snail.MyConsultantsFragment"
-        android:label="fragment_my_consultants"
-        tools:layout="@layout/fragment_my_consultants" />
-    <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.tawajood.snail.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/mapFragment"
         android:name="com.tawajood.snail.ui.main.fragments.MapFragment"
@@ -53,7 +38,7 @@
         android:id="@+id/searchSheet"
         android:name="com.tawajood.snail.ui.main.fragments.SearchSheet"
         android:label="fragment_search_sheet"
-        tools:layout="@layout/fragment_search_sheet" >
+        tools:layout="@layout/fragment_search_sheet">
         <action
             android:id="@+id/action_searchSheet_to_searchResultFragment"
             app:destination="@id/searchResultFragment" />
@@ -67,7 +52,14 @@
         android:id="@+id/clinicInfoFragment"
         android:name="com.tawajood.snail.ui.main.fragments.ClinicInfoFragment"
         android:label="fragment_clinic_info"
-        tools:layout="@layout/fragment_clinic_info" />
+        tools:layout="@layout/fragment_clinic_info">
+        <action
+            android:id="@+id/action_clinicInfoFragment_to_loginFirstSheet"
+            app:destination="@id/loginFirstSheet" />
+        <action
+            android:id="@+id/action_clinicInfoFragment_to_makeReservationFragment"
+            app:destination="@id/makeReservationFragment" />
+    </fragment>
     <dialog
         android:id="@+id/loginFirstSheet"
         android:name="com.tawajood.snail.ui.main.fragments.LoginFirstSheet"
@@ -77,7 +69,14 @@
         android:id="@+id/makeReservationFragment"
         android:name="com.tawajood.snail.ui.main.fragments.MakeReservationFragment"
         android:label="fragment_make_reservation"
-        tools:layout="@layout/fragment_make_reservation" />
+        tools:layout="@layout/fragment_make_reservation">
+        <action
+            android:id="@+id/action_makeReservationFragment_to_successfulOrderSheetFragment"
+            app:destination="@id/successfulOrderSheetFragment" />
+        <action
+            android:id="@+id/action_makeReservationFragment_to_cancelReservationSheetFragment"
+            app:destination="@id/cancelReservationSheetFragment" />
+    </fragment>
     <dialog
         android:id="@+id/cancelReservationSheetFragment"
         android:name="com.tawajood.snail.ui.main.fragments.CancelReservationSheetFragment"
@@ -88,4 +87,122 @@
         android:name="com.tawajood.snail.ui.main.fragments.SuccessfulOrderSheetFragment"
         android:label="fragment_successful_order_sheet"
         tools:layout="@layout/fragment_successful_order_sheet" />
+    <fragment
+        android:id="@+id/receiptSheetFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.ReceiptSheetFragment"
+        android:label="fragment_receipt"
+        tools:layout="@layout/fragment_receipt">
+        <action
+            android:id="@+id/action_receiptSheetFragment_to_reviewSheetFragment"
+            app:destination="@id/reviewSheetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.ContactUsFragment"
+        android:label="fragment_contact_us"
+        tools:layout="@layout/fragment_contact_us" />
+    <fragment
+        android:id="@+id/failurePaymentSheetFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.FailurePaymentSheetFragment"
+        android:label="fragment_failure_payment_sheet"
+        tools:layout="@layout/fragment_failure_payment_sheet">
+        <action
+            android:id="@+id/action_failurePaymentSheetFragment_to_receiptSheetFragment"
+            app:destination="@id/receiptSheetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.NotificationsFragment"
+        android:label="fragment_notifications"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.PaymentFragment"
+        android:label="fragment_payment"
+        tools:layout="@layout/fragment_payment">
+        <action
+            android:id="@+id/action_paymentFragment_to_failurePaymentSheetFragment"
+            app:destination="@id/failurePaymentSheetFragment" />
+        <action
+            android:id="@+id/action_paymentFragment_to_successfulPaymentSheetFragment"
+            app:destination="@id/successfulPaymentSheetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reviewSheetFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.ReviewSheetFragment"
+        android:label="fragment_review_sheet"
+        tools:layout="@layout/fragment_review_sheet" />
+    <fragment
+        android:id="@+id/successfulPaymentSheetFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.SuccessfulPaymentSheetFragment"
+        android:label="fragment_successful_payment_sheet"
+        tools:layout="@layout/fragment_successful_payment_sheet">
+        <action
+            android:id="@+id/action_successfulPaymentSheetFragment_to_receiptSheetFragment"
+            app:destination="@id/receiptSheetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myConsultantsFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.MyConsultantsFragment"
+        android:label="fragment_my_consultants"
+        tools:layout="@layout/fragment_my_consultants" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_deleteAccountSheetFragment"
+            app:destination="@id/deleteAccountSheetFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_otpToEditProfileInfoFragment"
+            app:destination="@id/otpToEditProfileInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/storeFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.StoreFragment"
+        android:label="fragment_store"
+        tools:layout="@layout/fragment_store" />
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.AboutUsFragment"
+        android:label="fragment_about_us"
+        tools:layout="@layout/fragment_about_us" />
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.ChangePasswordFragment"
+        android:label="fragment_change_password"
+        tools:layout="@layout/fragment_change_password" />
+    <dialog
+        android:id="@+id/deleteAccountSheetFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.DeleteAccountSheetFragment"
+        android:label="fragment_delete_account_sheet"
+        tools:layout="@layout/fragment_delete_account_sheet" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" />
+    <fragment
+        android:id="@+id/otpToEditProfileInfoFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.OtpToEditProfileInfoFragment"
+        android:label="fragment_otp_to_edit_profile_info"
+        tools:layout="@layout/fragment_otp_to_edit_profile_info">
+        <action
+            android:id="@+id/action_otpToEditProfileInfoFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/termsAndConditionsFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.TermsAndConditionsFragment"
+        android:label="fragment_terms_and_conditions"
+        tools:layout="@layout/fragment_terms_and_conditions" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

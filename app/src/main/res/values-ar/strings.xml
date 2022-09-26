@@ -46,7 +46,7 @@
     <string name="average_rating">تقييم متوسط</string>
     <string name="lowest_rated">الأقل تقييمًا</string>
     <string name="apply">تطبيق</string>
-    <string name="about_us">من نحن </string>
+    <string name="about_us">من نحن</string>
     <string name="my_animals">حيواناتي</string>
     <string name="ntifications">الاشعارات</string>
     <string name="suggestions">الشكاوى والمقترحات</string>
@@ -110,5 +110,18 @@
     <string name="clinic_rate">تقييم العيادة</string>
     <string name="notes">ملاحظات</string>
     <string name="save_review">حفظ التقييم</string>
+    <string name="complaint_mail">بريد الشكاوى</string>
+    <string name="suggestion_mail">بريد المقترحات</string>
+    <string name="edit_profile">تعديل الحساب</string>
+    <string name="delete_account"><u>حذف الحساب</u></string>
+    <string name="are_you_sure_you_want_to_delete_the_account">هل أنت متأكد من أنك تريد حذف الحساب؟</string>
+    <string name="save">حفظ</string>
+    <string name="old_password">كلمة المرور القديمة</string>
+    <string name="confirm_new_password">تأكيد كلمة المرور الجديدة</string>
+    <string name="terms_and_conditions">الشروط و الاحكام</string>
+    <string name="t_c">تطبيق استشارات بيطرية يهدف الى توصيل العملاء بالعيادات البيطرية و متجر الادوية لتسهيل عملية الاستشارة للعميل و سهولة طلب الادوية و الحصول عليها تطبيق استشارات بيطرية يهدف الى توصيل العملاء بالعيادات البيطرية و متجر الادوية لتسهيل عملية الاستشارة للعميل و سهولة طلب الادوية و الحصول عليها تطبيق استشارات بيطرية يهدف الى توصيل العملاء بالعيادات البيطرية و متجر الادوية لتسهيل عملية الاستشارة للعميل و سهولة طلب الادوية و الحصول عليها</string>
+    <string name="language">اللغة</string>
+    <string name="ar">عربى</string>
+    <string name="en">EN</string>
 
 </resources>

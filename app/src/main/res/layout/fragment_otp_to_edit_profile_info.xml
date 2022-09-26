@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    tools:context=".ui.main.fragments.OtpToEditProfileInfoFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="@string/verification_code"
+            android:textColor="@color/brown"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/subtitle_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/verification_code_msg"
+            android:textColor="@color/brown"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="@+id/title_tv"
+            app:layout_constraintStart_toStartOf="@+id/title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/title_tv" />
+
+        <com.jkb.vcedittext.VerificationCodeEditText
+            android:id="@+id/ver_code_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_24sdp"
+            android:layout_marginEnd="@dimen/_24sdp"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:bottomLineHeight="2dp"
+            app:bottomLineSelectedColor="@color/brown"
+            app:figures="4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/subtitle_tv"
+            app:selectedBackgroundColor="@color/off_white"
+            app:verCodeMargin="@dimen/_12sdp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/activate_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_46sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:text="@string/confirm"
+            android:textColor="@color/brown"
+            android:textSize="@dimen/_12ssp"
+            app:backgroundTint="@color/off_white"
+            app:cornerRadius="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_36sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ver_code_et"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -6,35 +6,33 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tawajood.snail.R
-import com.tawajood.snail.databinding.FragmentNotificationsBinding
-import com.tawajood.snail.databinding.FragmentSearchResultBinding
+import com.tawajood.snail.databinding.FragmentEditProfileBinding
+import com.tawajood.snail.databinding.FragmentProfileBinding
 import com.tawajood.snail.ui.main.MainActivity
 
 
-class NotificationsFragment : Fragment() {
+class EditProfileFragment : Fragment() {
 
-    private lateinit var binding: FragmentNotificationsBinding
+
+    private lateinit var binding: FragmentEditProfileBinding
     private lateinit var parent: MainActivity
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentNotificationsBinding.inflate(inflater)
+        binding = FragmentEditProfileBinding.inflate(inflater)
         parent = requireActivity() as MainActivity
-
-        setupUI()
         onClick()
 
         return binding.root
     }
 
     private fun onClick() {
-
-    }
-
-    private fun setupUI() {
-        parent.showBottomNav(false)
-
+        binding.editBtn.setOnClickListener {
+            parent.navController.navigate(R.id.profileFragment)
+        }
     }
 
 

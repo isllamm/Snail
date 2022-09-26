@@ -36,6 +36,9 @@ class MainActivity : AppCompatActivity() {
                 as NavHostFragment
         navController = navHostFragment.navController
         binding.bottomNavView.setupWithNavController(navController)
+        binding.navView.setupWithNavController(navController)
+        binding.navView.itemIconTintList = null
+
     }
 
 

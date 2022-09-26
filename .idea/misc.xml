@@ -13,31 +13,48 @@
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/drawable/top_radius.xml" value="0.215" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/drawable/top_radius_24.xml" value="0.215" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/drawable/two_corners_raduis_white.xml" value="0.215" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/activity_login.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/beige_divider.xml" value="0.3296296296296296" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_about_us.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_cancel_reservation_sheet.xml" value="0.33055555555555555" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_change_password.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_clinic_info.xml" value="0.29545454545454547" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_contact_us.xml" value="0.33055555555555555" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_delete_account_sheet.xml" value="0.33055555555555555" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_edit_profile.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_failure_payment_sheet.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_home.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_login_first_sheet.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_make_reservation.xml" value="0.33" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_my_animals.xml" value="0.33055555555555555" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_new_pass.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_notifications.xml" value="0.33055555555555555" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_otp_to_edit_profile_info.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_payment.xml" value="0.33055555555555555" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_receipt.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_register.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_review_sheet.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_search_result.xml" value="0.33055555555555555" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_settings.xml" value="0.25" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_store.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_successful_order_sheet.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_successful_payment_sheet.xml" value="0.33055555555555555" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_terms_and_conditions.xml" value="0.33055555555555555" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_verification.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/item_animal.xml" value="0.5" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/item_clinic.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/item_day.xml" value="0.3296296296296296" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/item_my_animal.xml" value="0.3296296296296296" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/item_notification.xml" value="0.3296296296296296" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/item_review.xml" value="0.33055555555555555" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/login_toolbar.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/logout_menu.xml" value="0.3296296296296296" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/nav_header_main.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/toolbar.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/menu/drawer_menu.xml" value="0.33055555555555555" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/menu/main_menu.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/menu/visitor_menu.xml" value="0.33055555555555555" />
         <entry key="..\:/tawajood/Snail/app/src/main/res/drawable-ar/end_radius.xml" value="0.1975" />
         <entry key="..\:/tawajood/Snail/app/src/main/res/drawable-v24/top_border_radius_12.xml" value="0.1" />

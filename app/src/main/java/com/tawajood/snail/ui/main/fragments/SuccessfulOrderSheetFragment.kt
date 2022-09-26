@@ -50,6 +50,10 @@ class SuccessfulOrderSheetFragment : BottomSheetDialogFragment() {
 
     private fun onClick() {
 
+        binding.btnOk.setOnClickListener {
+            parent.navController.navigate(R.id.paymentFragment)
+        }
+
     }
 
     override fun getTheme() = R.style.CustomBottomSheetDialogTheme

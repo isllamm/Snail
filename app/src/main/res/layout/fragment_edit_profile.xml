@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/top_raduis_fragments"
-    tools:context=".ui.main.fragments.ProfileFragment">
+    tools:context=".ui.main.fragments.EditProfileFragment">
 
     <ImageView
         android:id="@+id/iv_back"
@@ -27,6 +27,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:strokeColor="@color/light_beige"
         app:strokeWidth="@dimen/_1sdp">
+
+        <FrameLayout
+            android:id="@+id/frame_edit"
+            android:clickable="true"
+            android:focusable="true"
+            android:elevation="@dimen/_24sdp"
+            android:layout_width="match_parent"
+            android:background="#B3635238"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/ic_camera"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"/>
+        </FrameLayout>
 
         <ImageView
             android:id="@+id/profile_img"
@@ -83,7 +98,6 @@
                 android:layout_height="match_parent"
                 android:layout_toEndOf="@id/user_icon"
                 android:background="@null"
-                android:enabled="false"
                 android:hint="@string/username"
                 android:importantForAutofill="no"
                 android:inputType="text"
@@ -117,7 +131,6 @@
                 android:layout_toEndOf="@id/phone_icon"
                 android:background="@null"
                 android:hint="@string/phone"
-                android:enabled="false"
                 android:importantForAutofill="no"
                 android:inputType="phone"
                 android:paddingHorizontal="@dimen/_8sdp"
@@ -133,7 +146,6 @@
                 android:layout_centerVertical="true"
                 android:background="@drawable/flag_transparent"
                 android:gravity="center_vertical"
-                android:visibility="gone"
                 app:ccpDialog_background="@color/white"
                 app:ccpDialog_showTitle="false"
                 app:ccp_contentColor="@color/brown"
@@ -168,7 +180,6 @@
                 android:layout_height="match_parent"
                 android:layout_toEndOf="@id/email_icon"
                 android:background="@null"
-                android:enabled="false"
                 android:hint="@string/email"
                 android:importantForAutofill="no"
                 android:inputType="textEmailAddress"
@@ -187,49 +198,17 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/_46sdp"
         android:layout_marginStart="@dimen/_12sdp"
-        android:layout_marginTop="@dimen/_32sdp"
         android:layout_marginEnd="@dimen/_12sdp"
         android:backgroundTint="@color/beige"
-        android:text="@string/edit_profile"
+        android:text="@string/save"
         android:textColor="@color/brown"
         android:textSize="@dimen/_12ssp"
         app:cornerRadius="@dimen/_8sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/change_password_btn"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_46sdp"
-        android:layout_marginStart="@dimen/_12sdp"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginEnd="@dimen/_12sdp"
-        android:text="@string/change_password"
-        android:textColor="@color/beige"
-        android:textSize="@dimen/_12ssp"
-        app:cornerRadius="@dimen/_8sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_btn"
-        app:strokeColor="@color/beige"
-        app:strokeWidth="@dimen/_1sdp" />
-
-    <TextView
-        android:id="@+id/tv_delete_account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_12sdp"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginEnd="@dimen/_12sdp"
-        android:text="@string/delete_account"
-        android:textColor="@color/brown"
-        android:textSize="@dimen/_12ssp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/change_password_btn"
-        app:strokeColor="@color/beige"
-        app:strokeWidth="@dimen/_1sdp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

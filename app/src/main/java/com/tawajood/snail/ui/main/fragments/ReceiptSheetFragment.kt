@@ -49,6 +49,9 @@ class ReceiptSheetFragment : BottomSheetDialogFragment() {
     }
 
     private fun onClick() {
+        binding.btnDone.setOnClickListener {
+            parent.navController.navigate(R.id.action_receiptSheetFragment_to_reviewSheetFragment)
+        }
 
     }
 

@@ -29,6 +29,9 @@ class ClinicInfoFragment : Fragment(R.layout.fragment_clinic_info) {
         binding.btnConsultationRequest.setOnClickListener {
             parent.navController.navigate(R.id.makeReservationFragment)
         }
+        binding.btnReview.setOnClickListener {
+            parent.navController.navigate(R.id.reviewSheetFragment)
+        }
     }
 
 
@@ -37,7 +40,7 @@ class ClinicInfoFragment : Fragment(R.layout.fragment_clinic_info) {
     }
 
     private fun setupUI() {
-
+        parent.showBottomNav(false)
     }
 
 
