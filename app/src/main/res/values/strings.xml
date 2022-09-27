@@ -133,4 +133,35 @@
     <string name="language">Language</string>
     <string name="ar">عربى</string>
     <string name="en">EN</string>
+    <string name="animal_type">animal type</string>
+    <string name="another_type">another type</string>
+    <string name="type">type</string>
+    <string name="name_of_the_animal">name of the animal</string>
+    <string name="animal_gender">animal gender</string>
+    <string name="animal_age">animal age</string>
+    <string name="animal_weight">animal weight</string>
+    <string name="animal_picture">Animal Picture</string>
+    <string name="previous_reports">Previous Reports</string>
+    <string name="consultation_date1">Consultation date:</string>
+    <string name="report_content">report content:</string>
+    <string name="descriptions">descriptions</string>
+    <string name="vaccination_booklet">vaccination booklet</string>
+    <string name="add_vaccination">add vaccination</string>
+    <string name="date_of_vaccination">date of vaccination:</string>
+    <string name="vaccination_name">Vaccination name:</string>
+    <string name="another_vaccination">Another vaccination</string>
+    <string name="vaccination">Vaccination</string>
+    <string name="vaccination_date1">Vaccination date</string>
+    <string name="previous_consultation">Previous Consultation</string>
+    <string name="oreder_date">Oreder Date</string>
+    <string name="order_date">Order Date:</string>
+    <string name="clinic_name">Clinic Name:</string>
+    <string name="type_of_counseling2">type of counseling:</string>
+    <string name="consultation_data">Consultation data</string>
+    <string name="clinic_data">Clinic data</string>
+    <string name="reserved_specialty">reserved specialty:</string>
+    <string name="clinic_report">Clinic report:</string>
+    <string name="new_consultation">New Consultation</string>
+    <string name="pending_consultation">pending consultation</string>
+
 </resources>
