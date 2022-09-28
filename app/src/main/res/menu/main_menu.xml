@@ -8,7 +8,7 @@
     <item
         android:id="@+id/storeFragment"
         android:title="@string/store"
-        android:icon="@drawable/ic_store"/>
+        android:icon="@drawable/ic_aid"/>
     <item
         android:id="@+id/myConsultantsFragment"
         android:title="@string/my_consultants"

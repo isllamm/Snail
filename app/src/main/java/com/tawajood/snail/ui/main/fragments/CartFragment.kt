@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.tawajood.snail.R
 
 
-class StoreFragment : Fragment() {
+class CartFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -16,7 +16,7 @@ class StoreFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_store, container, false)
+        return inflater.inflate(R.layout.fragment_cart, container, false)
     }
 
 

@@ -36,7 +36,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_150sdp"
@@ -81,7 +81,7 @@
                 app:sliderScrollTimeInSec="2"
                 app:sliderStartAutoCycle="true" />
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:id="@+id/tv_description"

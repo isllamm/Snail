@@ -153,6 +153,25 @@
     <string name="clinic_report">تقرير العيادة:</string>
     <string name="new_consultation">استشارة جديدة</string>
     <string name="pending_consultation">استشارة معلقة</string>
+    <string name="hello_what_do_you_want">مرحبا ماذا تريد؟</string>
+    <string name="pharmacy">صيدلية</string>
+    <string name="store1">متجر</string>
+    <string name="product_type">نوع المنتج</string>
+    <string name="animal_foods">أطعمة حيوانات</string>
+    <string name="trade_mark">العلامة التجارية :</string>
+    <string name="flavor">النكهة:</string>
+    <string name="product_shape">شكل السلعة:</string>
+    <string name="weight">الوزن:</string>
+    <string name="expiry_date1">تاريخ الصلاحية:</string>
+    <string name="add_to_cart">اضف الى السلة</string>
+    <string name="products">المنتجات</string>
+    <string name="receipt1">الفاتورة</string>
+    <string name="total_price_of_products">اجمالى سعر المنتجات:</string>
+    <string name="complete_the_order">إتمام الطلب</string>
+    <string name="checkout">تأكيد الطلب</string>
+    <string name="delivery_data">بيانات التوصيل</string>
+    <string name="delivery_service">خدمة التوصيل:</string>
+    <string name="total">الاجمالي:</string>
 
 
 </resources>

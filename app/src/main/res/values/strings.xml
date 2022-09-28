@@ -163,5 +163,24 @@
     <string name="clinic_report">Clinic report:</string>
     <string name="new_consultation">New Consultation</string>
     <string name="pending_consultation">pending consultation</string>
+    <string name="hello_what_do_you_want">Hello, what do you want?</string>
+    <string name="pharmacy">pharmacy</string>
+    <string name="store1">Store</string>
+    <string name="product_type">Product Type</string>
+    <string name="animal_foods">animal foods</string>
+    <string name="trade_mark">trade mark :</string>
+    <string name="flavor">Flavor:</string>
+    <string name="product_shape">Product shape:</string>
+    <string name="weight">weight:</string>
+    <string name="expiry_date1">expiry date:</string>
+    <string name="add_to_cart">add to cart</string>
+    <string name="products">Products</string>
+    <string name="receipt1">receipt</string>
+    <string name="total_price_of_products">Total price of products:</string>
+    <string name="complete_the_order">Complete the order</string>
+    <string name="checkout">Checkout</string>
+    <string name="delivery_data">Delivery data</string>
+    <string name="delivery_service">Delivery Service:</string>
+    <string name="total">Total:</string>
 
 </resources>
