@@ -182,5 +182,14 @@
     <string name="delivery_data">Delivery data</string>
     <string name="delivery_service">Delivery Service:</string>
     <string name="total">Total:</string>
+    <string name="your_request_has_been_completed_successfully">Your request has been completed successfully</string>
+    <string name="back_to_the_store">Back to the store</string>
+    <string name="my_orders">My Orders</string>
+    <string name="previous_order">previous order</string>
+    <string name="previous_order_details">Previous order details</string>
+    <string name="electronic">electronic</string>
+    <string name="new_order_details">New order details</string>
+    <string name="delivered">Delivered</string>
+    <string name="new_order">New Order</string>
 
 </resources>

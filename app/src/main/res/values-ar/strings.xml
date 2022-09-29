@@ -172,6 +172,15 @@
     <string name="delivery_data">بيانات التوصيل</string>
     <string name="delivery_service">خدمة التوصيل:</string>
     <string name="total">الاجمالي:</string>
+    <string name="your_request_has_been_completed_successfully">تم إتمام طلبك بنجاح</string>
+    <string name="back_to_the_store">العودة الى المتجر</string>
+    <string name="my_orders">طلباتى</string>
+    <string name="previous_order">طلب سابق</string>
+    <string name="previous_order_details">تفاصيل طلب سابق</string>
+    <string name="electronic">الكترونى</string>
+    <string name="new_order_details">تفاصيل طلب جديد</string>
+    <string name="delivered">تم التوصيل</string>
+    <string name="new_order">طلب جديد</string>
 
 
 </resources>
