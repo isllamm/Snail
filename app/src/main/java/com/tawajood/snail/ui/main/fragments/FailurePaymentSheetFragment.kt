@@ -50,6 +50,9 @@ class FailurePaymentSheetFragment : BottomSheetDialogFragment() {
     }
 
     private fun onClick() {
+        binding.btnOk.setOnClickListener {
+            dismiss()
+        }
 
     }
 

@@ -51,6 +51,13 @@ class CancelReservationSheetFragment : BottomSheetDialogFragment() {
 
     private fun onClick() {
 
+        binding.btnNo.setOnClickListener {
+            dismiss()
+        }
+        binding.btnYes.setOnClickListener {
+            parent.navController.navigate(R.id.homeFragment)
+        }
+
     }
 
     override fun getTheme() = R.style.CustomBottomSheetDialogTheme

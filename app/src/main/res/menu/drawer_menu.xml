@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
@@ -13,7 +13,7 @@
 
     <group>
         <item
-            android:id="@+id/myAnimals"
+            android:id="@+id/myAnimalsFragment"
             android:icon="@drawable/ic_pets"
             android:title="@string/my_animals" />
     </group>
@@ -33,21 +33,21 @@
 
     <group>
         <item
-            android:id="@+id/suggestion"
+            android:id="@+id/contactUsFragment"
             android:icon="@drawable/ic_message2"
             android:title="@string/suggestions" />
     </group>
 
     <group>
         <item
-            android:id="@+id/cart"
+            android:id="@+id/cartFragment"
             android:icon="@drawable/ic_pet_cart"
             android:title="@string/cart" />
     </group>
 
     <group>
         <item
-            android:id="@+id/orders"
+            android:id="@+id/myOrdersFragment"
             android:icon="@drawable/ic_orders"
             android:title="@string/orders" />
 
@@ -67,7 +67,6 @@
             android:title="@string/settings" />
 
     </group>
-
 
 
     <item

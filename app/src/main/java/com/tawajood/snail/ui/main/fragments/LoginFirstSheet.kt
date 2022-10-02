@@ -2,6 +2,7 @@ package com.tawajood.snail.ui.main.fragments
 
 import android.annotation.SuppressLint
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,6 +15,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.tawajood.snail.R
 import com.tawajood.snail.databinding.FragmentLoginFirstSheetBinding
 import com.tawajood.snail.databinding.FragmentSearchSheetBinding
+import com.tawajood.snail.ui.login.LoginActivity
 import com.tawajood.snail.ui.main.MainActivity
 
 
@@ -49,6 +51,10 @@ class LoginFirstSheet : BottomSheetDialogFragment() {
     }
 
     private fun onClick() {
+
+        binding.btnLogin.setOnClickListener {
+            parent.logout()
+        }
 
     }
 

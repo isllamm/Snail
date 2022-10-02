@@ -33,6 +33,8 @@ class PaymentFragment : Fragment() {
 
     private fun setupUI() {
 
+        parent.showBottomNav(false)
+
     }
 
 

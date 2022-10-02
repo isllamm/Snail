@@ -59,6 +59,7 @@
         <action
             android:id="@+id/action_clinicInfoFragment_to_makeReservationFragment"
             app:destination="@id/makeReservationFragment" />
+
     </fragment>
     <dialog
         android:id="@+id/loginFirstSheet"
@@ -127,7 +128,7 @@
             android:id="@+id/action_paymentFragment_to_successfulPaymentSheetFragment"
             app:destination="@id/successfulPaymentSheetFragment" />
     </fragment>
-    <fragment
+    <dialog
         android:id="@+id/reviewSheetFragment"
         android:name="com.tawajood.snail.ui.main.fragments.ReviewSheetFragment"
         android:label="fragment_review_sheet"
@@ -145,7 +146,17 @@
         android:id="@+id/myConsultantsFragment"
         android:name="com.tawajood.snail.ui.main.fragments.MyConsultantsFragment"
         android:label="fragment_my_consultants"
-        tools:layout="@layout/fragment_my_consultants" />
+        tools:layout="@layout/fragment_my_consultants" >
+        <action
+            android:id="@+id/action_myConsultantsFragment_to_newConsultationFragment"
+            app:destination="@id/newConsultationFragment" />
+        <action
+            android:id="@+id/action_myConsultantsFragment_to_pendingConsultationFragment"
+            app:destination="@id/pendingConsultationFragment" />
+        <action
+            android:id="@+id/action_myConsultantsFragment_to_previousConsultationFragment"
+            app:destination="@id/previousConsultationFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.tawajood.snail.ui.main.fragments.ProfileFragment"
@@ -165,7 +176,11 @@
         android:id="@+id/storeFragment"
         android:name="com.tawajood.snail.ui.main.fragments.StoreFragment"
         android:label="fragment_store"
-        tools:layout="@layout/fragment_store" />
+        tools:layout="@layout/fragment_store" >
+        <action
+            android:id="@+id/action_storeFragment_to_animalStoreFragment"
+            app:destination="@id/animalStoreFragment" />
+    </fragment>
     <fragment
         android:id="@+id/aboutUsFragment"
         android:name="com.tawajood.snail.ui.main.fragments.AboutUsFragment"
@@ -205,4 +220,113 @@
         android:name="com.tawajood.snail.ui.main.fragments.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/myAnimalsFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.MyAnimalsFragment"
+        android:label="fragment_my_animals"
+        tools:layout="@layout/fragment_my_animals" >
+        <action
+            android:id="@+id/action_myAnimalsFragment_to_addNewAnimalFragment"
+            app:destination="@id/addNewAnimalFragment" />
+        <action
+            android:id="@+id/action_myAnimalsFragment_to_animalInfoFragment"
+            app:destination="@id/animalInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewAnimalFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.AddNewAnimalFragment"
+        android:label="fragment_add_new_animal"
+        tools:layout="@layout/fragment_add_new_animal" >
+        <action
+            android:id="@+id/action_addNewAnimalFragment_to_addInoculationFragment"
+            app:destination="@id/addInoculationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/animalInfoFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.AnimalInfoFragment"
+        android:label="fragment_animal_info"
+        tools:layout="@layout/fragment_animal_info" />
+    <fragment
+        android:id="@+id/addInoculationFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.AddInoculationFragment"
+        android:label="fragment_add_inoculation"
+        tools:layout="@layout/fragment_add_inoculation" />
+    <fragment
+        android:id="@+id/newConsultationFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.NewConsultationFragment"
+        android:label="fragment_new_consultation"
+        tools:layout="@layout/fragment_new_consultation" />
+    <fragment
+        android:id="@+id/pendingConsultationFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.PendingConsultationFragment"
+        android:label="fragment_pending_consultation"
+        tools:layout="@layout/fragment_pending_consultation" />
+    <fragment
+        android:id="@+id/previousConsultationFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.PreviousConsultationFragment"
+        android:label="fragment_previous_consultation"
+        tools:layout="@layout/fragment_previous_consultation" />
+    <fragment
+        android:id="@+id/animalStoreFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.AnimalStoreFragment"
+        android:label="fragment_animal_store"
+        tools:layout="@layout/fragment_animal_store" >
+        <action
+            android:id="@+id/action_animalStoreFragment_to_productInfoFragment"
+            app:destination="@id/productInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productInfoFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.ProductInfoFragment"
+        android:label="fragment_product_info"
+        tools:layout="@layout/fragment_product_info" >
+        <action
+            android:id="@+id/action_productInfoFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_cartFragment_to_checkoutFragment"
+            app:destination="@id/checkoutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.CheckoutFragment"
+        android:label="fragment_checkout"
+        tools:layout="@layout/fragment_checkout" >
+        <action
+            android:id="@+id/action_checkoutFragment_to_successfulOrderFromCartSheetFragment"
+            app:destination="@id/successfulOrderFromCartSheetFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/successfulOrderFromCartSheetFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.SuccessfulOrderFromCartSheetFragment"
+        android:label="fragment_successful_order_from_cart_sheet"
+        tools:layout="@layout/fragment_successful_order_from_cart_sheet" />
+    <fragment
+        android:id="@+id/myOrdersFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.MyOrdersFragment"
+        android:label="fragment_my_orders"
+        tools:layout="@layout/fragment_my_orders" >
+        <action
+            android:id="@+id/action_myOrdersFragment_to_prevOrderInfoFragment"
+            app:destination="@id/prevOrderInfoFragment" />
+        <action
+            android:id="@+id/action_myOrdersFragment_to_newOrderInfoFragment"
+            app:destination="@id/newOrderInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newOrderInfoFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.NewOrderInfoFragment"
+        android:label="fragment_new_order_info"
+        tools:layout="@layout/fragment_new_order_info" />
+    <fragment
+        android:id="@+id/prevOrderInfoFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.PrevOrderInfoFragment"
+        android:label="fragment_prev_order_info"
+        tools:layout="@layout/fragment_prev_order_info" />
 </navigation>

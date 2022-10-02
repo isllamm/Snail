@@ -1,6 +1,7 @@
 package com.tawajood.snail.ui.main.fragments
 
 import android.Manifest
+import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -13,6 +14,7 @@ import com.tawajood.snail.databinding.FragmentHomeBinding
 import com.tawajood.snail.pojo.Clinic
 import com.tawajood.snail.pojo.Slider
 import com.tawajood.snail.ui.main.MainActivity
+import com.tawajood.snail.utils.OnItemClickListener
 import com.tawajood.snail.utils.ToastUtils
 import io.nlopez.smartlocation.SmartLocation
 
@@ -47,7 +49,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         clinics.add(Clinic("دكتور زوو", 3f, R.drawable.test2))
         clinics.add(Clinic("سول كلينك", 5f, R.drawable.test3))
         clinics.add(Clinic("فيتولوجي", 3.5f, R.drawable.test4))
-        clinicsAdapter = ClinicsAdapter()
+        clinicsAdapter = ClinicsAdapter(object: ClinicsAdapter.OnItemClick{
+            override fun onItemClickListener(position:Int){
+                parent.navController.navigate(R.id.clinicInfoFragment)
+
+            }
+        })
         clinicsAdapter.clinics = clinics
         binding.clinicsRv.adapter = clinicsAdapter
     }
@@ -63,6 +70,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun onClick() {
+
+
+
         binding.locImg.setOnClickListener {
             if (!SmartLocation.with(requireContext()).location().state()
                     .locationServicesEnabled()
@@ -93,5 +103,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             ToastUtils.showToast(requireContext(), "Permission Denied")
         }
     }
+
+
+
 
 }

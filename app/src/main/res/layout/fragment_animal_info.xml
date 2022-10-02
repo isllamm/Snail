@@ -168,7 +168,7 @@
                     tools:listitem="@layout/item_vaccination" />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/next_btn"
+                    android:id="@+id/add_btn"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_46sdp"
                     android:layout_marginStart="@dimen/_8sdp"

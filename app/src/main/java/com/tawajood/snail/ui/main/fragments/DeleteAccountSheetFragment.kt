@@ -51,6 +51,15 @@ class DeleteAccountSheetFragment : BottomSheetDialogFragment() {
 
     private fun onClick() {
 
+        binding.btnNo.setOnClickListener {
+            dismiss()
+        }
+
+        binding.btnYes.setOnClickListener {
+            parent.logout()
+            parent.finish()
+        }
+
     }
 
     override fun getTheme() = R.style.CustomBottomSheetDialogTheme

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/top_border_radius_12"
+    android:background="@drawable/top_raduis_fragments"
     android:fillViewport="true"
     tools:context=".ui.main.fragments.ClinicInfoFragment">
 

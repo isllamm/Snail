@@ -494,6 +494,12 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_5"
             app:strokeColor="@color/beige"
             app:strokeWidth="@dimen/_1sdp">
+            <ImageView
+                android:id="@+id/animal_img"
+                android:elevation="@dimen/_8sdp"
+                android:scaleType="fitXY"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
 
             <ImageView
                 android:id="@+id/img"

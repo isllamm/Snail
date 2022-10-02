@@ -34,6 +34,9 @@ class MakeReservationFragment : Fragment(R.layout.fragment_make_reservation) {
         binding.nextBtn.setOnClickListener {
             parent.navController.navigate(R.id.action_makeReservationFragment_to_successfulOrderSheetFragment)
         }
+        binding.btnAddAnimal.setOnClickListener {
+            parent.navController.navigate(R.id.addNewAnimalFragment)
+        }
     }
 
 

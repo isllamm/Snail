@@ -58,6 +58,8 @@
         android:layout_gravity="start"
         android:elevation="@dimen/_80sdp"
         android:fitsSystemWindows="true"
+        app:itemIconTint="@drawable/drawer_bg"
+        app:itemTextColor="@drawable/drawer_bg"
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/drawer_menu">
 

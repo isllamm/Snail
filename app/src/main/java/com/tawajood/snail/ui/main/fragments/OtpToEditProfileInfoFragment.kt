@@ -62,6 +62,7 @@ class OtpToEditProfileInfoFragment : Fragment(R.layout.fragment_otp_to_edit_prof
     }
 
     private fun setupUI() {
+        parent.showBottomNav(false)
 
     }
 

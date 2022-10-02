@@ -6,17 +6,38 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tawajood.snail.R
+import com.tawajood.snail.databinding.FragmentAddInoculationBinding
+import com.tawajood.snail.databinding.FragmentCartBinding
+import com.tawajood.snail.ui.main.MainActivity
 
 
-class CartFragment : Fragment() {
+class CartFragment : Fragment(R.layout.fragment_cart) {
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cart, container, false)
+    private lateinit var binding: FragmentCartBinding
+    private lateinit var parent: MainActivity
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentCartBinding.bind(requireView())
+        parent = requireActivity() as MainActivity
+
+        setupUI()
+
+        onClick()
+    }
+
+    private fun onClick() {
+        binding.ivBack.setOnClickListener {
+            parent.onBackPressed()
+        }
+        binding.btnCheckout.setOnClickListener {
+            parent.navController.navigate(R.id.checkoutFragment)
+        }
+    }
+
+    private fun setupUI() {
+        parent.showBottomNav(false)
     }
 
 
