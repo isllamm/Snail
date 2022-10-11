@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.tawajood.snail.ui.login.fragments.LoginFragment"
+        android:name="com.tawajood.snail.ui.login.fragments.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -47,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.tawajood.snail.ui.login.fragments.RegisterFragment"
+        android:name="com.tawajood.snail.ui.login.fragments.register.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
@@ -60,7 +60,7 @@
     </fragment>
     <fragment
         android:id="@+id/verificationFragment"
-        android:name="com.tawajood.snail.ui.login.fragments.VerificationFragment"
+        android:name="com.tawajood.snail.ui.login.fragments.register.VerificationFragment"
         android:label="fragment_verification"
         tools:layout="@layout/fragment_verification" />
     <fragment

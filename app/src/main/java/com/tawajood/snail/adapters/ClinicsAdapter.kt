@@ -28,9 +28,9 @@ class ClinicsAdapter(private val onItemClick: OnItemClick) :
 
     override fun onBindViewHolder(holder: ClinicViewHolder, position: Int) {
         holder.binding.titleTv.text = clinics[position].name
-        holder.binding.rating.rating = clinics[position].rating
+        holder.binding.rating.rating = clinics[position].rating.toFloat()
         Glide.with(holder.itemView)
-            .load(clinics[position].img)
+            .load(clinics[position].image)
             .into(holder.binding.imageView)
 
         holder.itemView.setOnClickListener {

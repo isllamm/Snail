@@ -16,5 +16,9 @@ object Constants {
     const val LAT = "lat"
     const val LNG = "lng"
     const val PARKING = "parking"
+    const val SMS_TOKEN = "Bearer av9ZwgJyL-6SqEcFCWlS52gOEUgQ_50EcgtNMrfbaeY"
     const val _DATA = "_data"
+    const val REG_BODY = "reg_body"
+    const val VER_CODE = "ver_code"
+
 }

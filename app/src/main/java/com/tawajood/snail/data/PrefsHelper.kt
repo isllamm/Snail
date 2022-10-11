@@ -9,6 +9,8 @@ object PrefsHelper {
     private lateinit var preferences: SharedPreferences
     private const val PREFS_NAME = "shared_prefs"
 
+
+
     fun init(context: Context){
         preferences = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
     }
@@ -84,5 +86,31 @@ object PrefsHelper {
     fun getUserImage(): String{
         return preferences.getString(Constants.USER_IMAGE, "")!!
     }
+
+    fun setCurrentLat(lat: Float) {
+        preferences.edit().putFloat(Constants.LAT, lat).apply()
+    }
+
+    fun getCurrentLat(): Float{
+        return preferences.getFloat(Constants.LAT, -1f)
+    }
+
+    fun setCurrentLng(lat: Float) {
+        preferences.edit().putFloat(Constants.LNG, lat).apply()
+    }
+
+    fun getCurrentLng(): Float{
+        return preferences.getFloat(Constants.LNG, -1f)
+    }
+
+    fun setEmail(email: String) {
+        preferences.edit().putString(Constants.EMAIL, email).apply()
+    }
+
+    fun getEmail(): String{
+        return preferences.getString(Constants.EMAIL, "")!!
+    }
+
+
 
 }

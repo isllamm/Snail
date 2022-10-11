@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.fragments.HomeFragment"
+    tools:context=".ui.main.fragments.home.HomeFragment"
     android:fillViewport="true"
     android:clipToPadding="false">
 

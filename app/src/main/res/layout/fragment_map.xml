@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".ui.main.fragments.MapFragment">
+    tools:context=".ui.main.fragments.maps.MapFragment">
 
     <include
         android:id="@+id/toolbar"

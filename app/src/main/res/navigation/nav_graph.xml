@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.HomeFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
         <action
@@ -26,17 +26,17 @@
     </fragment>
     <fragment
         android:id="@+id/mapFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.MapFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.maps.MapFragment"
         android:label="fragment_map"
         tools:layout="@layout/fragment_map" />
     <dialog
         android:id="@+id/enableGpsSheet"
-        android:name="com.tawajood.snail.ui.main.fragments.EnableGpsSheet"
+        android:name="com.tawajood.snail.ui.main.fragments.sheets.EnableGpsSheet"
         android:label="sheet_enable_gps"
         tools:layout="@layout/sheet_enable_gps" />
     <dialog
         android:id="@+id/searchSheet"
-        android:name="com.tawajood.snail.ui.main.fragments.SearchSheet"
+        android:name="com.tawajood.snail.ui.main.fragments.sheets.SearchSheet"
         android:label="fragment_search_sheet"
         tools:layout="@layout/fragment_search_sheet">
         <action
@@ -50,7 +50,7 @@
         tools:layout="@layout/fragment_search_result" />
     <fragment
         android:id="@+id/clinicInfoFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.ClinicInfoFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.clinic.ClinicInfoFragment"
         android:label="fragment_clinic_info"
         tools:layout="@layout/fragment_clinic_info">
         <action
@@ -63,7 +63,7 @@
     </fragment>
     <dialog
         android:id="@+id/loginFirstSheet"
-        android:name="com.tawajood.snail.ui.main.fragments.LoginFirstSheet"
+        android:name="com.tawajood.snail.ui.main.fragments.sheets.LoginFirstSheet"
         android:label="fragment_login_first_sheet"
         tools:layout="@layout/fragment_login_first_sheet" />
     <fragment
@@ -85,12 +85,12 @@
         tools:layout="@layout/fragment_cancel_reservation_sheet" />
     <dialog
         android:id="@+id/successfulOrderSheetFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.SuccessfulOrderSheetFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.sheets.SuccessfulOrderSheetFragment"
         android:label="fragment_successful_order_sheet"
         tools:layout="@layout/fragment_successful_order_sheet" />
     <fragment
         android:id="@+id/receiptSheetFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.ReceiptSheetFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.sheets.ReceiptSheetFragment"
         android:label="fragment_receipt"
         tools:layout="@layout/fragment_receipt">
         <action
@@ -99,7 +99,7 @@
     </fragment>
     <fragment
         android:id="@+id/contactUsFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.ContactUsFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.contact_us.ContactUsFragment"
         android:label="fragment_contact_us"
         tools:layout="@layout/fragment_contact_us" />
     <fragment
@@ -130,12 +130,12 @@
     </fragment>
     <dialog
         android:id="@+id/reviewSheetFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.ReviewSheetFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.sheets.ReviewSheetFragment"
         android:label="fragment_review_sheet"
         tools:layout="@layout/fragment_review_sheet" />
     <fragment
         android:id="@+id/successfulPaymentSheetFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.SuccessfulPaymentSheetFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.sheets.SuccessfulPaymentSheetFragment"
         android:label="fragment_successful_payment_sheet"
         tools:layout="@layout/fragment_successful_payment_sheet">
         <action
@@ -144,7 +144,7 @@
     </fragment>
     <fragment
         android:id="@+id/myConsultantsFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.MyConsultantsFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.consultants.MyConsultantsFragment"
         android:label="fragment_my_consultants"
         tools:layout="@layout/fragment_my_consultants" >
         <action
@@ -159,7 +159,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.ProfileFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile">
         <action
@@ -174,7 +174,7 @@
     </fragment>
     <fragment
         android:id="@+id/storeFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.StoreFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.store.StoreFragment"
         android:label="fragment_store"
         tools:layout="@layout/fragment_store" >
         <action
@@ -183,7 +183,7 @@
     </fragment>
     <fragment
         android:id="@+id/aboutUsFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.AboutUsFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.about_us.AboutUsFragment"
         android:label="fragment_about_us"
         tools:layout="@layout/fragment_about_us" />
     <fragment
@@ -212,12 +212,12 @@
     </fragment>
     <fragment
         android:id="@+id/termsAndConditionsFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.TermsAndConditionsFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.terms.TermsAndConditionsFragment"
         android:label="fragment_terms_and_conditions"
         tools:layout="@layout/fragment_terms_and_conditions" />
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.SettingsFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
@@ -304,7 +304,7 @@
     </fragment>
     <dialog
         android:id="@+id/successfulOrderFromCartSheetFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.SuccessfulOrderFromCartSheetFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.sheets.SuccessfulOrderFromCartSheetFragment"
         android:label="fragment_successful_order_from_cart_sheet"
         tools:layout="@layout/fragment_successful_order_from_cart_sheet" />
     <fragment

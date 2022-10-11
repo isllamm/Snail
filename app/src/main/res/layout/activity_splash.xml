@@ -14,6 +14,7 @@
         tools:src="@drawable/splash"
         android:contentDescription="@string/bg" />
 
+
     <ImageView
         android:id="@+id/logo"
         android:layout_width="match_parent"

@@ -10,10 +10,13 @@ import com.bumptech.glide.Glide
 import com.tawajood.snail.R
 import com.tawajood.snail.data.PrefsHelper
 import com.tawajood.snail.databinding.ActivitySplashBinding
+import com.tawajood.snail.ui.login.LoginActivity
 import com.tawajood.snail.ui.main.MainActivity
 import com.tawajood.snail.ui.onboard.OnboardActivity
+import dagger.hilt.android.AndroidEntryPoint
 
 @SuppressLint("CustomSplashScreen")
+@AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,14 +31,16 @@ class SplashActivity : AppCompatActivity() {
             .load(R.drawable.logo)
             .into(binding.logo)
 
-        //Splash Screen duration
         Handler(Looper.myLooper()!!).postDelayed({
-            startActivity(Intent(this@SplashActivity, OnboardActivity::class.java))
-//            if (PrefsHelper.getToken().isNotEmpty()) {
-//                startActivity(Intent(this@SplashActivity, MainActivity::class.java))
-//            } else {
-//                startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
-//            }
+            if (PrefsHelper.isFirst()) {
+                startActivity(Intent(this, OnboardActivity::class.java))
+            } else {
+                if (PrefsHelper.getToken().isEmpty()) {
+                    startActivity(Intent(this, LoginActivity::class.java))
+                } else {
+                    startActivity(Intent(this, MainActivity::class.java))
+                }
+            }
             finish()
         }, 2000)
     }

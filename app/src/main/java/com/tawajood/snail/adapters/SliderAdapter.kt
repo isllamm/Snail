@@ -7,10 +7,11 @@ import com.smarteist.autoimageslider.SliderViewAdapter
 import com.tawajood.snail.databinding.ItemSliderBinding
 import com.tawajood.snail.pojo.Slider
 
-class SliderAdapter:
+class SliderAdapter(private val onItemClick: OnItemClick) :
     SliderViewAdapter<SliderAdapter.SliderViewHolder>() {
 
-    class SliderViewHolder(val binding: ItemSliderBinding): SliderViewAdapter.ViewHolder(binding.root)
+    class SliderViewHolder(val binding: ItemSliderBinding) :
+        SliderViewAdapter.ViewHolder(binding.root)
 
     var sliderItems = mutableListOf<Slider>()
         set(value) {
@@ -19,25 +20,25 @@ class SliderAdapter:
         }
 
     override fun onCreateViewHolder(parent: ViewGroup?): SliderViewHolder {
-        val binding = ItemSliderBinding.inflate(LayoutInflater.from(parent!!.context), parent, false)
+        val binding =
+            ItemSliderBinding.inflate(LayoutInflater.from(parent!!.context), parent, false)
         return SliderViewHolder(binding)
     }
 
     override fun onBindViewHolder(viewHolder: SliderViewHolder?, position: Int) {
-        Glide.with(viewHolder!!.itemView)
-            .load(sliderItems[position].image)
+        Glide.with(viewHolder!!.itemView).load(sliderItems[position].image)
             .into(viewHolder.binding.cover)
 
-//        viewHolder.itemView.setOnClickListener {
-//            onItemClick.onItemClickListener(position)
-//        }
+        viewHolder.itemView.setOnClickListener {
+            onItemClick.onItemClickListener(position)
+        }
     }
 
     override fun getCount(): Int {
         return sliderItems.size
     }
 
-//    interface OnItemClick{
-//        fun onItemClickListener(position: Int)
-//    }
+    interface OnItemClick {
+        fun onItemClickListener(position: Int)
+    }
 }

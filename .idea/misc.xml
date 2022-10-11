@@ -18,7 +18,9 @@
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/drawable/two_corners_raduis_white.xml" value="0.215" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/activity_login.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/activity_splash.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/beige_divider.xml" value="0.3296296296296296" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/dailog_loading.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_about_us.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_add_inoculation.xml" value="0.25" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_add_new_animal.xml" value="0.33055555555555555" />
@@ -34,6 +36,7 @@
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_edit_profile.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_failure_payment_sheet.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_home.xml" value="0.33055555555555555" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_login.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_login_first_sheet.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_make_reservation.xml" value="0.33" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_my_animals.xml" value="0.33055555555555555" />
@@ -46,6 +49,7 @@
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_otp_to_edit_profile_info.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_payment.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_pending_consultation.xml" value="0.33055555555555555" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_phone.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_prev_order_info.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_previous_consultation.xml" value="0.31805555555555554" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_product_info.xml" value="0.33055555555555555" />

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/top_raduis_fragments"
-    tools:context=".ui.main.fragments.ProfileFragment">
+    tools:context=".ui.main.fragments.profile.ProfileFragment">
 
     <ImageView
         android:id="@+id/iv_back"
@@ -77,19 +77,20 @@
                 android:src="@drawable/ic_profile"
                 app:tint="@color/beige" />
 
-            <EditText
-                android:id="@+id/username_et"
+            <TextView
+                android:id="@+id/username_tv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_toEndOf="@id/user_icon"
                 android:background="@null"
                 android:enabled="false"
+                android:gravity="start|center"
                 android:hint="@string/username"
                 android:importantForAutofill="no"
-                android:inputType="text"
                 android:paddingHorizontal="@dimen/_8sdp"
                 android:textAlignment="viewStart"
-                android:textDirection="ltr" />
+                android:textDirection="ltr"
+                android:textSize="@dimen/_12sdp" />
 
 
         </RelativeLayout>
@@ -110,19 +111,21 @@
                 android:src="@drawable/ic_call"
                 app:tint="@color/beige" />
 
-            <EditText
-                android:id="@+id/phone_et"
+            <TextView
+                android:id="@+id/phone_tv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_toEndOf="@id/phone_icon"
                 android:background="@null"
-                android:hint="@string/phone"
                 android:enabled="false"
+                android:gravity="center|start"
+                android:hint="@string/phone"
                 android:importantForAutofill="no"
                 android:inputType="phone"
                 android:paddingHorizontal="@dimen/_8sdp"
                 android:textAlignment="viewStart"
-                android:textDirection="ltr" />
+                android:textDirection="ltr"
+                android:textSize="@dimen/_12ssp" />
 
 
             <com.hbb20.CountryCodePicker
@@ -162,16 +165,17 @@
                 android:src="@drawable/ic_mail"
                 app:tint="@color/beige" />
 
-            <EditText
-                android:id="@+id/email_et"
+            <TextView
+                android:id="@+id/email_tv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_toEndOf="@id/email_icon"
                 android:background="@null"
                 android:enabled="false"
+                android:textSize="@dimen/_12ssp"
+                android:gravity="start|center"
                 android:hint="@string/email"
                 android:importantForAutofill="no"
-                android:inputType="textEmailAddress"
                 android:paddingHorizontal="@dimen/_8sdp"
                 android:textAlignment="viewStart"
                 android:textDirection="ltr" />

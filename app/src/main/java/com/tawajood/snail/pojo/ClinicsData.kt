@@ -1,0 +1,8 @@
+package com.tawajood.snail.pojo
+
+import com.google.gson.annotations.SerializedName
+
+data class ClinicsData(
+    val clinics: MutableList<Clinic>,
+)
+
