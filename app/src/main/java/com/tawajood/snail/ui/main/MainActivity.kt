@@ -6,7 +6,9 @@ import android.content.Intent
 import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.core.view.GravityCompat
 import androidx.core.view.isVisible
@@ -31,7 +33,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var navController: NavController
     private lateinit var loadingUtil: LoadingUtil
     private lateinit var reciever: Receiver
-    val viewModel: MainViewModel by viewModels()
+    private val viewModel: MainViewModel by viewModels()
+    private lateinit var header: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,9 +43,11 @@ class MainActivity : AppCompatActivity() {
         loadingUtil = LoadingUtil(this)
         reciever = Receiver()
         registerReceiver(reciever, IntentFilter(""))
+        header = binding.navView.getHeaderView(0)
 
         setupUI()
         onClick()
+        observeData()
         setupNavController()
     }
 
@@ -77,8 +82,6 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
         binding.bottomNavView.setupWithNavController(navController)
         binding.navView.setupWithNavController(navController)
-        binding.navView.itemIconTintList = null
-
     }
 
 
@@ -89,6 +92,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.navView.itemIconTintList = null
 
+        header.findViewById<TextView>(R.id.username_tv).text = PrefsHelper.getUsername()
+        Glide.with(header.context)
+            .load(PrefsHelper.getUserImage())
+            .into(header.findViewById<ImageView>(R.id.profile_img))
     }
 
     fun showToolbar(isVisible: Boolean) {
@@ -102,6 +109,7 @@ class MainActivity : AppCompatActivity() {
     fun showBottomNav(isVisible: Boolean) {
         binding.bottomNavView.isVisible = isVisible
     }
+
     fun showLoading() {
         loadingUtil.showLoading()
     }

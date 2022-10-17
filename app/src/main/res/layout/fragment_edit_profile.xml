@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/top_raduis_fragments"
-    tools:context=".ui.main.fragments.EditProfileFragment">
+    tools:context=".ui.main.fragments.profile.EditProfileFragment">
 
     <ImageView
         android:id="@+id/iv_back"

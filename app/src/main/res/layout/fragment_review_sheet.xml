@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/top_border_radius_12"
-    tools:context=".ui.main.fragments.sheets.ReviewSheetFragment">
+    tools:context=".ui.main.fragments.review.ReviewSheetFragment">
 
     <ImageView
         android:id="@+id/iv_back"

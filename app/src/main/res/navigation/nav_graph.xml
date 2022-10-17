@@ -45,7 +45,7 @@
     </dialog>
     <fragment
         android:id="@+id/searchResultFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.SearchResultFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.search.SearchResultFragment"
         android:label="fragment_search_result"
         tools:layout="@layout/fragment_search_result" />
     <fragment
@@ -104,7 +104,7 @@
         tools:layout="@layout/fragment_contact_us" />
     <fragment
         android:id="@+id/failurePaymentSheetFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.FailurePaymentSheetFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.sheets.FailurePaymentSheetFragment"
         android:label="fragment_failure_payment_sheet"
         tools:layout="@layout/fragment_failure_payment_sheet">
         <action
@@ -130,7 +130,7 @@
     </fragment>
     <dialog
         android:id="@+id/reviewSheetFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.sheets.ReviewSheetFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.review.ReviewSheetFragment"
         android:label="fragment_review_sheet"
         tools:layout="@layout/fragment_review_sheet" />
     <fragment
@@ -188,22 +188,22 @@
         tools:layout="@layout/fragment_about_us" />
     <fragment
         android:id="@+id/changePasswordFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.ChangePasswordFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.profile.ChangePasswordFragment"
         android:label="fragment_change_password"
         tools:layout="@layout/fragment_change_password" />
     <dialog
         android:id="@+id/deleteAccountSheetFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.DeleteAccountSheetFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.sheets.DeleteAccountSheetFragment"
         android:label="fragment_delete_account_sheet"
         tools:layout="@layout/fragment_delete_account_sheet" />
     <fragment
         android:id="@+id/editProfileFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.EditProfileFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.profile.EditProfileFragment"
         android:label="fragment_edit_profile"
         tools:layout="@layout/fragment_edit_profile" />
     <fragment
         android:id="@+id/otpToEditProfileInfoFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.OtpToEditProfileInfoFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.profile.OtpToEditProfileInfoFragment"
         android:label="fragment_otp_to_edit_profile_info"
         tools:layout="@layout/fragment_otp_to_edit_profile_info">
         <action
@@ -222,7 +222,7 @@
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/myAnimalsFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.MyAnimalsFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.pets.MyAnimalsFragment"
         android:label="fragment_my_animals"
         tools:layout="@layout/fragment_my_animals" >
         <action
@@ -234,7 +234,7 @@
     </fragment>
     <fragment
         android:id="@+id/addNewAnimalFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.AddNewAnimalFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.pets.AddNewAnimalFragment"
         android:label="fragment_add_new_animal"
         tools:layout="@layout/fragment_add_new_animal" >
         <action
@@ -243,12 +243,12 @@
     </fragment>
     <fragment
         android:id="@+id/animalInfoFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.AnimalInfoFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.pets.AnimalInfoFragment"
         android:label="fragment_animal_info"
         tools:layout="@layout/fragment_animal_info" />
     <fragment
         android:id="@+id/addInoculationFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.AddInoculationFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.pets.AddInoculationFragment"
         android:label="fragment_add_inoculation"
         tools:layout="@layout/fragment_add_inoculation" />
     <fragment
@@ -268,7 +268,7 @@
         tools:layout="@layout/fragment_previous_consultation" />
     <fragment
         android:id="@+id/animalStoreFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.AnimalStoreFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.store.AnimalStoreFragment"
         android:label="fragment_animal_store"
         tools:layout="@layout/fragment_animal_store" >
         <action

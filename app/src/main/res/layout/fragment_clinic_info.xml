@@ -57,16 +57,22 @@
                 android:layout_marginTop="@dimen/_8sdp"
                 android:layout_marginEnd="@dimen/_8sdp"
                 android:elevation="@dimen/_20sdp"
-
                 android:progressTint="@color/yellow_500"
                 android:rating="4.5"
                 android:rotationY="180" />
+
+            <ImageView
+                android:id="@+id/clinic_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY" />
 
 
             <com.smarteist.autoimageslider.SliderView
                 android:id="@+id/slider"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:visibility="gone"
                 app:sliderAnimationDuration="600"
                 app:sliderAutoCycleDirection="back_and_forth"
                 app:sliderAutoCycleEnabled="true"
@@ -201,89 +207,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <View
-                    android:id="@+id/view"
-                    android:layout_width="@dimen/_1sdp"
-                    android:layout_height="@dimen/_120sdp"
-                    android:background="@color/light_beige"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/internally"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_8sdp"
-                    android:layout_marginTop="@dimen/_16sdp"
-                    android:text="@string/internally"
-                    android:textColor="@color/brown"
-                    android:textSize="@dimen/_12ssp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/nutrition"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_12sdp"
-                    android:text="@string/nutrition"
-                    android:textColor="@color/brown"
-                    android:textSize="@dimen/_12ssp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@+id/internally"
-                    app:layout_constraintTop_toBottomOf="@+id/internally" />
-
-                <TextView
-                    android:id="@+id/teeth"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_12sdp"
-                    android:text="@string/teeth"
-                    android:textColor="@color/brown"
-                    android:textSize="@dimen/_12ssp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@+id/nutrition"
-                    app:layout_constraintTop_toBottomOf="@+id/nutrition" />
-
-                <TextView
-                    android:id="@+id/chest"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_8sdp"
-                    android:layout_marginTop="@dimen/_16sdp"
-                    android:text="@string/chest"
-                    android:textColor="@color/brown"
-                    android:textSize="@dimen/_12ssp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/view"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/eyes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_12sdp"
-                    android:text="@string/eyes"
-                    android:textColor="@color/brown"
-                    android:textSize="@dimen/_12ssp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@+id/chest"
-                    app:layout_constraintTop_toBottomOf="@+id/chest" />
-
-                <TextView
-                    android:id="@+id/bones"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_12sdp"
-                    android:text="@string/bones"
-                    android:textColor="@color/brown"
-                    android:textSize="@dimen/_12ssp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@+id/chest"
-                    app:layout_constraintTop_toBottomOf="@+id/eyes" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_specialization"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_4sdp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="2"
+                    tools:listitem="@layout/item_specialization" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -350,15 +281,15 @@
             android:id="@+id/btn_Consultation_request"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
-            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginStart="@dimen/_12sdp"
             android:layout_marginTop="@dimen/_8sdp"
-            app:cornerRadius="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
             android:backgroundTint="@color/beige"
-            android:textColor="@color/brown"
-            android:textSize="@dimen/_12ssp"
             android:text="@string/consultation_request"
             android:textAllCaps="false"
-            android:layout_marginStart="@dimen/_12sdp"
+            android:textColor="@color/brown"
+            android:textSize="@dimen/_12ssp"
+            app:cornerRadius="@dimen/_8sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/right" />
@@ -367,20 +298,20 @@
             android:id="@+id/btn_review"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
-            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginStart="@dimen/_12sdp"
             android:layout_marginTop="@dimen/_8sdp"
-            app:cornerRadius="@dimen/_8sdp"
-            app:strokeWidth="@dimen/_1sdp"
-            app:strokeColor="@color/beige"
-            android:textColor="@color/beige"
-            android:textSize="@dimen/_12ssp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:backgroundTint="@color/white"
             android:text="@string/make_a_review"
             android:textAllCaps="false"
-            android:backgroundTint="@color/white"
-            android:layout_marginStart="@dimen/_12sdp"
+            android:textColor="@color/beige"
+            android:textSize="@dimen/_12ssp"
+            app:cornerRadius="@dimen/_8sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_Consultation_request" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_Consultation_request"
+            app:strokeColor="@color/beige"
+            app:strokeWidth="@dimen/_1sdp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

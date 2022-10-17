@@ -1,4 +1,4 @@
-package com.tawajood.snail.ui.main.fragments
+package com.tawajood.snail.ui.main.fragments.sheets
 
 import android.annotation.SuppressLint
 import android.app.Dialog
@@ -12,15 +12,15 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.tawajood.snail.R
-import com.tawajood.snail.databinding.FragmentDeleteAccountSheetBinding
-import com.tawajood.snail.databinding.FragmentReceiptBinding
+import com.tawajood.snail.databinding.FragmentFailurePaymentSheetBinding
+import com.tawajood.snail.databinding.FragmentSuccessfulPaymentSheetBinding
 import com.tawajood.snail.ui.main.MainActivity
 
 
-class DeleteAccountSheetFragment : BottomSheetDialogFragment() {
+class FailurePaymentSheetFragment : BottomSheetDialogFragment() {
 
 
-    private lateinit var binding: FragmentDeleteAccountSheetBinding
+    private lateinit var binding: FragmentFailurePaymentSheetBinding
     private lateinit var parent: MainActivity
 
 
@@ -28,7 +28,7 @@ class DeleteAccountSheetFragment : BottomSheetDialogFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentDeleteAccountSheetBinding.inflate(inflater)
+        binding = FragmentFailurePaymentSheetBinding.inflate(inflater)
         parent = requireActivity() as MainActivity
         onClick()
 
@@ -43,21 +43,15 @@ class DeleteAccountSheetFragment : BottomSheetDialogFragment() {
                 bottomSheetDialog.findViewById<FrameLayout>(com.google.android.material.R.id.design_bottom_sheet)
             val behavior: BottomSheetBehavior<*> =
                 BottomSheetBehavior.from(bottomSheet!!)
-            behavior.skipCollapsed = false
+            behavior.skipCollapsed = true
             behavior.state = BottomSheetBehavior.STATE_EXPANDED
         }
         return bottomSheetDialog
     }
 
     private fun onClick() {
-
-        binding.btnNo.setOnClickListener {
+        binding.btnOk.setOnClickListener {
             dismiss()
-        }
-
-        binding.btnYes.setOnClickListener {
-            parent.logout()
-            parent.finish()
         }
 
     }

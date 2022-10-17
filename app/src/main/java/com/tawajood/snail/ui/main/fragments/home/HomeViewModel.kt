@@ -33,13 +33,9 @@ constructor(
 
     private fun getClinics() = viewModelScope.launch {
         try {
-            Log.d("islam", "getClinics: here")
             _clinicFlow.emit(Resource.Loading())
-            Log.d("islam", "getClinics: here1")
             val response = repository.getClinics()
-            Log.d("islam", "getClinics: " + response.code().toString())
             if (response.isSuccessful) {
-                Log.d("islam", "getClinics: " + "sss")
                 if (response.body()!!.status) {
                     _clinicFlow.emit(Resource.Success(response.body()!!))
                 } else {

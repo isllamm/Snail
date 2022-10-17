@@ -20,5 +20,11 @@ object Constants {
     const val _DATA = "_data"
     const val REG_BODY = "reg_body"
     const val VER_CODE = "ver_code"
+    const val MSG = "msg"
+    const val IMAGE = "image"
+    const val CLINIC = "clinic"
+    const val CLINIC_NAME = "name"
+    const val REVIEW_CLINIC = "review"
+    const val PET_ID = "id"
 
 }

@@ -9,8 +9,9 @@ import com.tawajood.snail.R
 import com.tawajood.snail.databinding.FragmentSettingsBinding
 import com.tawajood.snail.databinding.FragmentStoreBinding
 import com.tawajood.snail.ui.main.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class StoreFragment : Fragment(R.layout.fragment_store) {
 
 

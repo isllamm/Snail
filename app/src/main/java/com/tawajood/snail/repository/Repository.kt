@@ -1,10 +1,10 @@
 package com.tawajood.snail.repository
 
 
-import android.util.Log
 import com.tawajood.snail.api.RetrofitApi
 import com.tawajood.snail.data.PrefsHelper
-import com.tawajood.snail.pojo.RegisterBody
+import com.tawajood.snail.pojo.*
+import com.tawajood.snail.utils.toMap
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
@@ -42,5 +42,100 @@ constructor(private val api: RetrofitApi) {
         PrefsHelper.getUserId().toString()
     )
 
+    suspend fun updateProfile(updateBody: ProfileBody): Response<MainResponse<Any>> {
+        if (updateBody.image != null) {
+            val imagePart = MultipartBody.Part.createFormData(
+                "image",
+                updateBody.image.name,
+                updateBody.image.asRequestBody("multipart/form-data".toMediaTypeOrNull())
+            )
+            return api.updateProfile(
+                PrefsHelper.getToken(),
+                PrefsHelper.getLanguage(),
+                updateBody.toMap(),
+                imagePart
+            )
+        } else {
+            return api.updateProfile(
+                PrefsHelper.getToken(),
+                PrefsHelper.getLanguage(),
+                updateBody
+            )
+        }
+    }
 
+    suspend fun changePassword(newPassword: String) =
+        api.changePassword(
+            PrefsHelper.getLanguage(),
+            PrefsHelper.getPhone(),
+            PrefsHelper.getCountryCode(),
+            newPassword
+        )
+
+    suspend fun changePassword(countryCode: String, phone: String, newPassword: String) =
+        api.changePassword(
+            PrefsHelper.getLanguage(),
+            phone,
+            countryCode,
+            newPassword
+        )
+
+    suspend fun getClinicById(lang: String, clinicId: String) = api.getClinicById(lang, clinicId)
+
+
+    suspend fun addPet(petBody: PetBody): Response<MainResponse<Any>> {
+        if (petBody.image != null) {
+            val imagePart = MultipartBody.Part.createFormData(
+                "image",
+                petBody.image.name,
+                petBody.image.asRequestBody("multipart/form-data".toMediaTypeOrNull())
+            )
+            return api.addPet(
+                PrefsHelper.getToken(),
+                PrefsHelper.getLanguage(),
+                petBody.toMap(),
+                imagePart
+            )
+        } else {
+            return api.addPet(
+                PrefsHelper.getToken(),
+                PrefsHelper.getLanguage(),
+                petBody,
+            )
+        }
+    }
+
+    suspend fun addVaccination(petId: String, date: String, typeId: String) =
+        api.addVaccination(PrefsHelper.getToken(), PrefsHelper.getLanguage(), petId, date, typeId)
+
+    suspend fun getPets() = api.myPets(
+        PrefsHelper.getToken(),
+        PrefsHelper.getLanguage(),
+        PrefsHelper.getUserId().toString()
+    )
+
+    suspend fun petById(petId: String) = api.petById(
+        PrefsHelper.getToken(),
+        PrefsHelper.getLanguage(),
+        petId
+    )
+
+    suspend fun getPetTypes() = api.getPetTypes(PrefsHelper.getLanguage())
+
+    suspend fun getVaccinationTypes() = api.getVaccinationTypes(PrefsHelper.getLanguage())
+
+    suspend fun search(name: String) =
+        api.search(PrefsHelper.getLanguage(), name)
+
+    suspend fun review(clinicId: String, rating: String, comment: String) =
+        api.review(
+            PrefsHelper.getToken(),
+            PrefsHelper.getLanguage(),
+            ReviewBody(
+                PrefsHelper.getUserId().toString(),
+                clinicId,
+                rating,
+                comment.ifEmpty { "None" },
+            )
+        )
 }

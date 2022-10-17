@@ -28,11 +28,11 @@ class ReviewsAdapter : RecyclerView.Adapter<ReviewsAdapter.ReviewViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ReviewsAdapter.ReviewViewHolder, position: Int) {
-        holder.binding.tvUsername.text = reviews[position].name
-        holder.binding.ratingBar.rating = reviews[position].rating
-        holder.binding.tvReview.text = reviews[position].review
+        holder.binding.tvUsername.text = reviews[position].user.name
+        holder.binding.ratingBar.rating = reviews[position].rate.toFloat()
+        holder.binding.tvReview.text = reviews[position].comment
         Glide.with(holder.itemView)
-            .load(reviews[position].img)
+            .load(reviews[position].user.image)
             .into(holder.binding.ivUserImage)
     }
 

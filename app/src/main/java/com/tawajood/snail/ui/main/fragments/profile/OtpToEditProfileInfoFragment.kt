@@ -1,4 +1,4 @@
-package com.tawajood.snail.ui.main.fragments
+package com.tawajood.snail.ui.main.fragments.profile
 
 import android.os.Bundle
 import android.text.Editable

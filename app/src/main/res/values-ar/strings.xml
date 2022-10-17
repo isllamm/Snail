@@ -27,6 +27,13 @@
     <string name="phone_already_exists">رقم الهاتف موجود بالفعل</string>
     <string name="new_register">تسجيل جديد</string>
     <string name="confirm">تأكيد</string>
+    <array name="gender_types">
+        <item>ذكر</item>
+        <item>انثى</item>
+    </array>
+    <string name="choose_rate">من فضلك قم بإختيار تقييم</string>
+    <string name="profile_updated_successfully">تم تحديث الملف الشخصي بنجاح</string>
+    <string name="password_updated_successfully">تم تحديث الباسورد بنجاح</string>
     <string name="verification_code">كود التفعيل</string>
     <string name="verification_code_msg">ادخل الكود التفعيلي المرسل إلى رقم الجوال الذي قمت بتسجيله</string>
     <string name="change_password">تغيير كلمة المرور</string>

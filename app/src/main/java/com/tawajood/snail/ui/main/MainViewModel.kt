@@ -40,13 +40,6 @@ constructor(
         }
     }
 
-    fun setCartCount(count: Int){
-        _cartCount.postValue(count)
-    }
-
-    fun setLatLng(latLng: LatLng){
-        _latLng.postValue(latLng)
-    }
 
     fun getIdentifiers() = viewModelScope.launch {
         try {
@@ -58,7 +51,7 @@ constructor(
                 _identifiers.emit(Resource.Error(message = response.msg))
             }
         } catch (ex: CancellationException) {
-            Log.d("7imaZz", "exception: ${ex.message.toString()}")
+            Log.d("islam", "exception: ${ex.message.toString()}")
         } catch (e: Exception) {
             _identifiers.emit(Resource.Error(message = e.message.toString()))
         }

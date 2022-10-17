@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/top_raduis_fragments"
-    tools:context=".ui.main.fragments.MyAnimalsFragment">
+    tools:context=".ui.main.fragments.pets.MyAnimalsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -38,7 +38,6 @@
             android:id="@+id/rv_myAnimals"
             android:layout_margin="@dimen/_12sdp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-
             app:spanCount="2"
             tools:itemCount="5"
             tools:listitem="@layout/item_my_animal"

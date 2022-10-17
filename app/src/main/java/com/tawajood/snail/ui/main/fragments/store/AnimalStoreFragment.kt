@@ -1,4 +1,4 @@
-package com.tawajood.snail.ui.main.fragments
+package com.tawajood.snail.ui.main.fragments.store
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,19 +6,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tawajood.snail.R
-import com.tawajood.snail.databinding.FragmentAboutUsBinding
 import com.tawajood.snail.databinding.FragmentAddInoculationBinding
+import com.tawajood.snail.databinding.FragmentAnimalStoreBinding
 import com.tawajood.snail.ui.main.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
 
-class AddInoculationFragment : Fragment(R.layout.fragment_add_inoculation) {
+@AndroidEntryPoint
+class AnimalStoreFragment : Fragment(R.layout.fragment_animal_store) {
 
 
-    private lateinit var binding: FragmentAddInoculationBinding
+    private lateinit var binding: FragmentAnimalStoreBinding
     private lateinit var parent: MainActivity
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentAddInoculationBinding.bind(requireView())
+        binding = FragmentAnimalStoreBinding.bind(requireView())
         parent = requireActivity() as MainActivity
 
         setupUI()
@@ -35,4 +37,6 @@ class AddInoculationFragment : Fragment(R.layout.fragment_add_inoculation) {
     private fun setupUI() {
         parent.showBottomNav(false)
     }
+
+
 }

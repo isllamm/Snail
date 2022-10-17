@@ -89,6 +89,7 @@
                 android:importantForAutofill="no"
                 android:paddingHorizontal="@dimen/_8sdp"
                 android:textAlignment="viewStart"
+                android:textColor="@color/black"
                 android:textDirection="ltr"
                 android:textSize="@dimen/_12sdp" />
 
@@ -121,9 +122,9 @@
                 android:gravity="center|start"
                 android:hint="@string/phone"
                 android:importantForAutofill="no"
-                android:inputType="phone"
                 android:paddingHorizontal="@dimen/_8sdp"
                 android:textAlignment="viewStart"
+                android:textColor="@color/black"
                 android:textDirection="ltr"
                 android:textSize="@dimen/_12ssp" />
 
@@ -136,7 +137,6 @@
                 android:layout_centerVertical="true"
                 android:background="@drawable/flag_transparent"
                 android:gravity="center_vertical"
-                android:visibility="gone"
                 app:ccpDialog_background="@color/white"
                 app:ccpDialog_showTitle="false"
                 app:ccp_contentColor="@color/brown"
@@ -172,13 +172,14 @@
                 android:layout_toEndOf="@id/email_icon"
                 android:background="@null"
                 android:enabled="false"
-                android:textSize="@dimen/_12ssp"
                 android:gravity="start|center"
                 android:hint="@string/email"
                 android:importantForAutofill="no"
                 android:paddingHorizontal="@dimen/_8sdp"
                 android:textAlignment="viewStart"
-                android:textDirection="ltr" />
+                android:textColor="@color/black"
+                android:textDirection="ltr"
+                android:textSize="@dimen/_12ssp" />
 
 
         </RelativeLayout>

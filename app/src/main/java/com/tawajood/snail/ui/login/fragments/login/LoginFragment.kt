@@ -121,7 +121,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                     }
                     is Resource.Loading -> parent.showLoading()
                     is Resource.Success -> {
-                        Log.i("isllam", "ana hena")
+                        Log.i("islam", "ana hena")
                         val user = it.data!!
                         PrefsHelper.setToken(user.token)
                         PrefsHelper.setUserId(user.id)
@@ -131,6 +131,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                         PrefsHelper.setUserImage(user.image)
                         PrefsHelper.setCurrentLat(user.lat.toFloat())
                         PrefsHelper.setCurrentLng(user.lng.toFloat())
+                        PrefsHelper.setFirst(false)
                         parent.gotoMain()
                     }
                 }
@@ -149,10 +150,10 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                     PrefsHelper.setCurrentLat(it.latitude.toFloat())
                     PrefsHelper.setCurrentLng(it.longitude.toFloat())
                     parent.gotoMain()
-                    Log.d("isllam", "lat: ${it.latitude}, lng: ${it.longitude}")
+                    Log.d("islam", "lat: ${it.latitude}, lng: ${it.longitude}")
                 }
         } else {
-            Log.e("isllam", "onActivityResult: PERMISSION DENIED")
+            Log.e("islam", "onActivityResult: PERMISSION DENIED")
             ToastUtils.showToast(requireContext(), "Permission Denied")
         }
     }

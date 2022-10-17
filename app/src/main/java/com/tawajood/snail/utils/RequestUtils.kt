@@ -7,9 +7,7 @@ import com.tawajood.snail.pojo.MainResponse
 import retrofit2.Response
 
 fun <T> handleResponse(response: Response<MainResponse<T>>): MainResponse<T> {
-    Log.d("islam", "handleResponse: llll")
     return if (response.isSuccessful) {
-        Log.d("islam", ": "+response.toString())
         if (response.body()!!.status) {
             MainResponse(
                 true,

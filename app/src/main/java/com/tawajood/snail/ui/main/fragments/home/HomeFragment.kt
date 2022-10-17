@@ -7,15 +7,18 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.tawajood.snail.R
 import com.tawajood.snail.adapters.ClinicsAdapter
 import com.tawajood.snail.adapters.SliderAdapter
+import com.tawajood.snail.data.PrefsHelper
 import com.tawajood.snail.databinding.FragmentHomeBinding
 import com.tawajood.snail.pojo.Clinic
 import com.tawajood.snail.pojo.Slider
 import com.tawajood.snail.ui.main.MainActivity
+import com.tawajood.snail.utils.Constants
 import com.tawajood.snail.utils.OnItemClickListener
 import com.tawajood.snail.utils.Resource
 import com.tawajood.snail.utils.ToastUtils
@@ -42,6 +45,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         binding = FragmentHomeBinding.bind(requireView())
         parent = requireActivity() as MainActivity
 
+        Log.d("islam", "onViewCreated: "+PrefsHelper.getToken())
         setupUI()
         setupClinicsRecycler()
         setupTopClinics()
@@ -58,7 +62,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private fun setupClinicsRecycler() {
         clinicsAdapter = ClinicsAdapter(object : ClinicsAdapter.OnItemClick {
             override fun onItemClickListener(position: Int) {
-
+                parent.navController.navigate(
+                    R.id.clinicInfoFragment, bundleOf(
+                        Constants.CLINIC to clinics[position].id
+                    )
+                )
             }
 
         })
@@ -67,9 +75,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private fun setupTopClinics() {
 
-        sliderAdapter = SliderAdapter(object : SliderAdapter.OnItemClick{
+        sliderAdapter = SliderAdapter(object : SliderAdapter.OnItemClick {
             override fun onItemClickListener(position: Int) {
-
+                parent.navController.navigate(
+                    R.id.clinicInfoFragment, bundleOf(
+                        Constants.CLINIC to clinics[position].id
+                    )
+                )
             }
 
         })
@@ -94,6 +106,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         binding.filterIcon.setOnClickListener {
             parent.navController.navigate(R.id.action_homeFragment_to_searchSheet)
+        }
+        binding.searchIcon.setOnClickListener {
+            parent.navController.navigate(
+                R.id.searchResultFragment,
+                bundleOf(Constants.CLINIC_NAME to binding.etSearch.text.toString())
+            )
         }
 
 
@@ -138,7 +156,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                     is Resource.Success -> {
 
                         sliderItems = it.data!!.sliderItems
-                        sliderAdapter.sliderItems =sliderItems
+                        sliderAdapter.sliderItems = sliderItems
 
                     }
                 }

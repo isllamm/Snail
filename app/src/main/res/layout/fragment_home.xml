@@ -34,17 +34,17 @@
                 android:contentDescription="@string/search" />
 
             <EditText
+                android:id="@+id/et_search"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@null"
-                android:layout_toEndOf="@id/search_icon"
                 android:layout_toStartOf="@id/filter_icon"
+                android:layout_toEndOf="@id/search_icon"
+                android:background="@null"
                 android:hint="@string/search_by_clinic"
-                android:textAlignment="viewStart"
-                android:paddingHorizontal="@dimen/_8sdp"
                 android:importantForAutofill="no"
                 android:inputType="text"
-                />
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:textAlignment="viewStart" />
 
             <ImageView
                 android:id="@+id/filter_icon"

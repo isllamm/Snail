@@ -6,6 +6,7 @@ data class Profile(
     val id: Int,
     val active: Int,
     val address: String,
+    val email: String,
     @SerializedName("country_code")
     val countryCode: String,
     @SerializedName("fcm_token")

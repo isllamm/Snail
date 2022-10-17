@@ -12,15 +12,15 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.tawajood.snail.R
+import com.tawajood.snail.databinding.FragmentDeleteAccountSheetBinding
 import com.tawajood.snail.databinding.FragmentReceiptBinding
-import com.tawajood.snail.databinding.FragmentReviewSheetBinding
 import com.tawajood.snail.ui.main.MainActivity
 
 
-class ReviewSheetFragment : BottomSheetDialogFragment() {
+class DeleteAccountSheetFragment : BottomSheetDialogFragment() {
 
 
-    private lateinit var binding: FragmentReviewSheetBinding
+    private lateinit var binding: FragmentDeleteAccountSheetBinding
     private lateinit var parent: MainActivity
 
 
@@ -28,7 +28,7 @@ class ReviewSheetFragment : BottomSheetDialogFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentReviewSheetBinding.inflate(inflater)
+        binding = FragmentDeleteAccountSheetBinding.inflate(inflater)
         parent = requireActivity() as MainActivity
         onClick()
 
@@ -43,7 +43,7 @@ class ReviewSheetFragment : BottomSheetDialogFragment() {
                 bottomSheetDialog.findViewById<FrameLayout>(com.google.android.material.R.id.design_bottom_sheet)
             val behavior: BottomSheetBehavior<*> =
                 BottomSheetBehavior.from(bottomSheet!!)
-            behavior.skipCollapsed = true
+            behavior.skipCollapsed = false
             behavior.state = BottomSheetBehavior.STATE_EXPANDED
         }
         return bottomSheetDialog
@@ -51,9 +51,15 @@ class ReviewSheetFragment : BottomSheetDialogFragment() {
 
     private fun onClick() {
 
-        binding.btnSave.setOnClickListener {
-            parent.navController.navigate(R.id.homeFragment)
+        binding.btnNo.setOnClickListener {
+            dismiss()
         }
+
+        binding.btnYes.setOnClickListener {
+            parent.logout()
+            parent.finish()
+        }
+
     }
 
     override fun getTheme() = R.style.CustomBottomSheetDialogTheme

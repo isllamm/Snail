@@ -5,9 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/top_raduis_fragments"
-    android:elevation="@dimen/_8sdp"
     android:fillViewport="true"
-    tools:context=".ui.main.fragments.AnimalInfoFragment">
+    tools:context=".ui.main.fragments.pets.AnimalInfoFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
