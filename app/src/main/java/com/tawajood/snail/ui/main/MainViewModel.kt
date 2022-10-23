@@ -40,7 +40,9 @@ constructor(
         }
     }
 
-
+    fun setCartCount(count: Int){
+        _cartCount.postValue(count)
+    }
     fun getIdentifiers() = viewModelScope.launch {
         try {
             _identifiers.emit(Resource.Loading())

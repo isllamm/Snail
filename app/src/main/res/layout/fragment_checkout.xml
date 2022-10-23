@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/top_raduis_fragments"
     android:fillViewport="true"
-    tools:context=".ui.main.fragments.CheckoutFragment">
+    tools:context=".ui.main.fragments.checkout.CheckoutFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

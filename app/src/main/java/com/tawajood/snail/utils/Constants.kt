@@ -26,5 +26,13 @@ object Constants {
     const val CLINIC_NAME = "name"
     const val REVIEW_CLINIC = "review"
     const val PET_ID = "id"
+    const val REQUEST_ID = "id"
+    const val CAT_ID = "id"
+    const val VENDOR_ID = "id"
+    const val SUB_CAT_ID = "id"
+    const val PRODUCT_ID = "id"
+    const val CART_COUNT = "c"
+    const val OPEN_NOTIFICATION = "open_not"
+    const val RECEIVER_ID = "receiver_id"
 
 }

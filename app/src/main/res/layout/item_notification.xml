@@ -22,8 +22,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+
             <TextView
-                android:id="@+id/tv_history"
+                android:id="@+id/date_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_16sdp"
@@ -43,12 +44,26 @@
                 android:text="02:00"
                 android:textColor="@color/beige"
                 android:textSize="@dimen/_12ssp"
+                android:visibility="gone"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_history" />
+                app:layout_constraintTop_toBottomOf="@+id/date_tv" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/materialCardView"
+
+        app:layout_constraintTop_toTopOf="@+id/materialCardView"
+        tools:text="طلب ناجح" />
 
     <TextView
         android:id="@+id/tv_body"

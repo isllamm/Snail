@@ -23,7 +23,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_clinic_name"
+            android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_8sdp"
@@ -65,6 +65,7 @@
             android:layout_marginTop="@dimen/_8sdp"
             android:layout_marginEnd="@dimen/_4sdp"
             android:background="@drawable/full_border_radius_8"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv">
@@ -96,8 +97,8 @@
                 android:layout_height="match_parent"
                 android:layout_toEndOf="@id/i1"
                 android:background="@null"
-                android:hint="@string/animal_foods"
                 android:enabled="false"
+                android:hint="@string/animal_foods"
                 android:importantForAutofill="no"
                 android:inputType="text"
                 android:paddingHorizontal="@dimen/_8sdp"
@@ -110,17 +111,17 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_products"
+            android:id="@+id/rv_vendors"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_12sdp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="2"
-            tools:listitem="@layout/item_product"
-            tools:itemCount="4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rl_et_type" />
+            app:layout_constraintTop_toBottomOf="@+id/rl_et_type"
+            app:spanCount="2"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_vendor" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

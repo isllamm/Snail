@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "236559051423",
+    "project_id": "snail-9d979",
+    "storage_bucket": "snail-9d979.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236559051423:android:f223c4ecf6069b8f9310aa",
+        "android_client_info": {
+          "package_name": "com.tawajood.snail"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236559051423-brlj27tjg630or05urdrlpevvg6snmpd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tawajood.snail",
+            "certificate_hash": "dff21bfb6c03e168aebf0cd61a4599fb43a30c1a"
+          }
+        },
+        {
+          "client_id": "236559051423-1pg7mt8su13rsrlud2kv0q86ep49cn9l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwT8Y2uXxQEwzN-egNEnBeRbkXcnb1F0s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "236559051423-1pg7mt8su13rsrlud2kv0q86ep49cn9l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

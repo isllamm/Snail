@@ -9,7 +9,6 @@ import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import retrofit2.Response
-import java.io.File
 import javax.inject.Inject
 
 class Repository
@@ -105,6 +104,37 @@ constructor(private val api: RetrofitApi) {
         }
     }
 
+    suspend fun addRequest(
+        addRequestBody: AddRequestBody, images: ImagesBody
+    ): Response<MainResponse<Any>> {
+
+        val imagesParts: MutableList<MultipartBody.Part> = mutableListOf()
+        images.images!!.forEach {
+            imagesParts.add(
+                MultipartBody.Part.createFormData(
+                    "images[]",
+                    it.name,
+                    it.asRequestBody("multipart/form-data".toMediaTypeOrNull())
+                )
+            )
+        }
+
+        return api.addRequests(
+            PrefsHelper.getToken(),
+            PrefsHelper.getLanguage(),
+            addRequestBody.toMap(),
+            imagesParts.toTypedArray()
+        )
+    }
+
+    suspend fun getRequestTypes() = api.getRequestTypes(PrefsHelper.getLanguage())
+
+    suspend fun getConsultantById(requestId: String) =
+        api.getConsultantById(PrefsHelper.getToken(), PrefsHelper.getLanguage(), requestId)
+
+    suspend fun cancelConsultant(requestId: String) =
+        api.cancelConsultant(PrefsHelper.getToken(), PrefsHelper.getLanguage(), requestId)
+
     suspend fun addVaccination(petId: String, date: String, typeId: String) =
         api.addVaccination(PrefsHelper.getToken(), PrefsHelper.getLanguage(), petId, date, typeId)
 
@@ -123,6 +153,46 @@ constructor(private val api: RetrofitApi) {
     suspend fun getPetTypes() = api.getPetTypes(PrefsHelper.getLanguage())
 
     suspend fun getVaccinationTypes() = api.getVaccinationTypes(PrefsHelper.getLanguage())
+    suspend fun getCategories() = api.getCategories(PrefsHelper.getLanguage())
+    suspend fun getVendorsByCategoryId(catId: String) =
+        api.getVendorsByCategoryId(PrefsHelper.getLanguage(), catId)
+
+    suspend fun getSubCategories(vendorId: String) =
+        api.getSubCategory(PrefsHelper.getLanguage(), vendorId)
+
+    suspend fun getProducts(subcategoryId: String) =
+        api.getProducts(PrefsHelper.getLanguage(), subcategoryId)
+
+    suspend fun getProductById(id: String) = api.getProductById(PrefsHelper.getLanguage(), id)
+
+    suspend fun addToCart(productId: String, quantity: String) = api.addToCart(
+        PrefsHelper.getToken(),
+        PrefsHelper.getLanguage(),
+        PrefsHelper.getUserId().toString(),
+        productId,
+        quantity
+    )
+
+    suspend fun getCart() = api.getCart(
+        PrefsHelper.getToken(),
+        PrefsHelper.getLanguage(),
+        PrefsHelper.getUserId().toString(),
+    )
+
+    suspend fun deleteItemFromCart(cartItemId: Int) =
+        api.deleteItemFromCart(
+            PrefsHelper.getToken(),
+            PrefsHelper.getLanguage(),
+            cartItemId
+        )
+
+    suspend fun updateCart(cartItemId: Int, quantity: Int) =
+        api.updateCart(
+            PrefsHelper.getToken(),
+            PrefsHelper.getLanguage(),
+            cartItemId,
+            quantity
+        )
 
     suspend fun search(name: String) =
         api.search(PrefsHelper.getLanguage(), name)

@@ -53,6 +53,37 @@ interface RetrofitApi {
         @Field("user_id") user_id: String,
     ): Response<MainResponse<ConsultantsResponse>>
 
+    @Multipart
+    @JvmSuppressWildcards
+    @POST("add-request")
+    suspend fun addRequests(
+        @Header("token") token: String,
+        @Header("lang") lang: String,
+        @PartMap requestBody: Map<String, RequestBody>,
+        @Part images: Array<MultipartBody.Part>
+    ): Response<MainResponse<Any>>
+
+    @FormUrlEncoded
+    @POST("request-by-id")
+    suspend fun getConsultantById(
+        @Header("token") token: String,
+        @Header("lang") lang: String,
+        @Field("request_id") requestId: String,
+    ): Response<MainResponse<ConsultantResponse>>
+
+    @FormUrlEncoded
+    @POST("cancel-request")
+    suspend fun cancelConsultant(
+        @Header("token") token: String,
+        @Header("lang") lang: String,
+        @Field("request_id") requestId: String,
+    ): Response<MainResponse<Any>>
+
+    @GET("request-types")
+    suspend fun getRequestTypes(
+        @Header("lang") lang: String,
+    ): Response<MainResponse<RequestTypeResponse>>
+
     @GET("clinics")
     suspend fun getClinics(
         @Header("lang") lang: String
@@ -133,6 +164,71 @@ interface RetrofitApi {
     suspend fun getVaccinationTypes(
         @Header("lang") lang: String,
     ): Response<MainResponse<VaccinationTypesResponse>>
+
+    @GET("categories")
+    suspend fun getCategories(
+        @Header("lang") lang: String,
+    ): Response<MainResponse<CategoriesResponse>>
+
+    @GET("get-vendors-by-category-id")
+    suspend fun getVendorsByCategoryId(
+        @Header("lang") lang: String,
+        @Query(value = "cat_id") cat_id: String,
+    ): Response<MainResponse<GetVendorsByCategoryIdResponse>>
+
+    @GET("get-subcategories-by-vendor-id")
+    suspend fun getSubCategory(
+        @Header("lang") lang: String,
+        @Query(value = "vendor_id") vendor_id: String,
+    ): Response<MainResponse<SubCategoriesResponse>>
+
+    @GET("get-products-by-subcategory-id")
+    suspend fun getProducts(
+        @Header("lang") lang: String,
+        @Query(value = "subcategory_id") subcategory_id: String,
+    ): Response<MainResponse<ProductsResponse>>
+
+    @POST("get-product-by-id")
+    suspend fun getProductById(
+        @Header("lang") lang: String,
+        @Query(value = "id") id: String,
+    ): Response<MainResponse<ProductResponse>>
+
+    @FormUrlEncoded
+    @POST("add-cart")
+    suspend fun addToCart(
+        @Header("token") token: String,
+        @Header("lang") lang: String,
+        @Field("user_id") user_id: String,
+        @Field("product_id") product_id: String,
+        @Field("quantity") quantity: String,
+    ): Response<MainResponse<Any>>
+
+    @FormUrlEncoded
+    @POST("cart")
+    suspend fun getCart(
+        @Header("token") token: String,
+        @Header("lang") lang: String,
+        @Field("user_id") user_id: String,
+    ): Response<MainResponse<CartResponse>>
+
+    @FormUrlEncoded
+    @POST("delete-cart")
+    suspend fun deleteItemFromCart(
+        @Header("token") token: String,
+        @Header("lang") lang: String,
+        @Field("cart_id") cartItemId: Int
+    ): Response<MainResponse<Any>>
+
+    @FormUrlEncoded
+    @POST("update-cart")
+    suspend fun updateCart(
+        @Header("token") token: String,
+        @Header("lang") lang: String,
+        @Field("cart_id") cartItemId: Int,
+        @Field("quantity") quantity: Int
+    ): Response<MainResponse<Any>>
+
 
     @GET("profile")
     suspend fun getProfile(

@@ -1,5 +1,6 @@
 package com.tawajood.snail.ui.main.fragments.pets
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -21,6 +22,9 @@ import com.tawajood.snail.utils.Resource
 import com.tawajood.snail.utils.ToastUtils
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
+import java.text.SimpleDateFormat
+import java.util.*
+import javax.xml.datatype.DatatypeConstants.MONTHS
 import kotlin.properties.Delegates
 
 @AndroidEntryPoint
@@ -54,6 +58,29 @@ class AddInoculationFragment : Fragment(R.layout.fragment_add_inoculation) {
     }
 
     private fun onClick() {
+        binding.datePicker.setOnClickListener {
+
+            val c = Calendar.getInstance()
+            val year = c.get(Calendar.YEAR)
+            val month = c.get(Calendar.MONTH)
+            val day = c.get(Calendar.DAY_OF_MONTH)
+
+
+            val dpd = DatePickerDialog(
+                requireContext(),
+                DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+
+                    // Display Selected date
+                    binding.dateEt.setText("$year-$monthOfYear-$dayOfMonth")
+
+                },
+                year,
+                month,
+                day
+            )
+
+            dpd.show()
+        }
         binding.ivBack.setOnClickListener {
             parent.onBackPressed()
         }
@@ -73,7 +100,7 @@ class AddInoculationFragment : Fragment(R.layout.fragment_add_inoculation) {
     }
 
     private fun observeData() {
-        lifecycleScope.launchWhenStarted {
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.vaccinationTypesFlow.collectLatest {
                 parent.hideLoading()
                 when (it) {
@@ -96,7 +123,7 @@ class AddInoculationFragment : Fragment(R.layout.fragment_add_inoculation) {
             }
         }
 
-        lifecycleScope.launchWhenStarted {
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.addVaccinationFlow.collectLatest {
                 parent.hideLoading()
                 when (it) {

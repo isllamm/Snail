@@ -10,4 +10,5 @@ data class Pet(
     val image: String,
     val type_id: Int,
     val type: String,
+    var isSelected: Boolean = false
 )

@@ -10,10 +10,12 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.viewModels
+import androidx.core.os.bundleOf
 import androidx.core.view.GravityCompat
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
+import androidx.navigation.NavGraph
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.bumptech.glide.Glide
@@ -33,8 +35,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var navController: NavController
     private lateinit var loadingUtil: LoadingUtil
     private lateinit var reciever: Receiver
-    private val viewModel: MainViewModel by viewModels()
+    val viewModel: MainViewModel by viewModels()
     private lateinit var header: View
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         reciever = Receiver()
         registerReceiver(reciever, IntentFilter(""))
         header = binding.navView.getHeaderView(0)
+        registerReceiver(reciever, IntentFilter("com.tawajood.Snail.Notify"))
 
         setupUI()
         onClick()
@@ -125,6 +129,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+
 
     override fun onDestroy() {
         super.onDestroy()

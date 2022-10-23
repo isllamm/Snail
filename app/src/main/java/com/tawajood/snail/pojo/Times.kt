@@ -9,4 +9,6 @@ data class Times
     val clinicDayId: Int,
     val from: String,
     val to: String,
+    var isSelected: Boolean = false
+
 )

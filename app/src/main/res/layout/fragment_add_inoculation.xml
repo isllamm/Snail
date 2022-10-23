@@ -152,6 +152,7 @@
             android:layout_marginTop="@dimen/_30sdp"
             android:layout_marginEnd="@dimen/_8sdp"
             android:background="@drawable/circuler_radius"
+            app:layout_constraintBottom_toBottomOf="@+id/tv1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rl_et_type2"
             app:riv_corner_radius="@dimen/_30sdp">

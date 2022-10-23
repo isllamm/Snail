@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/top_border_radius_12"
     android:elevation="@dimen/_100sdp"
-    tools:context=".ui.main.fragments.MakeReservationFragment">
+    tools:context=".ui.main.fragments.make_reservation.MakeReservationFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -101,22 +101,102 @@
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:contentDescription="@string/username"
                 android:src="@drawable/ccp_ic_arrow_drop_down"
+                android:visibility="gone"
                 app:tint="@color/beige" />
 
-            <EditText
-                android:id="@+id/username_et"
+            <Spinner
+                android:id="@+id/type_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_toEndOf="@id/user_icon"
-                android:background="@null"
-                android:hint="@string/type_of_counseling"
                 android:importantForAutofill="no"
                 android:inputType="text"
                 android:paddingHorizontal="@dimen/_8sdp"
-                android:textAlignment="viewStart"
+                android:popupBackground="@color/white"
                 android:textColorHint="@color/beige"
-                android:textDirection="ltr" />
+                android:theme="@style/mySpinnerItemStyle" />
 
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imageView31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:src="@drawable/small_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rl_et1" />
+
+        <TextView
+            android:id="@+id/tv_history_counseling1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:text="@string/specialties"
+            android:textColor="@color/brown"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView31"
+            app:layout_constraintStart_toEndOf="@+id/imageView31"
+            app:layout_constraintTop_toTopOf="@+id/imageView31" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:text="@string/star"
+            android:textColor="@color/red_500"
+            android:textSize="@dimen/_25ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_history_counseling1"
+            app:layout_constraintStart_toEndOf="@+id/tv_history_counseling1"
+            app:layout_constraintTop_toTopOf="@+id/tv_history_counseling1" />
+
+        <RelativeLayout
+            android:id="@+id/rl_et11"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_46sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:background="@drawable/full_border_radius_8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_history_counseling1">
+
+            <ImageView
+                android:id="@+id/user_icon1"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:contentDescription="@string/username"
+                android:src="@drawable/ic_doc"
+                app:tint="@color/beige" />
+
+            <ImageView
+                android:id="@+id/arrow1"
+                android:layout_width="@dimen/_26sdp"
+                android:layout_height="@dimen/_26sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:contentDescription="@string/username"
+                android:src="@drawable/ccp_ic_arrow_drop_down"
+                android:visibility="gone"
+                app:tint="@color/beige" />
+
+            <Spinner
+                android:id="@+id/typeSpe_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@id/user_icon1"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:popupBackground="@color/white"
+                android:textColorHint="@color/beige"
+                android:theme="@style/mySpinnerItemStyle" />
 
         </RelativeLayout>
 
@@ -127,7 +207,7 @@
             android:layout_marginTop="@dimen/_30sdp"
             android:src="@drawable/small_logo"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rl_et1" />
+            app:layout_constraintTop_toBottomOf="@+id/rl_et11" />
 
         <TextView
             android:id="@+id/tv_history_counseling"
@@ -154,11 +234,23 @@
             app:layout_constraintStart_toEndOf="@+id/tv_history_counseling"
             app:layout_constraintTop_toTopOf="@+id/tv_history_counseling" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_days"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_history_counseling"
+            tools:listitem="@layout/item_day" />
+
         <nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup
             android:id="@+id/days"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_12sdp"
+            android:visibility="gone"
             app:justifyContent="flex_start"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -236,7 +328,7 @@
             android:layout_marginTop="@dimen/_30sdp"
             android:src="@drawable/small_logo"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/days" />
+            app:layout_constraintTop_toBottomOf="@+id/rv_days" />
 
         <TextView
             android:id="@+id/tv_time_counseling"
@@ -263,11 +355,23 @@
             app:layout_constraintStart_toEndOf="@+id/tv_time_counseling"
             app:layout_constraintTop_toTopOf="@+id/tv_time_counseling" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_times"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_time_counseling"
+            tools:listitem="@layout/item_time" />
+
         <nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup
             android:id="@+id/time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_12sdp"
+            android:visibility="gone"
             app:justifyContent="flex_start"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -321,7 +425,7 @@
             android:layout_marginTop="@dimen/_30sdp"
             android:src="@drawable/small_logo"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/time" />
+            app:layout_constraintTop_toBottomOf="@+id/rv_times" />
 
         <TextView
             android:id="@+id/tv_homeAddress"
@@ -357,6 +461,8 @@
             android:layout_marginTop="@dimen/_8sdp"
             android:layout_marginEnd="@dimen/_4sdp"
             android:background="@drawable/full_border_radius_8"
+            android:clickable="true"
+            android:focusable="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_homeAddress">
@@ -372,29 +478,34 @@
                 app:tint="@color/beige" />
 
             <ImageView
-                android:id="@+id/img_loc"
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
+                android:id="@+id/img_btn"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="@dimen/_12sdp"
+                android:clickable="true"
                 android:contentDescription="@string/username"
+                android:elevation="@dimen/_12sdp"
+                android:focusable="true"
                 android:src="@drawable/ic_my_location"
                 app:tint="@color/beige" />
 
-            <EditText
+            <TextView
                 android:id="@+id/address_et"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_toEndOf="@id/loc_img"
                 android:background="@null"
+                android:clickable="true"
+                android:enabled="true"
+                android:focusable="true"
+                android:gravity="center|start"
                 android:hint="@string/home_address"
                 android:importantForAutofill="no"
-                android:inputType="text"
                 android:paddingHorizontal="@dimen/_8sdp"
-                android:textAlignment="viewStart"
                 android:textColorHint="@color/beige"
-                android:textDirection="ltr" />
+                android:textSize="@dimen/_12ssp" />
 
 
         </RelativeLayout>
@@ -441,11 +552,11 @@
             android:layout_marginStart="@dimen/_4sdp"
             android:layout_marginEnd="@dimen/_4sdp"
             android:orientation="horizontal"
-            tools:listitem="@layout/item_animal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_animals" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_animals"
+            tools:listitem="@layout/item_animal" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_addAnimal"
@@ -542,56 +653,53 @@
                 android:textDirection="ltr" />
         </RelativeLayout>
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_img"
-            android:layout_width="@dimen/_65sdp"
-            android:layout_height="@dimen/_65sdp"
-            android:layout_marginStart="@dimen/_8sdp"
-            android:layout_marginTop="@dimen/_8sdp"
-            app:cardCornerRadius="@dimen/_8sdp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rl_et3">
 
-            <ImageView
-                android:id="@+id/iv_img"
+        <RelativeLayout
+            android:id="@+id/other_img_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:padding="@dimen/_4sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rl_et3">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/images_rv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="fitXY"
-                android:src="@drawable/test1" />
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="10dp"
+                android:layout_toEndOf="@id/add_img_card"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="1"
+                tools:itemCount="9"
+                tools:listitem="@layout/image_item" />
 
-            <ImageView
-                android:layout_width="@dimen/_28sdp"
-                android:layout_height="@dimen/_28sdp"
-                android:layout_gravity="left|bottom"
-                android:elevation="@dimen/_12sdp"
-                android:src="@drawable/circle_delete" />
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/add_img_card"
+                android:layout_width="@dimen/_65sdp"
+                android:layout_height="@dimen/_65sdp"
+                android:layout_margin="@dimen/_6sdp"
+                android:backgroundTint="@color/light_beige"
+                app:cardCornerRadius="@dimen/_8sdp">
 
-        </com.google.android.material.card.MaterialCardView>
-
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/add_img_card"
-            android:layout_width="@dimen/_65sdp"
-            android:layout_height="@dimen/_65sdp"
-            android:layout_marginStart="@dimen/_8sdp"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:layout_marginEnd="22dp"
-            android:backgroundTint="@color/light_beige"
-            app:cardCornerRadius="@dimen/_8sdp"
-            app:layout_constraintBottom_toBottomOf="@+id/card_img"
-            app:layout_constraintStart_toEndOf="@+id/card_img"
-            app:layout_constraintTop_toBottomOf="@+id/rl_et3">
-
-            <ImageView
-                android:id="@+id/img"
-                android:layout_width="@dimen/_26sdp"
-                android:layout_height="@dimen/_26sdp"
-                android:layout_gravity="center"
-                android:scaleType="fitXY"
-                android:src="@drawable/ic_image" />
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="@dimen/_26sdp"
+                    android:layout_height="@dimen/_26sdp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_image" />
 
 
-        </com.google.android.material.card.MaterialCardView>
+            </com.google.android.material.card.MaterialCardView>
+        </RelativeLayout>
+
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/next_btn"
@@ -606,7 +714,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.258"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_img_card" />
+            app:layout_constraintTop_toBottomOf="@+id/other_img_rl" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/cancel_btn"

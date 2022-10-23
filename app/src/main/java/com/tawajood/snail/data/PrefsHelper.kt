@@ -78,7 +78,13 @@ object PrefsHelper {
     fun getCountryCode(): String{
         return preferences.getString(Constants.COUNTRY_CODE, "")!!
     }
+    fun setCartCount(count: Int){
+        preferences.edit().putInt(Constants.CART_COUNT, count).apply()
+    }
 
+    fun getCartCount(): Int{
+        return preferences.getInt(Constants.CART_COUNT, 0)
+    }
     fun setUserImage(code: String) {
         preferences.edit().putString(Constants.USER_IMAGE, code).apply()
     }
