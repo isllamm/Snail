@@ -1,8 +1,9 @@
-package com.tawajood.snail.ui.main.fragments.sheets
+package com.tawajood.snail.ui.main.fragments.payment
 
 import android.annotation.SuppressLint
 import android.app.Dialog
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,19 +12,24 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.tawajood.snail.R
-import com.tawajood.snail.databinding.FragmentSearchSheetBinding
+import com.tawajood.snail.databinding.FragmentFailurePaymentSheetBinding
+import com.tawajood.snail.databinding.FragmentSuccessfulPaymentSheetBinding
+import com.tawajood.snail.ui.main.MainActivity
 
-class SearchSheet : BottomSheetDialogFragment() {
 
-    private lateinit var binding: FragmentSearchSheetBinding
+class FailurePaymentSheetFragment : BottomSheetDialogFragment() {
+
+
+    private lateinit var binding: FragmentFailurePaymentSheetBinding
+    private lateinit var parent: MainActivity
+
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentSearchSheetBinding.inflate(inflater)
-
+        binding = FragmentFailurePaymentSheetBinding.inflate(inflater)
+        parent = requireActivity() as MainActivity
         onClick()
 
         return binding.root
@@ -43,11 +49,14 @@ class SearchSheet : BottomSheetDialogFragment() {
         return bottomSheetDialog
     }
 
-    private fun onClick(){
-        binding.backImg.setOnClickListener {
+    private fun onClick() {
+        binding.btnOk.setOnClickListener {
             dismiss()
         }
+
     }
 
     override fun getTheme() = R.style.CustomBottomSheetDialogTheme
+
+
 }

@@ -23,6 +23,8 @@ import com.tawajood.snail.R
 import com.tawajood.snail.data.PrefsHelper
 import com.tawajood.snail.databinding.ActivityMainBinding
 import com.tawajood.snail.ui.login.LoginActivity
+import com.tawajood.snail.ui.main.MainViewModel_Factory.newInstance
+import com.tawajood.snail.ui.main.fragments.home.LoginFirstSheet
 import com.tawajood.snail.utils.LoadingUtil
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -49,9 +51,15 @@ class MainActivity : AppCompatActivity() {
         header = binding.navView.getHeaderView(0)
         registerReceiver(reciever, IntentFilter("com.tawajood.Snail.Notify"))
 
+        if (PrefsHelper.getToken().isEmpty()) {
+            binding.navView.inflateMenu(R.menu.visitor_menu)
+        } else {
+            binding.navView.inflateMenu(R.menu.drawer_menu)
+
+        }
+
         setupUI()
         onClick()
-        observeData()
         setupNavController()
     }
 
@@ -86,6 +94,7 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
         binding.bottomNavView.setupWithNavController(navController)
         binding.navView.setupWithNavController(navController)
+
     }
 
 
@@ -122,14 +131,12 @@ class MainActivity : AppCompatActivity() {
         loadingUtil.hideLoading()
     }
 
-    private fun observeData() {
-        lifecycleScope.launchWhenStarted {
-            viewModel.identifiers.collectLatest {
-
-            }
+    fun checkLogin(): Boolean {
+        if (PrefsHelper.getToken().isEmpty()) {
+            navController.navigate(R.id.loginFirstSheet)
         }
+        return true
     }
-
 
 
     override fun onDestroy() {

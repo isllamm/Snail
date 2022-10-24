@@ -7,7 +7,7 @@
     android:background="@drawable/top_border_radius_12"
     android:backgroundTint="@color/brown"
     android:elevation="@dimen/_12sdp"
-    tools:context=".ui.main.fragments.sheets.EnableGpsSheet">
+    tools:context=".ui.main.fragments.home.EnableGpsSheet">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

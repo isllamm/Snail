@@ -1,10 +1,9 @@
-package com.tawajood.snail.ui.main.fragments.sheets
+package com.tawajood.snail.ui.main.fragments.checkout
 
 import android.annotation.SuppressLint
 import android.app.Dialog
-import android.content.Intent
 import android.os.Bundle
-import android.provider.Settings
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,20 +12,25 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.tawajood.snail.R
-import com.tawajood.snail.databinding.SheetEnableGpsBinding
+import com.tawajood.snail.databinding.FragmentSuccessfulOrderFromCartSheetBinding
+import com.tawajood.snail.databinding.FragmentSuccessfulOrderSheetBinding
+import com.tawajood.snail.ui.main.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
+class SuccessfulOrderFromCartSheetFragment : BottomSheetDialogFragment() {
 
 
-class EnableGpsSheet : BottomSheetDialogFragment() {
+    private lateinit var binding: FragmentSuccessfulOrderFromCartSheetBinding
+    private lateinit var parent: MainActivity
 
-    private lateinit var binding: SheetEnableGpsBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = SheetEnableGpsBinding.inflate(inflater)
-
+        binding = FragmentSuccessfulOrderFromCartSheetBinding.inflate(inflater)
+        parent = requireActivity() as MainActivity
         onClick()
 
         return binding.root
@@ -40,22 +44,18 @@ class EnableGpsSheet : BottomSheetDialogFragment() {
                 bottomSheetDialog.findViewById<FrameLayout>(com.google.android.material.R.id.design_bottom_sheet)
             val behavior: BottomSheetBehavior<*> =
                 BottomSheetBehavior.from(bottomSheet!!)
-            behavior.skipCollapsed = true
+            behavior.skipCollapsed = false
             behavior.state = BottomSheetBehavior.STATE_EXPANDED
         }
         return bottomSheetDialog
     }
 
-    private fun onClick(){
-        binding.acceptBtn.setOnClickListener {
-            startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))
-            dismiss()
-        }
-
-        binding.noBtn.setOnClickListener {
-            dismiss()
+    private fun onClick() {
+        binding.btnOk.setOnClickListener {
+            parent.navController.navigate(R.id.homeFragment)
         }
     }
 
     override fun getTheme() = R.style.CustomBottomSheetDialogTheme
+
 }

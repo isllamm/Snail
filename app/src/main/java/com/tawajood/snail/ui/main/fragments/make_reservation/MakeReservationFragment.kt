@@ -30,7 +30,6 @@ import com.tawajood.snail.adapters.TimesAdapter
 import com.tawajood.snail.databinding.FragmentMakeReservationBinding
 import com.tawajood.snail.pojo.*
 import com.tawajood.snail.ui.main.MainActivity
-import com.tawajood.snail.ui.maps.MapsActivity
 import com.tawajood.snail.utils.*
 import dagger.hilt.android.AndroidEntryPoint
 import io.nlopez.smartlocation.SmartLocation

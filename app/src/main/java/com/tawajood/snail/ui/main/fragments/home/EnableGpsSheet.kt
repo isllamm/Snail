@@ -1,9 +1,10 @@
-package com.tawajood.snail.ui.main.fragments.sheets
+package com.tawajood.snail.ui.main.fragments.home
 
 import android.annotation.SuppressLint
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,24 +13,20 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.tawajood.snail.R
-import com.tawajood.snail.databinding.FragmentDeleteAccountSheetBinding
-import com.tawajood.snail.databinding.FragmentReceiptBinding
-import com.tawajood.snail.ui.main.MainActivity
+import com.tawajood.snail.databinding.SheetEnableGpsBinding
 
 
-class DeleteAccountSheetFragment : BottomSheetDialogFragment() {
+class EnableGpsSheet : BottomSheetDialogFragment() {
 
-
-    private lateinit var binding: FragmentDeleteAccountSheetBinding
-    private lateinit var parent: MainActivity
-
+    private lateinit var binding: SheetEnableGpsBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentDeleteAccountSheetBinding.inflate(inflater)
-        parent = requireActivity() as MainActivity
+        binding = SheetEnableGpsBinding.inflate(inflater)
+
         onClick()
 
         return binding.root
@@ -43,26 +40,22 @@ class DeleteAccountSheetFragment : BottomSheetDialogFragment() {
                 bottomSheetDialog.findViewById<FrameLayout>(com.google.android.material.R.id.design_bottom_sheet)
             val behavior: BottomSheetBehavior<*> =
                 BottomSheetBehavior.from(bottomSheet!!)
-            behavior.skipCollapsed = false
+            behavior.skipCollapsed = true
             behavior.state = BottomSheetBehavior.STATE_EXPANDED
         }
         return bottomSheetDialog
     }
 
-    private fun onClick() {
-
-        binding.btnNo.setOnClickListener {
+    private fun onClick(){
+        binding.acceptBtn.setOnClickListener {
+            startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))
             dismiss()
         }
 
-        binding.btnYes.setOnClickListener {
-            parent.logout()
-            parent.finish()
+        binding.noBtn.setOnClickListener {
+            dismiss()
         }
-
     }
 
     override fun getTheme() = R.style.CustomBottomSheetDialogTheme
-
-
 }

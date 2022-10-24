@@ -81,13 +81,16 @@
                 app:tint="@color/beige" />
 
             <ImageView
-                android:id="@+id/img_loc"
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
+                android:id="@+id/img_btn"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="@dimen/_12sdp"
+                android:clickable="true"
                 android:contentDescription="@string/username"
+                android:elevation="@dimen/_12sdp"
+                android:focusable="true"
                 android:src="@drawable/ic_my_location"
                 app:tint="@color/beige" />
 
@@ -164,7 +167,6 @@
                     android:layout_height="match_parent"
                     android:layout_toEndOf="@id/user_icon"
                     android:background="@null"
-                    android:enabled="false"
                     android:hint="@string/username"
                     android:importantForAutofill="no"
                     android:inputType="text"
@@ -197,7 +199,6 @@
                     android:layout_height="match_parent"
                     android:layout_toEndOf="@id/phone_icon"
                     android:background="@null"
-                    android:enabled="false"
                     android:hint="@string/phone"
                     android:importantForAutofill="no"
                     android:inputType="phone"
@@ -214,7 +215,7 @@
                     android:layout_centerVertical="true"
                     android:background="@drawable/flag_transparent"
                     android:gravity="center_vertical"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     app:ccpDialog_background="@color/white"
                     app:ccpDialog_showTitle="false"
                     app:ccp_contentColor="@color/brown"

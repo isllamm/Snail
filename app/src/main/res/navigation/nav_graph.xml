@@ -31,12 +31,12 @@
         tools:layout="@layout/fragment_map" />
     <dialog
         android:id="@+id/enableGpsSheet"
-        android:name="com.tawajood.snail.ui.main.fragments.sheets.EnableGpsSheet"
+        android:name="com.tawajood.snail.ui.main.fragments.home.EnableGpsSheet"
         android:label="sheet_enable_gps"
         tools:layout="@layout/sheet_enable_gps" />
     <dialog
         android:id="@+id/searchSheet"
-        android:name="com.tawajood.snail.ui.main.fragments.sheets.SearchSheet"
+        android:name="com.tawajood.snail.ui.main.fragments.search.SearchSheet"
         android:label="fragment_search_sheet"
         tools:layout="@layout/fragment_search_sheet">
         <action
@@ -63,7 +63,7 @@
     </fragment>
     <dialog
         android:id="@+id/loginFirstSheet"
-        android:name="com.tawajood.snail.ui.main.fragments.sheets.LoginFirstSheet"
+        android:name="com.tawajood.snail.ui.main.fragments.home.LoginFirstSheet"
         android:label="fragment_login_first_sheet"
         tools:layout="@layout/fragment_login_first_sheet" />
     <fragment
@@ -90,7 +90,7 @@
         tools:layout="@layout/fragment_successful_order_sheet" />
     <fragment
         android:id="@+id/receiptSheetFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.sheets.ReceiptSheetFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.payment.ReceiptSheetFragment"
         android:label="fragment_receipt"
         tools:layout="@layout/fragment_receipt">
         <action
@@ -104,7 +104,7 @@
         tools:layout="@layout/fragment_contact_us" />
     <fragment
         android:id="@+id/failurePaymentSheetFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.sheets.FailurePaymentSheetFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.payment.FailurePaymentSheetFragment"
         android:label="fragment_failure_payment_sheet"
         tools:layout="@layout/fragment_failure_payment_sheet">
         <action
@@ -135,7 +135,7 @@
         tools:layout="@layout/fragment_review_sheet" />
     <fragment
         android:id="@+id/successfulPaymentSheetFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.sheets.SuccessfulPaymentSheetFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.payment.SuccessfulPaymentSheetFragment"
         android:label="fragment_successful_payment_sheet"
         tools:layout="@layout/fragment_successful_payment_sheet">
         <action
@@ -193,7 +193,7 @@
         tools:layout="@layout/fragment_change_password" />
     <dialog
         android:id="@+id/deleteAccountSheetFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.sheets.DeleteAccountSheetFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.profile.DeleteAccountSheetFragment"
         android:label="fragment_delete_account_sheet"
         tools:layout="@layout/fragment_delete_account_sheet" />
     <fragment
@@ -304,7 +304,7 @@
     </fragment>
     <dialog
         android:id="@+id/successfulOrderFromCartSheetFragment"
-        android:name="com.tawajood.snail.ui.main.fragments.sheets.SuccessfulOrderFromCartSheetFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.checkout.SuccessfulOrderFromCartSheetFragment"
         android:label="fragment_successful_order_from_cart_sheet"
         tools:layout="@layout/fragment_successful_order_from_cart_sheet" />
     <fragment

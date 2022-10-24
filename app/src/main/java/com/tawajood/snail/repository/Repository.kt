@@ -173,6 +173,30 @@ constructor(private val api: RetrofitApi) {
         quantity
     )
 
+    suspend fun addOrder(orderBody: OrderBody) = api.addOrder(
+        PrefsHelper.getToken(),
+        PrefsHelper.getLanguage(),
+        orderBody,
+    )
+
+    suspend fun getOrders() = api.getOrders(
+        PrefsHelper.getToken(),
+        PrefsHelper.getLanguage(),
+        PrefsHelper.getUserId().toString(),
+    )
+
+    suspend fun getOrderById(orderId: String) = api.getOrderById(
+        PrefsHelper.getToken(),
+        PrefsHelper.getLanguage(),
+        orderId,
+    )
+
+    suspend fun orderDelivered(orderId: String) = api.orderDelivered(
+        PrefsHelper.getToken(),
+        PrefsHelper.getLanguage(),
+        orderId,
+    )
+
     suspend fun getCart() = api.getCart(
         PrefsHelper.getToken(),
         PrefsHelper.getLanguage(),
@@ -192,6 +216,21 @@ constructor(private val api: RetrofitApi) {
             PrefsHelper.getLanguage(),
             cartItemId,
             quantity
+        )
+
+    suspend fun getNotifications() =
+        api.getNotifications(
+            PrefsHelper.getToken(),
+            PrefsHelper.getLanguage(),
+            PrefsHelper.getUserId()
+        )
+
+    suspend fun updateFCMToken() =
+        api.updateFCMToken(
+            PrefsHelper.getToken(),
+            PrefsHelper.getUserId(),
+            PrefsHelper.getFCMToken(),
+            0
         )
 
     suspend fun search(name: String) =

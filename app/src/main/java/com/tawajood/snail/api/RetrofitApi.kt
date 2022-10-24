@@ -212,6 +212,55 @@ interface RetrofitApi {
         @Field("user_id") user_id: String,
     ): Response<MainResponse<CartResponse>>
 
+
+    @POST("add-order")
+    suspend fun addOrder(
+        @Header("token") token: String,
+        @Header("lang") lang: String,
+        @Body orderBody: OrderBody
+    ): Response<MainResponse<Any>>
+
+    @FormUrlEncoded
+    @POST("my-orders")
+    suspend fun getOrders(
+        @Header("token") token: String,
+        @Header("lang") lang: String,
+        @Field("user_id") user_id: String,
+    ): Response<MainResponse<OrdersResponse>>
+
+    @FormUrlEncoded
+    @POST("order-by-id")
+    suspend fun getOrderById(
+        @Header("token") token: String,
+        @Header("lang") lang: String,
+        @Field("order_id") order_id: String,
+    ): Response<MainResponse<OrderResponse>>
+
+    @FormUrlEncoded
+    @POST("order-delivered")
+    suspend fun orderDelivered(
+        @Header("token") token: String,
+        @Header("lang") lang: String,
+        @Field("order_id") order_id: String,
+    ): Response<MainResponse<Any>>
+
+    @FormUrlEncoded
+    @POST("notifications")
+    suspend fun getNotifications(
+        @Header("token") token: String,
+        @Header("lang") lang: String,
+        @Field("user_id") userId: Int
+    ): Response<MainResponse<NotificationsResponse>>
+
+    @FormUrlEncoded
+    @POST("update-fcm-token")
+    suspend fun updateFCMToken(
+        @Header("token") token: String,
+        @Field("user_id") userId: Int,
+        @Field("fcm_token") fcmToken: String,
+        @Field("mobile_id") mobileId: Int
+    )
+
     @FormUrlEncoded
     @POST("delete-cart")
     suspend fun deleteItemFromCart(

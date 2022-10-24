@@ -1,4 +1,4 @@
-package com.tawajood.snail.ui.main.fragments.sheets
+package com.tawajood.snail.ui.main.fragments.home
 
 import android.annotation.SuppressLint
 import android.app.Dialog
@@ -17,8 +17,9 @@ import com.tawajood.snail.databinding.FragmentLoginFirstSheetBinding
 import com.tawajood.snail.databinding.FragmentSearchSheetBinding
 import com.tawajood.snail.ui.login.LoginActivity
 import com.tawajood.snail.ui.main.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class LoginFirstSheet : BottomSheetDialogFragment() {
 
     private lateinit var binding: FragmentLoginFirstSheetBinding

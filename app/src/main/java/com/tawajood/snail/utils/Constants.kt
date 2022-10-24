@@ -34,5 +34,6 @@ object Constants {
     const val CART_COUNT = "c"
     const val OPEN_NOTIFICATION = "open_not"
     const val RECEIVER_ID = "receiver_id"
+    const val ORDER_ID = "o"
 
 }

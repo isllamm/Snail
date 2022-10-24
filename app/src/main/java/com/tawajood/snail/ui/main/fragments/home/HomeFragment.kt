@@ -45,7 +45,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         binding = FragmentHomeBinding.bind(requireView())
         parent = requireActivity() as MainActivity
 
-        Log.d("islam", "onViewCreated: "+PrefsHelper.getToken())
+        Log.d("islam", "onViewCreated: " + PrefsHelper.getToken())
         setupUI()
         setupClinicsRecycler()
         setupTopClinics()
@@ -62,11 +62,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private fun setupClinicsRecycler() {
         clinicsAdapter = ClinicsAdapter(object : ClinicsAdapter.OnItemClick {
             override fun onItemClickListener(position: Int) {
-                parent.navController.navigate(
-                    R.id.clinicInfoFragment, bundleOf(
-                        Constants.CLINIC to clinics[position].id
+                if (parent.checkLogin()) {
+                    parent.navController.navigate(
+                        R.id.clinicInfoFragment, bundleOf(
+                            Constants.CLINIC to clinics[position].id
+                        )
                     )
-                )
+                }
+
             }
 
         })
@@ -77,11 +80,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         sliderAdapter = SliderAdapter(object : SliderAdapter.OnItemClick {
             override fun onItemClickListener(position: Int) {
-                parent.navController.navigate(
-                    R.id.clinicInfoFragment, bundleOf(
-                        Constants.CLINIC to clinics[position].id
+                if (parent.checkLogin()) {
+                    parent.navController.navigate(
+                        R.id.clinicInfoFragment, bundleOf(
+                            Constants.CLINIC to clinics[position].id
+                        )
                     )
-                )
+                }
+
             }
 
         })
@@ -108,10 +114,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             parent.navController.navigate(R.id.action_homeFragment_to_searchSheet)
         }
         binding.searchIcon.setOnClickListener {
-            parent.navController.navigate(
-                R.id.searchResultFragment,
-                bundleOf(Constants.CLINIC_NAME to binding.etSearch.text.toString())
-            )
+            if (parent.checkLogin()){
+                parent.navController.navigate(
+                    R.id.searchResultFragment,
+                    bundleOf(Constants.CLINIC_NAME to binding.etSearch.text.toString())
+                )
+            }
+
         }
 
 

@@ -1,4 +1,4 @@
-package com.tawajood.snail.ui.main.fragments.sheets
+package com.tawajood.snail.ui.main.fragments.payment
 
 import android.annotation.SuppressLint
 import android.app.Dialog
@@ -12,14 +12,15 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.tawajood.snail.R
-import com.tawajood.snail.databinding.FragmentFailurePaymentSheetBinding
-import com.tawajood.snail.databinding.FragmentReceiptBinding
+import com.tawajood.snail.databinding.FragmentLoginFirstSheetBinding
+import com.tawajood.snail.databinding.FragmentSuccessfulPaymentSheetBinding
 import com.tawajood.snail.ui.main.MainActivity
 
 
-class ReceiptSheetFragment : BottomSheetDialogFragment() {
+class SuccessfulPaymentSheetFragment : BottomSheetDialogFragment() {
 
-    private lateinit var binding: FragmentReceiptBinding
+
+    private lateinit var binding: FragmentSuccessfulPaymentSheetBinding
     private lateinit var parent: MainActivity
 
 
@@ -27,7 +28,7 @@ class ReceiptSheetFragment : BottomSheetDialogFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentReceiptBinding.inflate(inflater)
+        binding = FragmentSuccessfulPaymentSheetBinding.inflate(inflater)
         parent = requireActivity() as MainActivity
         onClick()
 
@@ -49,8 +50,8 @@ class ReceiptSheetFragment : BottomSheetDialogFragment() {
     }
 
     private fun onClick() {
-        binding.btnDone.setOnClickListener {
-            parent.navController.navigate(R.id.action_receiptSheetFragment_to_reviewSheetFragment)
+        binding.btnBill.setOnClickListener {
+            parent.navController.navigate(R.id.action_successfulPaymentSheetFragment_to_receiptSheetFragment)
         }
 
     }

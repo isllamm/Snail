@@ -61,7 +61,7 @@
         app:itemIconTint="@drawable/drawer_bg"
         app:itemTextColor="@drawable/drawer_bg"
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/drawer_menu">
+        >
 
     </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>

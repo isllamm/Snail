@@ -1,9 +1,8 @@
-package com.tawajood.snail.ui.main.fragments.sheets
+package com.tawajood.snail.ui.main.fragments.search
 
 import android.annotation.SuppressLint
 import android.app.Dialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,24 +11,19 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.tawajood.snail.R
-import com.tawajood.snail.databinding.FragmentLoginFirstSheetBinding
-import com.tawajood.snail.databinding.FragmentSuccessfulPaymentSheetBinding
-import com.tawajood.snail.ui.main.MainActivity
+import com.tawajood.snail.databinding.FragmentSearchSheetBinding
 
+class SearchSheet : BottomSheetDialogFragment() {
 
-class SuccessfulPaymentSheetFragment : BottomSheetDialogFragment() {
-
-
-    private lateinit var binding: FragmentSuccessfulPaymentSheetBinding
-    private lateinit var parent: MainActivity
-
+    private lateinit var binding: FragmentSearchSheetBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentSuccessfulPaymentSheetBinding.inflate(inflater)
-        parent = requireActivity() as MainActivity
+        binding = FragmentSearchSheetBinding.inflate(inflater)
+
         onClick()
 
         return binding.root
@@ -49,13 +43,11 @@ class SuccessfulPaymentSheetFragment : BottomSheetDialogFragment() {
         return bottomSheetDialog
     }
 
-    private fun onClick() {
-        binding.btnBill.setOnClickListener {
-            parent.navController.navigate(R.id.action_successfulPaymentSheetFragment_to_receiptSheetFragment)
+    private fun onClick(){
+        binding.backImg.setOnClickListener {
+            dismiss()
         }
-
     }
 
     override fun getTheme() = R.style.CustomBottomSheetDialogTheme
-
 }
