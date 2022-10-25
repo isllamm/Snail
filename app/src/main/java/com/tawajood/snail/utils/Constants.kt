@@ -12,6 +12,7 @@ object Constants {
     const val PHONE = "phone"
     const val COUNTRY_CODE = "country_code"
     const val USER_IMAGE = "user_image"
+    const val IS_NOTIFIABLE = "user_image"
     const val EMAIL = "email"
     const val LAT = "lat"
     const val LNG = "lng"

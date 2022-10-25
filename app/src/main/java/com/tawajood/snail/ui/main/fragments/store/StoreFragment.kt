@@ -48,12 +48,14 @@ class StoreFragment : Fragment(R.layout.fragment_store) {
     private fun setupRec() {
         categoriesAdapter = CategoriesAdapter(object : CategoriesAdapter.OnItemClick {
             override fun onItemClickListener(position: Int) {
-                Log.d("islam", "onItemClickListener: 111")
-                parent.navController.navigate(
-                    R.id.animalStoreFragment, bundleOf(
-                        Constants.CAT_ID to cats[position].id
+                if (parent.checkLogin()) {
+                    parent.navController.navigate(
+                        R.id.animalStoreFragment, bundleOf(
+                            Constants.CAT_ID to cats[position].id
+                        )
                     )
-                )
+                }
+
             }
 
         })
@@ -65,13 +67,7 @@ class StoreFragment : Fragment(R.layout.fragment_store) {
         binding.ivBack.setOnClickListener {
             parent.onBackPressed()
         }
-        binding.cardStore.setOnClickListener {
-            parent.navController.navigate(R.id.action_storeFragment_to_animalStoreFragment)
-        }
 
-        binding.cardPharmacy.setOnClickListener {
-            parent.navController.navigate(R.id.action_storeFragment_to_animalStoreFragment)
-        }
     }
 
     private fun setupUI() {

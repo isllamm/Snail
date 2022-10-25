@@ -47,25 +47,28 @@ class MyConsultantsFragment : Fragment(R.layout.fragment_my_consultants) {
         newConsultantsAdapter =
             MyNewConsultantsAdapter(object : MyNewConsultantsAdapter.OnItemClick {
                 override fun onItemClickListener(position: Int) {
-                    when (consultants[position].status) {
-                        0 -> {
-                            parent.navController.navigate(
-                                R.id.newConsultationFragment,
-                                bundleOf(Constants.REQUEST_ID to consultants[position].id)
-                            )
+                    if (parent.checkLogin()) {
+                        when (consultants[position].status) {
+                            0 -> {
+                                parent.navController.navigate(
+                                    R.id.newConsultationFragment,
+                                    bundleOf(Constants.REQUEST_ID to consultants[position].id)
+                                )
+                            }
+                            1 -> {
+                                parent.navController.navigate(
+                                    R.id.pendingConsultationFragment,
+                                    bundleOf(Constants.REQUEST_ID to consultants[position].id)
+                                )
+                            }
+                            2 -> {
+                                parent.navController.navigate(
+                                    R.id.previousConsultationFragment,
+                                    bundleOf(Constants.REQUEST_ID to consultants[position].id)
+                                )
+                            }
                         }
-                        1 -> {
-                            parent.navController.navigate(
-                                R.id.pendingConsultationFragment,
-                                bundleOf(Constants.REQUEST_ID to consultants[position].id)
-                            )
-                        }
-                        2 -> {
-                            parent.navController.navigate(
-                                R.id.previousConsultationFragment,
-                                bundleOf(Constants.REQUEST_ID to consultants[position].id)
-                            )
-                        }
+
                     }
 
                 }

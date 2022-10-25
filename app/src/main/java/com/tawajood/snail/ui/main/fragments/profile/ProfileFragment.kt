@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.tawajood.snail.R
+import com.tawajood.snail.data.PrefsHelper
 import com.tawajood.snail.databinding.FragmentProfileBinding
 
 import com.tawajood.snail.ui.main.MainActivity
@@ -38,13 +39,22 @@ class ProfileFragment : Fragment() {
 
     private fun onClick() {
         binding.editBtn.setOnClickListener {
-            parent.navController.navigate(R.id.action_profileFragment_to_editProfileFragment)
+            if (parent.checkLogin()){
+                parent.navController.navigate(R.id.action_profileFragment_to_editProfileFragment)
+
+            }
         }
         binding.changePasswordBtn.setOnClickListener {
-            parent.navController.navigate(R.id.changePasswordFragment)
+            if (parent.checkLogin()){
+                parent.navController.navigate(R.id.changePasswordFragment)
+
+            }
         }
         binding.tvDeleteAccount.setOnClickListener {
-            parent.navController.navigate(R.id.action_profileFragment_to_deleteAccountSheetFragment)
+            if (parent.checkLogin()){
+                parent.navController.navigate(R.id.action_profileFragment_to_deleteAccountSheetFragment)
+
+            }
         }
     }
 
@@ -66,6 +76,7 @@ class ProfileFragment : Fragment() {
                         binding.ccp.setCountryForPhoneCode(profile.countryCode.toInt())
                         binding.phoneTv.text = profile.phone
                         binding.emailTv.text = profile.email
+                        PrefsHelper.setIsNotifiable(profile.notifiable)
                         Glide.with(requireContext())
                             .load(profile.image)
                             .into(binding.profileImg)

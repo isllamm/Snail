@@ -196,6 +196,9 @@
     <string name="new_order_details">تفاصيل طلب جديد</string>
     <string name="delivered">تم التوصيل</string>
     <string name="new_order">طلب جديد</string>
+    <string name="on">تشغيل</string>
+    <string name="star">*</string>
 
+    <string name="off">ايقاف</string>
 
 </resources>

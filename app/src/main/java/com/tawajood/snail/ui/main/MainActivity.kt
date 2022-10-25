@@ -1,5 +1,6 @@
 package com.tawajood.snail.ui.main
 
+import android.annotation.SuppressLint
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -83,6 +84,7 @@ class MainActivity : AppCompatActivity() {
         PrefsHelper.setToken("")
         PrefsHelper.setUserId(-1)
         PrefsHelper.setPhone("")
+        PrefsHelper.setUsername("")
         PrefsHelper.setUserImage("")
         startActivity(Intent(this, LoginActivity::class.java))
         finish()
@@ -94,7 +96,7 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
         binding.bottomNavView.setupWithNavController(navController)
         binding.navView.setupWithNavController(navController)
-
+        updateSideNavData()
     }
 
 
@@ -105,10 +107,16 @@ class MainActivity : AppCompatActivity() {
 
         binding.navView.itemIconTintList = null
 
-        header.findViewById<TextView>(R.id.username_tv).text = PrefsHelper.getUsername()
-        Glide.with(header.context)
+    }
+
+    @SuppressLint("SetTextI18n")
+    fun updateSideNavData() {
+        binding.navView.getHeaderView(0).findViewById<TextView>(R.id.username_tv).text =
+            PrefsHelper.getUsername()
+        Glide.with(this)
             .load(PrefsHelper.getUserImage())
-            .into(header.findViewById<ImageView>(R.id.profile_img))
+            .into(binding.navView.getHeaderView(0).findViewById(R.id.profile_img))
+
     }
 
     fun showToolbar(isVisible: Boolean) {
@@ -134,6 +142,7 @@ class MainActivity : AppCompatActivity() {
     fun checkLogin(): Boolean {
         if (PrefsHelper.getToken().isEmpty()) {
             navController.navigate(R.id.loginFirstSheet)
+            return false
         }
         return true
     }

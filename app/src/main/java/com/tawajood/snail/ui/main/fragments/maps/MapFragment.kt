@@ -17,6 +17,8 @@ import android.widget.TextView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -33,8 +35,14 @@ import com.tawajood.snail.R
 import com.tawajood.snail.databinding.FragmentMapBinding
 import com.tawajood.snail.pojo.Clinic
 import com.tawajood.snail.ui.main.MainActivity
+import com.tawajood.snail.ui.main.fragments.home.HomeViewModel
+import com.tawajood.snail.utils.Resource
+import com.tawajood.snail.utils.ToastUtils
 import com.tawajood.snail.utils.getAddressForTextView
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
 
+@AndroidEntryPoint
 class MapFragment : Fragment(R.layout.fragment_map) {
 
     private val callback = OnMapReadyCallback { googleMap ->
@@ -49,6 +57,7 @@ class MapFragment : Fragment(R.layout.fragment_map) {
     private lateinit var googleMap: GoogleMap
 
     private var clinics = mutableListOf<Clinic>()
+    private val viewModel: MapViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -65,6 +74,30 @@ class MapFragment : Fragment(R.layout.fragment_map) {
         super.onViewCreated(view, savedInstanceState)
 
         setupUI()
+        observeData()
+    }
+
+    private fun observeData() {
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            viewModel.clinicFlow.collectLatest {
+                parent.hideLoading()
+                when (it) {
+                    is Resource.Error -> ToastUtils.showToast(
+                        requireContext(),
+                        it.message.toString()
+                    )
+                    is Resource.Idle -> {}
+                    is Resource.Loading -> {
+                        parent.showLoading()
+                    }
+                    is Resource.Success -> {
+
+                        clinics = it.data!!.data!!.clinics
+
+                    }
+                }
+            }
+        }
     }
 
     private fun setupUI(){

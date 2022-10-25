@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import com.tawajood.snail.R
 import com.tawajood.snail.data.PrefsHelper
 import com.tawajood.snail.databinding.FragmentProductInfoBinding
@@ -22,11 +23,26 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
 
     private lateinit var binding: FragmentSettingsBinding
     private lateinit var parent: MainActivity
+    private var isAr = true
+    private var isON = 0
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentSettingsBinding.bind(requireView())
         parent = requireActivity() as MainActivity
+
+        isAr = PrefsHelper.getLanguage() == Constants.AR
+
+        if (isAr)
+            setArClicked()
+        else
+            setEnClicked()
+        if (isON == 0) {
+            setOffClicked()
+        } else {
+            setOnArClicked()
+        }
 
         setupUI()
 
@@ -38,20 +54,71 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
             parent.onBackPressed()
         }
 
-        binding.btnToggleLang.setOnToggleChanged { toggleStatus, booleanToggleStatus, toggleIntValue ->
-            when (toggleStatus) {
-                TriStateToggleButton.ToggleStatus.on -> {
-                    PrefsHelper.setLanguage(Constants.AR)
-                    updateLang()
-                }
-                TriStateToggleButton.ToggleStatus.mid ->{}
-                TriStateToggleButton.ToggleStatus.off -> {
-                    PrefsHelper.setLanguage(Constants.AR)
-                    updateLang()
-                }
-            }
+        binding.arTv.setOnClickListener {
+            PrefsHelper.setLanguage(Constants.AR)
+            updateLang()
         }
+
+        binding.enTv.setOnClickListener {
+            PrefsHelper.setLanguage(Constants.EN)
+            updateLang()
+        }
+
     }
+
+    private fun setArClicked() {
+        binding.arTv.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+        binding.arTv.backgroundTintList = ContextCompat.getColorStateList(
+            requireContext(),
+            R.color.brown
+        )
+        binding.enTv.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+        binding.enTv.backgroundTintList = ContextCompat.getColorStateList(
+            requireContext(),
+            R.color.light_beige
+        )
+    }
+
+    private fun setEnClicked() {
+        binding.enTv.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+        binding.enTv.backgroundTintList = ContextCompat.getColorStateList(
+            requireContext(),
+            R.color.brown
+        )
+        binding.arTv.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+        binding.arTv.backgroundTintList = ContextCompat.getColorStateList(
+            requireContext(),
+            R.color.light_beige
+        )
+    }
+
+
+    private fun setOnArClicked() {
+        binding.onTv.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+        binding.onTv.backgroundTintList = ContextCompat.getColorStateList(
+            requireContext(),
+            R.color.brown
+        )
+        binding.offTv.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+        binding.offTv.backgroundTintList = ContextCompat.getColorStateList(
+            requireContext(),
+            R.color.light_beige
+        )
+    }
+
+    private fun setOffClicked() {
+        binding.offTv.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+        binding.offTv.backgroundTintList = ContextCompat.getColorStateList(
+            requireContext(),
+            R.color.brown
+        )
+        binding.onTv.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+        binding.onTv.backgroundTintList = ContextCompat.getColorStateList(
+            requireContext(),
+            R.color.light_beige
+        )
+    }
+
 
     private fun setupUI() {
         parent.showBottomNav(false)

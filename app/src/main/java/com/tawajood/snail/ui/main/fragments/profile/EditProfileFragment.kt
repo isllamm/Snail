@@ -122,6 +122,8 @@ class EditProfileFragment : Fragment() {
                         Glide.with(requireContext())
                             .load(profile.image)
                             .into(binding.profileImg)
+
+
                     }
                 }
             }
