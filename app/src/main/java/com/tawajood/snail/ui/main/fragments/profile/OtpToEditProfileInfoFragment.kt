@@ -32,6 +32,7 @@ class OtpToEditProfileInfoFragment : Fragment(R.layout.fragment_otp_to_edit_prof
     }
 
     private fun onClick() {
+
         binding.verCodeEt.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }

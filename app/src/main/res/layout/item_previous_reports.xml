@@ -71,8 +71,8 @@
 
         <TextView
             android:id="@+id/tv_name_clinic"
-            android:layout_width="@dimen/_70sdp"
-            android:layout_height="@dimen/_30sdp"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_35sdp"
             android:layout_gravity="bottom|right"
             android:background="@drawable/right_corner_radius"
             android:gravity="center"
@@ -99,6 +99,7 @@
                 android:layout_height="@dimen/_26sdp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
+                android:visibility="gone"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:contentDescription="@string/username"
                 android:src="@drawable/ccp_ic_arrow_drop_down"

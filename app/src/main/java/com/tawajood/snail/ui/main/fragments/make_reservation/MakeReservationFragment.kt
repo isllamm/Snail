@@ -156,7 +156,9 @@ class MakeReservationFragment : Fragment(R.layout.fragment_make_reservation) {
     }
 
     private fun onClick() {
-
+        binding.ivBack.setOnClickListener {
+            parent.onBackPressed()
+        }
         binding.imgBtn.setOnClickListener {
             if (!SmartLocation.with(requireContext()).location().state()
                     .locationServicesEnabled()
@@ -206,7 +208,7 @@ class MakeReservationFragment : Fragment(R.layout.fragment_make_reservation) {
 
     private fun validate(): Boolean {
         if (TextUtils.isEmpty(binding.detailsEt.text)) {
-            ToastUtils.showToast(requireContext(), "التفاصيل االطلب مطلوب")
+            ToastUtils.showToast(requireContext(), "التفاصيل الاستشارة مطلوب")
             return false
         }
         if (TextUtils.isEmpty(binding.addressEt.text)) {

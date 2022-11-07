@@ -76,6 +76,28 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
             binding.passwordEt.setSelection(binding.passwordEt.length())
         }
 
+        binding.eyeImage2.setOnClickListener {
+            if (passIsShown) {
+                passIsShown = false
+                binding.passwordEt.inputType =
+                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                Glide.with(this)
+                    .load(R.drawable.ic_eye_closed)
+                    .into(binding.eyeImage2)
+            } else {
+                passIsShown = true
+                binding.passwordEt.inputType =
+                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                Glide.with(this)
+                    .load(R.drawable.ic_eye)
+                    .into(binding.eyeImage2)
+            }
+            binding.passwordEt.typeface = ResourcesCompat.getFont(
+                requireContext(),
+                R.font.tajawal_regular
+            )
+            binding.passwordEt.setSelection(binding.passwordEt.length())
+        }
 
         binding.haveAnAccTv.setOnClickListener {
             parent.onBackPressed()

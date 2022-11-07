@@ -10,8 +10,12 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.tawajood.snail.R
+import com.tawajood.snail.adapters.MedicineAdapter
+import com.tawajood.snail.adapters.PreviousReportsAdapter
+import com.tawajood.snail.adapters.VaccinationsAdapter
 import com.tawajood.snail.databinding.FragmentAddInoculationBinding
 import com.tawajood.snail.databinding.FragmentAnimalInfoBinding
+import com.tawajood.snail.pojo.Consultant
 import com.tawajood.snail.pojo.Pet
 import com.tawajood.snail.ui.main.MainActivity
 import com.tawajood.snail.utils.Constants
@@ -30,6 +34,10 @@ class AnimalInfoFragment : Fragment(R.layout.fragment_animal_info) {
     private var petId by Delegates.notNull<Int>()
     private val viewModel: PetsViewModel by viewModels()
     private lateinit var pet: Pet
+    private lateinit var consultants: MutableList<Consultant>
+    private lateinit var previousReportsAdapter: PreviousReportsAdapter
+    private lateinit var medicineAdapter: MedicineAdapter
+    private lateinit var vaccinationsAdapter: VaccinationsAdapter
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,6 +48,40 @@ class AnimalInfoFragment : Fragment(R.layout.fragment_animal_info) {
         setupUI()
         observeData()
         onClick()
+        setupPrevRec()
+        setupMed()
+        setupVac()
+    }
+
+    private fun setupVac() {
+        vaccinationsAdapter = VaccinationsAdapter(object : VaccinationsAdapter.OnItemClick{
+            override fun onItemClickListener(position: Int) {
+
+            }
+
+        })
+        binding.rvVaccination.adapter = vaccinationsAdapter
+    }
+
+    private fun setupMed() {
+        medicineAdapter = MedicineAdapter(object : MedicineAdapter.OnItemClick{
+            override fun onItemClickListener(position: Int) {
+
+            }
+
+        })
+        binding.rvDescription.adapter = medicineAdapter
+    }
+
+    private fun setupPrevRec() {
+        previousReportsAdapter = PreviousReportsAdapter(object : PreviousReportsAdapter.OnItemClick{
+            override fun onItemClickListener(position: Int) {
+
+            }
+
+        })
+
+        binding.rvPreviousReports.adapter = previousReportsAdapter
     }
 
 
@@ -76,6 +118,11 @@ class AnimalInfoFragment : Fragment(R.layout.fragment_animal_info) {
                     is Resource.Success -> {
                         pet = it.data!!.pet
                         binding.tvName.text = pet.name
+
+                        consultants = pet.requests
+                        previousReportsAdapter.consultant = consultants
+                        medicineAdapter.consultant= consultants
+                        vaccinationsAdapter.petVaccinations = pet.vaccinations
                         Glide.with(requireContext())
                             .load(pet.image)
                             .into(binding.imgIv)

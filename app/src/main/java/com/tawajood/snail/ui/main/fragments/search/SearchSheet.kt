@@ -12,10 +12,12 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.tawajood.snail.R
 import com.tawajood.snail.databinding.FragmentSearchSheetBinding
+import com.tawajood.snail.ui.main.MainActivity
 
 class SearchSheet : BottomSheetDialogFragment() {
 
     private lateinit var binding: FragmentSearchSheetBinding
+    private lateinit var parent: MainActivity
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,6 +25,7 @@ class SearchSheet : BottomSheetDialogFragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentSearchSheetBinding.inflate(inflater)
+        parent = requireActivity() as MainActivity
 
         onClick()
 
@@ -46,6 +49,9 @@ class SearchSheet : BottomSheetDialogFragment() {
     private fun onClick(){
         binding.backImg.setOnClickListener {
             dismiss()
+        }
+        binding.btn.setOnClickListener {
+            parent.navController.navigate(R.id.filterResultFragmentFragment)
         }
     }
 

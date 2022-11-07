@@ -38,6 +38,9 @@ class ProfileFragment : Fragment() {
 
 
     private fun onClick() {
+        binding.ivBack.setOnClickListener {
+            parent.onBackPressed()
+        }
         binding.editBtn.setOnClickListener {
             if (parent.checkLogin()){
                 parent.navController.navigate(R.id.action_profileFragment_to_editProfileFragment)

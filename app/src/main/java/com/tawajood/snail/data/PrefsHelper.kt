@@ -31,6 +31,14 @@ object PrefsHelper {
         return preferences.getBoolean(Constants.IS_FIRST, true)
     }
 
+    fun setOn(isFirst: Boolean) {
+        preferences.edit().putBoolean(Constants.IS_ON, isFirst).apply()
+    }
+
+    fun isOn(): Boolean {
+        return preferences.getBoolean(Constants.IS_ON, true)
+    }
+
     fun setToken(token: String) {
         preferences.edit().putString(Constants.TOKEN, token).apply()
     }

@@ -31,18 +31,9 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentSettingsBinding.bind(requireView())
         parent = requireActivity() as MainActivity
+        binding.scLanguageSwitcher.isChecked = PrefsHelper.getLanguage() == Constants.EN
 
-        isAr = PrefsHelper.getLanguage() == Constants.AR
 
-        if (isAr)
-            setArClicked()
-        else
-            setEnClicked()
-        if (isON == 0) {
-            setOffClicked()
-        } else {
-            setOnArClicked()
-        }
 
         setupUI()
 
@@ -50,6 +41,14 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
     }
 
     private fun onClick() {
+        binding.scLanguageSwitcher.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                PrefsHelper.setLanguage(Constants.EN)
+            } else {
+                PrefsHelper.setLanguage(Constants.AR)
+            }
+            updateLang()
+        }
         binding.ivBack.setOnClickListener {
             parent.onBackPressed()
         }

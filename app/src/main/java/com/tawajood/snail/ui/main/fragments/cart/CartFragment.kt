@@ -100,7 +100,13 @@ class CartFragment : Fragment(R.layout.fragment_cart) {
 
                         cartAdapter.cart = cartItems
 
-                        binding.tvTotalPrice.text = "ريال" + cartResponse.finalTotal
+                        if(PrefsHelper.getLanguage() == "ar"){
+                            binding.tvTotalPrice.text =  cartResponse.total+" ريال "
+
+                        }else{
+                            binding.tvTotalPrice.text =  cartResponse.total+" RS "
+
+                        }
                     }
                 }
             }

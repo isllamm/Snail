@@ -17,7 +17,7 @@
             android:layout_width="@dimen/_18sdp"
             android:layout_height="@dimen/_18sdp"
             android:layout_marginStart="@dimen/_8sdp"
-            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_18sdp"
             android:src="@drawable/ic_arrow___left_square"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -26,7 +26,7 @@
             android:id="@+id/tv_clinic_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_18sdp"
             android:text="@string/vipet_s_clinic"
             android:textColor="@color/brown"
             android:textSize="@dimen/_16ssp"
@@ -40,26 +40,32 @@
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_150sdp"
-            android:layout_marginStart="@dimen/_4sdp"
             android:layout_marginTop="@dimen/_12sdp"
-            android:layout_marginEnd="@dimen/_4sdp"
-            app:cardCornerRadius="@dimen/_12sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_clinic_name">
 
-            <RatingBar
-                android:id="@+id/rating_bar"
-                style="@style/customRatingBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <androidx.cardview.widget.CardView
                 android:layout_gravity="left"
+                android:layout_width="wrap_content"
                 android:layout_marginTop="@dimen/_8sdp"
-                android:layout_marginEnd="@dimen/_8sdp"
                 android:elevation="@dimen/_20sdp"
-                android:progressTint="@color/yellow_500"
-                android:rating="4.5"
-                android:rotationY="180" />
+                app:cardCornerRadius="@dimen/_4sdp"
+                android:backgroundTint="@color/light_beige"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_height="wrap_content">
+                <RatingBar
+                    android:id="@+id/rating_bar"
+                    style="@style/customRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_4sdp"
+                    android:layout_gravity="center"
+                    android:progressTint="@color/yellow_700"
+                    android:rating="2"
+                    android:rotationY="180" />
+            </androidx.cardview.widget.CardView>
+
 
             <ImageView
                 android:id="@+id/clinic_img"
@@ -198,7 +204,6 @@
             android:layout_height="@dimen/_100sdp"
             android:layout_margin="@dimen/_8sdp"
             android:backgroundTint="@color/off_white"
-            app:cardCornerRadius="@dimen/_8sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_Specialties">
@@ -263,8 +268,8 @@
 
         <ImageView
             android:id="@+id/left"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
             android:layout_marginTop="@dimen/_12sdp"
             android:layout_marginEnd="@dimen/_8sdp"
             android:src="@drawable/ic_arrow_left"
@@ -273,10 +278,10 @@
 
         <ImageView
             android:id="@+id/right"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
             android:layout_marginTop="@dimen/_12sdp"
-            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
             android:src="@drawable/ic_arrow_right"
             app:layout_constraintEnd_toStartOf="@+id/left"
             app:layout_constraintTop_toBottomOf="@+id/rv_reviews" />
@@ -287,7 +292,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
             android:layout_marginStart="@dimen/_12sdp"
-            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_22sdp"
             android:layout_marginEnd="@dimen/_12sdp"
             android:backgroundTint="@color/beige"
             android:text="@string/consultation_request"

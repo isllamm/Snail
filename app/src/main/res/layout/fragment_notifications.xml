@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_16sdp"
-            android:text="@string/notifications"
+            android:text="@string/ntifications"
             android:textColor="@color/brown"
             android:textSize="@dimen/_16ssp"
             app:layout_constraintEnd_toEndOf="parent"

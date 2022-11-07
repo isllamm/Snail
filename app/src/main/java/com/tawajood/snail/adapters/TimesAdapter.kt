@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.tawajood.snail.data.PrefsHelper
 import com.tawajood.snail.databinding.ItemDayBinding
 import com.tawajood.snail.databinding.ItemTimeBinding
 import com.tawajood.snail.pojo.Day
@@ -41,8 +42,15 @@ class TimesAdapter(private val onItemClick: OnItemClick) :
 
     override fun onBindViewHolder(holder: TimesAdapter.TimesViewHolder, position: Int) {
 
-        holder.binding.tvFrom.text = "from ${times[position].from}"
-        holder.binding.tvTo.text = "to ${times[position].to}"
+        if(PrefsHelper.getLanguage() == "ar"){
+            holder.binding.tvFrom.text = "من ${times[position].from}"
+            holder.binding.tvTo.text = "إلى ${times[position].to}"
+        }else{
+            holder.binding.tvFrom.text = "from ${times[position].from}"
+            holder.binding.tvTo.text = "to ${times[position].to}"
+        }
+
+
 
         if (times[position].isSelected) {
             holder.binding.container.setBackgroundColor(Color.parseColor("#635238"))

@@ -58,6 +58,9 @@ class AddInoculationFragment : Fragment(R.layout.fragment_add_inoculation) {
     }
 
     private fun onClick() {
+        binding.ivBack.setOnClickListener {
+            parent.onBackPressed()
+        }
         binding.datePicker.setOnClickListener {
 
             val c = Calendar.getInstance()
@@ -68,7 +71,8 @@ class AddInoculationFragment : Fragment(R.layout.fragment_add_inoculation) {
 
             val dpd = DatePickerDialog(
                 requireContext(),
-                DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                R.style.DialogThemeCalender,
+                DatePickerDialog.OnDateSetListener { _, year, monthOfYear, dayOfMonth ->
 
                     // Display Selected date
                     binding.dateEt.setText("$year-$monthOfYear-$dayOfMonth")

@@ -11,6 +11,7 @@ data class Clinic(
     val country_code: String,
     val lat: Double,
     val lng: Double,
+    val image_clinic: String,
     val address: String,
     val details: String,
     val registration_number: String,

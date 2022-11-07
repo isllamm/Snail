@@ -60,26 +60,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/top_rated"
-                android:checked="true"
-                android:buttonTint="@color/brown"/>
+                style="@style/MyRadioButtonStyle"
+                android:buttonTint="@color/beige"/>
 
             <RadioButton
                 android:id="@+id/avg_rb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/average_rating"
-                android:buttonTint="@color/brown"/>
+                style="@style/MyRadioButtonStyle"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:buttonTint="@color/beige"/>
 
             <RadioButton
                 android:id="@+id/lowest_rb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/lowest_rated"
-                android:buttonTint="@color/brown"/>
+                style="@style/MyRadioButtonStyle"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:buttonTint="@color/beige"/>
 
         </RadioGroup>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_50sdp"
             android:backgroundTint="@color/beige"

@@ -31,9 +31,6 @@
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/logo" />
 
-        <activity
-            android:name=".ui.maps.MapsActivity"
-            android:exported="false" />
 
         <activity
             android:name=".ui.login.LoginActivity"

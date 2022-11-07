@@ -28,7 +28,8 @@ class SliderAdapter(private val onItemClick: OnItemClick) :
     override fun onBindViewHolder(viewHolder: SliderViewHolder?, position: Int) {
         Glide.with(viewHolder!!.itemView).load(sliderItems[position].image)
             .into(viewHolder.binding.cover)
-
+        viewHolder.binding.tvClinicName.text = sliderItems[position].name
+        viewHolder.binding.ratingBar.rating = sliderItems[position].rating.toFloat()
         viewHolder.itemView.setOnClickListener {
             onItemClick.onItemClickListener(position)
         }

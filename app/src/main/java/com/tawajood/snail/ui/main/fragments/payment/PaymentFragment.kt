@@ -26,6 +26,9 @@ class PaymentFragment : Fragment() {
     }
 
     private fun onClick() {
+        binding.ivBack.setOnClickListener {
+            parent.onBackPressed()
+        }
         binding.btnPay.setOnClickListener {
             parent.navController.navigate(R.id.action_paymentFragment_to_successfulPaymentSheetFragment)
         }

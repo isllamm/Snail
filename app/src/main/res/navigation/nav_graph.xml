@@ -339,4 +339,9 @@
         android:name="com.tawajood.snail.ui.main.fragments.store.ProductsFragment"
         android:label="fragment_products"
         tools:layout="@layout/fragment_products" />
+    <fragment
+        android:id="@+id/filterResultFragmentFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.search.FilterResultFragmentFragment"
+        android:label="fragment_filter_result_fragment"
+        tools:layout="@layout/fragment_filter_result_fragment" />
 </navigation>

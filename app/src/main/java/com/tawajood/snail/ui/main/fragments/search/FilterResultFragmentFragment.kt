@@ -1,6 +1,7 @@
 package com.tawajood.snail.ui.main.fragments.search
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.tawajood.snail.R
 import com.tawajood.snail.adapters.ClinicsAdapter
+import com.tawajood.snail.databinding.FragmentFilterResultFragmentBinding
 import com.tawajood.snail.databinding.FragmentSearchResultBinding
 import com.tawajood.snail.pojo.Clinic
 import com.tawajood.snail.ui.main.MainActivity
@@ -21,12 +23,12 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlin.properties.Delegates
 
 @AndroidEntryPoint
-class SearchResultFragment : Fragment() {
 
-    private lateinit var binding: FragmentSearchResultBinding
+class FilterResultFragmentFragment : Fragment() {
+
+    private lateinit var binding: FragmentFilterResultFragmentBinding
     private lateinit var parent: MainActivity
     private var clinics = mutableListOf<Clinic>()
-    private var clinicName by Delegates.notNull<String>()
     private lateinit var clinicsAdapter: ClinicsAdapter
     private val viewModel: SearchViewModel by viewModels()
 
@@ -34,17 +36,15 @@ class SearchResultFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentSearchResultBinding.inflate(inflater)
+
+        binding = FragmentFilterResultFragmentBinding.inflate(inflater)
         parent = requireActivity() as MainActivity
-        clinicName = requireArguments().getString(Constants.CLINIC_NAME).toString()
-        viewModel.search(clinicName)
 
         setupUI()
         observeData()
         setupClinicsRecycler()
         return binding.root
     }
-
 
     private fun setupClinicsRecycler() {
         clinicsAdapter = ClinicsAdapter(object : ClinicsAdapter.OnItemClick {
@@ -58,6 +58,12 @@ class SearchResultFragment : Fragment() {
 
         })
         binding.rvResults.adapter = clinicsAdapter
+    }
+
+    private fun setupUI() {
+        viewModel.getClinics()
+        parent.showToolbar(true)
+        parent.showBottomNav(false)
     }
 
     private fun observeData() {
@@ -77,16 +83,12 @@ class SearchResultFragment : Fragment() {
 
                         clinics = it.data!!.data!!.clinics
                         clinicsAdapter.clinics = clinics
+                        Log.d("islam", "observeData: "+clinics)
 
                     }
                 }
             }
         }
-    }
-
-    private fun setupUI() {
-        parent.showToolbar(true)
-        parent.showBottomNav(false)
     }
 
 

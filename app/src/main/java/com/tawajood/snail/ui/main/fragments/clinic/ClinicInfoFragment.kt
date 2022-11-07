@@ -4,9 +4,13 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.tawajood.snail.R
 import com.tawajood.snail.adapters.ReviewsAdapter
@@ -36,6 +40,8 @@ class ClinicInfoFragment : Fragment(R.layout.fragment_clinic_info) {
     private var clinicId by Delegates.notNull<Int>()
     private val viewModel: ClinicViewModel by viewModels()
     private lateinit var clinic: Clinic
+    private var count by Delegates.notNull<Int>()
+    private var i:Int = 0
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -52,15 +58,38 @@ class ClinicInfoFragment : Fragment(R.layout.fragment_clinic_info) {
 
 
     private fun setupRecSpecialization() {
+        //val itemDecorator =  DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL);
+        //itemDecorator.setDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.line)!!)
         specializationAdapter = SpecializationAdapter()
         binding.rvSpecialization.adapter = specializationAdapter
     }
+
     private fun setupRecReviews() {
         reviewsAdapter = ReviewsAdapter()
         binding.rvReviews.adapter = reviewsAdapter
     }
 
     private fun onClick() {
+        binding.right.setOnClickListener {
+            if (i<count){
+                i += 1
+                binding.rvReviews.scrollToPosition(i)
+
+            }
+
+
+        }
+        binding.left.setOnClickListener {
+            if (i==count||i!=0){
+                i -= 1
+                binding.rvReviews.scrollToPosition(i)
+
+            }
+
+        }
+        binding.ivBack.setOnClickListener {
+            parent.onBackPressed()
+        }
         binding.btnConsultationRequest.setOnClickListener {
             parent.navController.navigate(
                 R.id.makeReservationFragment,
@@ -112,6 +141,7 @@ class ClinicInfoFragment : Fragment(R.layout.fragment_clinic_info) {
                         Glide.with(requireContext()).load(clinic.image).into(binding.clinicImg)
                         specializationAdapter.specialization = clinic.specializations
                         reviewsAdapter.reviews = clinic.recommendations
+                        count = clinic.recommendations.size
                         //binding.tvSpecialties.text = clinic.specialization.specialization.name
                     }
                 }

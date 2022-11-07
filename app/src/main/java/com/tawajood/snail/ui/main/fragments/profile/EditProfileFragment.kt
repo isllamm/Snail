@@ -52,6 +52,9 @@ class EditProfileFragment : Fragment() {
     }
 
     private fun onClick() {
+        binding.ivBack.setOnClickListener {
+            parent.onBackPressed()
+        }
         binding.frameEdit.setOnClickListener {
             imagePermissionResult.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
 

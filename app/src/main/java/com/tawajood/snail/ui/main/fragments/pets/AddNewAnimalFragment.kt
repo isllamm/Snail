@@ -64,7 +64,7 @@ class AddNewAnimalFragment : Fragment() {
 
     private fun setupTypes() {
         typesAdapter =
-            ArrayAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item)
+            ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line)
         binding.typeSpinner.adapter = typesAdapter
     }
 

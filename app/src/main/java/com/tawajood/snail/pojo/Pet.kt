@@ -10,5 +10,7 @@ data class Pet(
     val image: String,
     val type_id: Int,
     val type: String,
-    var isSelected: Boolean = false
+    var isSelected: Boolean = false,
+    val requests: MutableList<Consultant>,
+    val vaccinations: MutableList<PetVaccinations>,
 )

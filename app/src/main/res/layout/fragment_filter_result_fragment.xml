@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".ui.main.fragments.search.SearchResultFragment">
+    tools:context=".ui.main.fragments.search.FilterResultFragmentFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,8 +14,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_results"
             android:layout_width="match_parent"
-            android:layout_marginTop="@dimen/_12sdp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -24,6 +24,5 @@
             tools:listitem="@layout/item_clinic" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </ScrollView>

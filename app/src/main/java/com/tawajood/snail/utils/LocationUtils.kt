@@ -4,7 +4,9 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.location.Address
 import android.location.Geocoder
+import android.text.Editable
 import android.util.Log
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.google.android.gms.maps.model.LatLng
@@ -65,6 +67,74 @@ fun getDistanceBetweenLocation(StartP: LatLng, EndP: LatLng) :Float{
     return String.format(Locale(Constants.EN), "%.2f", radius * c).toFloat()
 }
 
+fun getAddressForEditText(
+    context: Context,
+    latitude: Double,
+    longitude: Double,
+    tvAddress: EditText,
+){
+    object : CoroutineScope {
+        var job: Job = Job()
+
+        override val coroutineContext: CoroutineContext
+            get() = Dispatchers.Main + job // to run code in Main(UI) Thread
+
+        // call this method to cancel a coroutine when you don't need it anymore,
+        // e.g. when user closes the screen
+        fun cancel() {
+            job.cancel()
+        }
+
+        fun execute() = launch {
+            onPreExecute()
+            val result = doInBackground() // runs in background thread without blocking the Main Thread
+            onPostExecute(result)
+        }
+
+        private suspend fun doInBackground(): Address? = withContext(Dispatchers.IO) { // to run code in Background Thread
+            Log.d("7imaZz", "doInBackground: background")
+            val geocoder = Geocoder(context, Locale.getDefault())
+            var address: Address? = null
+            try {
+                runCatching {
+                    val list = geocoder.getFromLocation(latitude, longitude, 1)
+                    if (list != null && list.size > 0) {
+                        address = list[0]
+                    }
+                }
+
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+            return@withContext address
+        }
+
+        // Runs on the Main(UI) Thread
+        private fun onPreExecute() {
+            Log.d("7imaZz", "onPreExecute: loading")
+            tvAddress.text = context.getText(R.string.loading) as Editable?
+        }
+
+        // Runs on the Main(UI) Thread
+        @SuppressLint("SetTextI18n")
+        private fun onPostExecute(address: Address?) {
+            Log.d("7imaZz", "onPostExecute: post")
+            // hide progress
+            if (address != null) {
+                // if throufare   get sub threofare
+                val wholeAddress = address.getAddressLine(0)
+                val governorate = address.adminArea
+                val region = address.subAdminArea
+                val city = if (address.locality != null) address.locality else ""
+                //                    tvAddress.setText(wholeAddress);
+                Log.d("7imaZz", "onPostExecute: $wholeAddress")
+                tvAddress.text = "$city - $region - $governorate" as Editable?
+            } else {
+                tvAddress.text = context.getText(R.string.error_location_address) as Editable?
+            }
+        }
+    }.execute()
+}
 fun getAddressForTextView(
     context: Context,
     latitude: Double,

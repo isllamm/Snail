@@ -4,6 +4,7 @@ object Constants {
     const val LANG = "lang"
     const val EN = "en"
     const val AR = "ar"
+    const val IS_ON="1"
     const val IS_FIRST = "is_first"
     const val TOKEN = "token"
     const val FCM_TOKEN = "fcm_token"

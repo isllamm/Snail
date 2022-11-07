@@ -65,7 +65,7 @@
     <string name="my_animals">حيواناتي</string>
     <string name="ntifications">الاشعارات</string>
     <string name="suggestions">الشكاوى والمقترحات</string>
-    <string name="cart">السلة</string>
+    <string name="cart">سلة التسوق</string>
     <string name="orders">طلباتي</string>
     <string name="t_amp_c">الشروط والاحكام</string>
     <string name="settings">الاعدادات</string>
@@ -95,7 +95,7 @@
     <string name="registered_animals">الحيوانات المسجلة</string>
     <string name="add_new_animal">اضف حيوان جديد</string>
     <string name="consultation_details">تفاصيل الاستشارة</string>
-    <string name="cancel">إالغاء</string>
+    <string name="cancel">إلغاء</string>
     <string name="are_you_sure_you_want_to_cancel_the_reservation">هل أنت متأكد من أنك تريد الغاء الحجز؟</string>
     <string name="no">لا</string>
     <string name="yes">نعم</string>
@@ -200,5 +200,6 @@
     <string name="star">*</string>
 
     <string name="off">ايقاف</string>
+    <string name="tax">الضريبة:</string>
 
 </resources>

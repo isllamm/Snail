@@ -156,9 +156,18 @@ class CheckoutFragment : Fragment(R.layout.fragment_checkout) {
 
                         checkoutItemsAdapter.cart = cartItems
 
-                        binding.tvTotal.text = " ريال" + cartResponse.finalTotal
-                        binding.tvTotalPrice.text = " ريال" + cartResponse.total
-                        binding.tvDeliveryPrice.text = "ريال " + cartResponse.delivery_cost
+                        if (PrefsHelper.getLanguage() == "ar") {
+                            binding.tvTotal.text = cartResponse.finalTotal + " ريال "
+                            binding.tvTotalPrice.text = cartResponse.total + " ريال "
+                            binding.tvDeliveryPrice.text = cartResponse.delivery_cost + " ريال "
+                            binding.tvTaxPrice.text = cartResponse.tax + " ريال "
+                        } else {
+                            binding.tvTotal.text = cartResponse.finalTotal + " RS "
+                            binding.tvTotalPrice.text = cartResponse.total + " RS "
+                            binding.tvDeliveryPrice.text = cartResponse.delivery_cost + " RS "
+                            binding.tvTaxPrice.text = cartResponse.tax + " RS "
+                        }
+
 
                     }
                 }

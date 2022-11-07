@@ -9,9 +9,12 @@
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/drawable/full_border_radius_8.xml" value="0.215" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/drawable/full_border_radius_8_white.xml" value="0.215" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/drawable/ic_close.xml" value="0.215" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/drawable/line.xml" value="0.1" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/drawable/menu_divider.xml" value="0.215" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/drawable/radio_btn.xml" value="0.215" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/drawable/ratingbar_full.xml" value="0.215" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/drawable/right_corner_radius.xml" value="0.215" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/drawable/slider_bg.xml" value="0.215" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/drawable/top_border_radius_12.xml" value="0.215" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/drawable/top_radius.xml" value="0.215" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/drawable/top_radius_24.xml" value="0.215" />
@@ -32,11 +35,12 @@
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_cart.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_change_password.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_checkout.xml" value="0.33055555555555555" />
-        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_clinic_info.xml" value="0.29545454545454547" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_clinic_info.xml" value="0.25" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_contact_us.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_delete_account_sheet.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_edit_profile.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_failure_payment_sheet.xml" value="0.33055555555555555" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_filter_result_fragment.xml" value="0.31805555555555554" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_first.xml" value="0.17037037037037037" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_home.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_login.xml" value="0.33055555555555555" />
@@ -63,6 +67,7 @@
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_register.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_review_sheet.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_search_result.xml" value="0.33055555555555555" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_search_sheet.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_second.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_settings.xml" value="0.33" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/fragment_store.xml" value="0.33055555555555555" />
@@ -90,6 +95,7 @@
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/item_previous_consultation.xml" value="0.3296296296296296" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/item_previous_reports.xml" value="0.33" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/item_product.xml" value="0.33055555555555555" />
+        <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/item_product_slider.xml" value="0.3296296296296296" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/item_review.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/item_slider.xml" value="0.33055555555555555" />
         <entry key="..\:/TAWAJOOD/Snail/app/src/main/res/layout/item_specialization.xml" value="0.3296296296296296" />

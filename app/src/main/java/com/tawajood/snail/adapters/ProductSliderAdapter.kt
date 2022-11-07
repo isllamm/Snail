@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.smarteist.autoimageslider.SliderViewAdapter
+import com.tawajood.snail.databinding.ItemProductSliderBinding
 import com.tawajood.snail.databinding.ItemSliderBinding
 import com.tawajood.snail.pojo.ProductImages
 import com.tawajood.snail.pojo.Slider
@@ -11,7 +12,7 @@ import com.tawajood.snail.pojo.Slider
 class ProductSliderAdapter(private val onItemClick: OnItemClick) :
     SliderViewAdapter<ProductSliderAdapter.ProductSliderViewHolder>() {
 
-    class ProductSliderViewHolder(val binding: ItemSliderBinding) :
+    class ProductSliderViewHolder(val binding: ItemProductSliderBinding) :
         SliderViewAdapter.ViewHolder(binding.root)
 
     var sliderItems = mutableListOf<ProductImages>()
@@ -22,7 +23,7 @@ class ProductSliderAdapter(private val onItemClick: OnItemClick) :
 
     override fun onCreateViewHolder(parent: ViewGroup?): ProductSliderViewHolder {
         val binding =
-            ItemSliderBinding.inflate(LayoutInflater.from(parent!!.context), parent, false)
+            ItemProductSliderBinding.inflate(LayoutInflater.from(parent!!.context), parent, false)
         return ProductSliderViewHolder(binding)
     }
 

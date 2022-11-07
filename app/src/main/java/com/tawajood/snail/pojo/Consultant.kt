@@ -26,6 +26,7 @@ data class Consultant(
     val statusName: String,
     val created_at: String,
     val images: MutableList<ConsultantImages>,
+    val medicines:MutableList<Medicine>,
     val requestType: RequestTypes
 
 ) : Serializable

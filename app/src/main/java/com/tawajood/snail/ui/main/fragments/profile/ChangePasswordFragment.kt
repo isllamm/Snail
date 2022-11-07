@@ -39,6 +39,9 @@ class ChangePasswordFragment : Fragment(R.layout.fragment_change_password) {
     }
 
     private fun onClick() {
+        binding.ivBack.setOnClickListener {
+            parent.onBackPressed()
+        }
         binding.eyeImage1.setOnClickListener {
             if (passIsShown) {
                 passIsShown = false

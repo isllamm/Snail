@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.fragments.home.HomeFragment"
+    android:clipToPadding="false"
     android:fillViewport="true"
-    android:clipToPadding="false">
+    tools:context=".ui.main.fragments.home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -17,21 +17,21 @@
             android:id="@+id/relativeLayout"
             android:layout_width="@dimen/_230sdp"
             android:layout_height="@dimen/_46sdp"
+            android:layout_margin="@dimen/_16sdp"
             android:background="@drawable/full_border_radius_8_white"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:paddingHorizontal="@dimen/_16sdp"
             android:paddingVertical="@dimen/_4sdp"
-            android:layout_margin="@dimen/_16sdp">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/search_icon"
                 android:layout_width="@dimen/_24sdp"
                 android:layout_height="@dimen/_24sdp"
-                android:src="@drawable/ic_search"
                 android:layout_centerVertical="true"
+                android:contentDescription="@string/search"
                 android:padding="@dimen/_2sdp"
-                android:contentDescription="@string/search" />
+                android:src="@drawable/ic_search" />
 
             <EditText
                 android:id="@+id/et_search"
@@ -51,22 +51,22 @@
                 android:layout_width="@dimen/_16sdp"
                 android:layout_height="@dimen/_16sdp"
                 android:layout_alignParentEnd="true"
-                android:src="@drawable/ic_filter"
                 android:layout_centerVertical="true"
-                android:clickable="true"
-                android:focusable="true"
                 android:background="?attr/selectableItemBackground"
-                android:contentDescription="@string/filter" />
+                android:clickable="true"
+                android:contentDescription="@string/filter"
+                android:focusable="true"
+                android:src="@drawable/ic_filter" />
 
         </RelativeLayout>
 
         <FrameLayout
             android:layout_width="@dimen/_36sdp"
             android:layout_height="@dimen/_36sdp"
+            android:layout_margin="@dimen/_16sdp"
             android:background="@drawable/round_bg"
             android:backgroundTint="@color/beige"
             android:elevation="@dimen/_4sdp"
-            android:layout_margin="@dimen/_16sdp"
             app:layout_constraintBottom_toBottomOf="@+id/relativeLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/relativeLayout">
@@ -75,12 +75,12 @@
                 android:id="@+id/loc_img"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_location"
-                android:padding="@dimen/_8sdp"
-                android:clickable="true"
-                android:focusable="true"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="@string/location"/>
+                android:clickable="true"
+                android:contentDescription="@string/location"
+                android:focusable="true"
+                android:padding="@dimen/_8sdp"
+                android:src="@drawable/ic_location" />
 
         </FrameLayout>
 
@@ -88,10 +88,10 @@
             android:id="@+id/clinics_ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16sdp"
             android:layout_marginTop="@dimen/_36sdp"
             android:gravity="start"
             android:orientation="horizontal"
-            android:layout_marginHorizontal="@dimen/_16sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
             tools:ignore="UseCompoundDrawables">
@@ -119,24 +119,24 @@
             android:id="@+id/clinics_rv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp"
-            tools:listitem="@layout/item_clinic"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_4sdp"
             android:clipToPadding="false"
+            android:orientation="horizontal"
             android:paddingHorizontal="@dimen/_16sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/clinics_ll" />
+            app:layout_constraintTop_toBottomOf="@+id/clinics_ll"
+            tools:listitem="@layout/item_clinic" />
 
         <LinearLayout
             android:id="@+id/top_clinics_ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16sdp"
             android:layout_marginTop="@dimen/_36sdp"
             android:gravity="start"
             android:orientation="horizontal"
-            android:layout_marginHorizontal="@dimen/_16sdp"
             app:layout_constraintTop_toBottomOf="@id/clinics_rv"
             tools:ignore="UseCompoundDrawables">
 
@@ -162,11 +162,15 @@
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_120sdp"
-            android:layout_margin="@dimen/_16sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
             app:cardCornerRadius="@dimen/_12sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/top_clinics_ll">
+
+
 
 
             <com.smarteist.autoimageslider.SliderView

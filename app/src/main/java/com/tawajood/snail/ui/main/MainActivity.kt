@@ -113,9 +113,9 @@ class MainActivity : AppCompatActivity() {
     fun updateSideNavData() {
         binding.navView.getHeaderView(0).findViewById<TextView>(R.id.username_tv).text =
             PrefsHelper.getUsername()
-        Glide.with(this)
+        /*Glide.with(this)
             .load(PrefsHelper.getUserImage())
-            .into(binding.navView.getHeaderView(0).findViewById(R.id.profile_img))
+            .into(binding.navView.getHeaderView(0).findViewById(R.id.profile_img))*/
 
     }
 
