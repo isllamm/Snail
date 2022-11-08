@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.tawajood.snail.R
@@ -95,18 +96,45 @@ class CartFragment : Fragment(R.layout.fragment_cart) {
                         parent.showLoading()
                     }
                     is Resource.Success -> {
-                        cartResponse = it.data!!
-                        cartItems = it.data.carts
+                        if (it.data!!.carts.isEmpty()) {
+                            binding.empty.isVisible = true
+                            binding.tvEmpty.isVisible = true
 
-                        cartAdapter.cart = cartItems
+                            binding.materialCardView4.isVisible = false
+                            binding.rvCartProducts.isVisible = false
+                            binding.btnCheckout.isVisible = false
+                            binding.imageView1.isVisible = false
+                            binding.tv1.isVisible = false
+                            binding.imageView2.isVisible = false
+                            binding.tvSpecialties.isVisible = false
+                            binding.v1.isVisible = false
+                        } else {
+                            binding.empty.isVisible = false
+                            binding.tvEmpty.isVisible = false
 
-                        if(PrefsHelper.getLanguage() == "ar"){
-                            binding.tvTotalPrice.text =  cartResponse.total+" ريال "
+                            binding.materialCardView4.isVisible = true
+                            binding.rvCartProducts.isVisible = true
+                            binding.btnCheckout.isVisible = true
+                            binding.imageView1.isVisible = true
+                            binding.tv1.isVisible = true
+                            binding.imageView2.isVisible = true
+                            binding.tvSpecialties.isVisible = true
+                            binding.v1.isVisible = true
+                            
+                            cartResponse = it.data!!
+                            cartItems = it.data.carts
 
-                        }else{
-                            binding.tvTotalPrice.text =  cartResponse.total+" RS "
+                            cartAdapter.cart = cartItems
 
+                            if (PrefsHelper.getLanguage() == "ar") {
+                                binding.tvTotalPrice.text = cartResponse.total + " ريال "
+
+                            } else {
+                                binding.tvTotalPrice.text = cartResponse.total + " RS "
+
+                            }
                         }
+
                     }
                 }
             }

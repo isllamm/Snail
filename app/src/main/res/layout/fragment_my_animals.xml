@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:background="@drawable/top_raduis_fragments"
     tools:context=".ui.main.fragments.pets.MyAnimalsFragment">
 
@@ -34,6 +35,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/empty"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_120sdp"
+            android:src="@drawable/no_animals"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tv_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_animals"
+            android:textColor="@color/brown"
+            android:textSize="@dimen/_14ssp"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="@+id/empty"
+            app:layout_constraintStart_toStartOf="@+id/empty"
+            app:layout_constraintTop_toBottomOf="@+id/empty" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_myAnimals"
             android:layout_margin="@dimen/_12sdp"
@@ -51,21 +75,23 @@
             android:id="@+id/add_animal_btn"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_46sdp"
-            android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginEnd="@dimen/_12sdp"
-            app:icon="@drawable/ic_pets"
-            app:iconGravity="textStart"
-            app:iconTint="@color/brown"
             android:backgroundTint="@color/beige"
             android:text="@string/add_new_animal"
             android:textColor="@color/brown"
             android:textSize="@dimen/_12ssp"
             app:cornerRadius="@dimen/_8sdp"
+            app:icon="@drawable/ic_pets"
+            app:iconGravity="textStart"
+            app:iconTint="@color/brown"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rv_myAnimals" />
+            app:layout_constraintTop_toBottomOf="@+id/rv_myAnimals"
+            app:layout_constraintVertical_bias="0.812" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

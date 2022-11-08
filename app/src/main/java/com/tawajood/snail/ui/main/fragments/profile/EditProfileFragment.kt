@@ -119,6 +119,7 @@ class EditProfileFragment : Fragment() {
                     is Resource.Success -> {
                         val profile = it.data!!
                         binding.usernameEt.setText(profile.name)
+                        binding.tvName.text = profile.name
                         binding.phoneEt.setText(profile.phone)
                         binding.ccp.setCountryForPhoneCode(profile.countryCode.toInt())
                         binding.emailEt.setText(profile.email)

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.tawajood.snail.R
@@ -85,7 +86,16 @@ class NotificationsFragment : Fragment() {
                     }
                     is Resource.Success -> {
                         notifications = it.data!!
-                        adapter.notifications = notifications
+                        if (notifications.isEmpty()){
+                            binding.rvNotifications.isVisible = false
+                            binding.empty.isVisible = true
+                        }else{
+                            binding.rvNotifications.isVisible = true
+                            binding.empty.isVisible = false
+
+                            adapter.notifications = notifications
+
+                        }
                         //binding.emptyTv.isVisible = notifications.isEmpty()
                     }
                 }

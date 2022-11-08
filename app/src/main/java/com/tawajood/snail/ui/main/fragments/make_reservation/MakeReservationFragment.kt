@@ -67,10 +67,10 @@ class MakeReservationFragment : Fragment(R.layout.fragment_make_reservation) {
     private val imagesFiles = mutableListOf<File>()
     private var specializations = mutableListOf<Specializations>()
 
-    private var petId by Delegates.notNull<Int>()
+    private var petId: Int? = null
     private var clinicId by Delegates.notNull<Int>()
-    private var clinicDayId by Delegates.notNull<Int>()
-    private var clinicTimeId by Delegates.notNull<Int>()
+    private var clinicDayId: Int? = null
+    private var clinicTimeId: Int? = null
 
 
     override fun onCreateView(
@@ -185,12 +185,12 @@ class MakeReservationFragment : Fragment(R.layout.fragment_make_reservation) {
                     AddRequestBody(
                         PrefsHelper.getUserId(),
                         clinicId,
-                        petId,
+                        petId!!,
                         specializations[binding.typeSpeSpinner.selectedItemPosition].specialization_id.toInt(),
                         types[binding.typeSpinner.selectedItemPosition].id,
                         binding.detailsEt.text.toString(),
-                        clinicDayId,
-                        clinicTimeId,
+                        clinicDayId!!,
+                        clinicTimeId!!,
                         binding.addressEt.text.toString(),
                         lat!!,
                         lng!!,
@@ -223,12 +223,12 @@ class MakeReservationFragment : Fragment(R.layout.fragment_make_reservation) {
         }
 
         if (clinicDayId == null) {
-            ToastUtils.showToast(requireContext(), "اختر اليوم")
+            ToastUtils.showToast(requireContext(), "اختر اليوم والوقت")
 
             return false
         }
         if (clinicTimeId == null) {
-            ToastUtils.showToast(requireContext(), "اختر الوقت")
+            ToastUtils.showToast(requireContext(), "اختر اليوم والوقت")
 
             return false
         }

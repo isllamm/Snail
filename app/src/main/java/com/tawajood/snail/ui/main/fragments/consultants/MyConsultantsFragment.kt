@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.core.os.bundleOf
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.tawajood.snail.R
@@ -93,18 +94,25 @@ class MyConsultantsFragment : Fragment(R.layout.fragment_my_consultants) {
             viewModel.consultantsFlow.collectLatest {
                 parent.hideLoading()
                 when (it) {
-                    is Resource.Error -> ToastUtils.showToast(
-                        requireContext(),
-                        it.message.toString()
-                    )
+                    is Resource.Error -> {}
                     is Resource.Idle -> {}
                     is Resource.Loading -> {
                         parent.showLoading()
                     }
                     is Resource.Success -> {
-
                         consultants = it.data!!.consultants
-                        newConsultantsAdapter.consultant = consultants
+
+                        if (consultants.isEmpty()) {
+                            binding.empty.isVisible = true
+                            binding.tvEmpty.isVisible = true
+                            binding.rvNewConsultation.isVisible = false
+                        } else {
+                            binding.empty.isVisible = false
+                            binding.tvEmpty.isVisible = false
+                            binding.rvNewConsultation.isVisible = true
+                            newConsultantsAdapter.consultant = consultants
+
+                        }
 
                     }
                 }

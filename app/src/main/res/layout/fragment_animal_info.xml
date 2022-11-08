@@ -68,6 +68,18 @@
             app:layout_constraintStart_toEndOf="@+id/i1"
             app:layout_constraintTop_toTopOf="@+id/i1" />
 
+        <ImageView
+            android:id="@+id/empty"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:src="@drawable/no_reports"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/tv_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_iv" />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_previous_reports"
@@ -80,6 +92,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_1"
             tools:itemCount="1"
             tools:listitem="@layout/item_previous_reports" />
+
 
         <ImageView
             android:id="@+id/i2"
@@ -120,9 +133,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_18sdp"
             android:src="@drawable/small_logo"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rv_description" />
+            app:layout_constraintTop_toBottomOf="@id/rv_description"
+            app:layout_constraintBottom_toTopOf="@+id/materialCardView7"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/tv_3"
@@ -138,17 +153,17 @@
             app:layout_constraintTop_toTopOf="@+id/i3" />
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
             android:layout_marginBottom="@dimen/_32sdp"
             android:backgroundTint="@color/light_beige"
             app:cardCornerRadius="@dimen/_8sdp"
-            android:layout_marginStart="@dimen/_8sdp"
-            android:layout_marginEnd="@dimen/_8sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_3"
             app:strokeColor="@color/beige"
             app:strokeWidth="@dimen/_1sdp">
 
@@ -160,13 +175,25 @@
                     android:id="@+id/rv_vaccination"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintEnd_toEndOf="parent"
+                    android:visibility="visible"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-
                     tools:itemCount="2"
                     tools:listitem="@layout/item_vaccination" />
+
+                <ImageView
+                    android:id="@+id/empty1"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:src="@drawable/no_inoculation"
+                    android:visibility="gone"
+                    android:layout_margin="@dimen/_10sdp"
+                    app:layout_constraintBottom_toTopOf="@+id/add_btn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/add_btn"
@@ -175,7 +202,6 @@
                     android:layout_marginStart="@dimen/_8sdp"
                     android:layout_marginTop="@dimen/_16sdp"
                     android:layout_marginEnd="@dimen/_8sdp"
-                    android:layout_marginBottom="@dimen/_4sdp"
                     android:backgroundTint="@color/beige"
                     android:text="@string/add_vaccination"
                     android:textColor="@color/brown"
@@ -184,10 +210,11 @@
                     app:icon="@drawable/ic_add_2"
                     app:iconGravity="textStart"
                     app:iconTint="@color/brown"
+                    app:layout_constraintTop_toBottomOf="@id/rv_vaccination"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/rv_vaccination" />
+                     />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -33,7 +33,7 @@
     </array>
     <string name="choose_rate">من فضلك قم بإختيار تقييم</string>
     <string name="profile_updated_successfully">تم تحديث الملف الشخصي بنجاح</string>
-    <string name="password_updated_successfully">تم تحديث الباسورد بنجاح</string>
+    <string name="password_updated_successfully">تم تحديث كلمة المرور بنجاح</string>
     <string name="verification_code">كود التفعيل</string>
     <string name="verification_code_msg">ادخل الكود التفعيلي المرسل إلى رقم الجوال الذي قمت بتسجيله</string>
     <string name="change_password">تغيير كلمة المرور</string>
@@ -201,5 +201,10 @@
 
     <string name="off">ايقاف</string>
     <string name="tax">الضريبة:</string>
+    <string name="empty_cart">سلة المشتريات فارغة</string>
+    <string name="no_animals">لا يوجد حيوانات</string>
+    <string name="no_consultations">لا يوجد استشارات</string>
+    <string name="no_reports">no reports</string>
+    <string name="stores">المتاجر</string>
 
 </resources>

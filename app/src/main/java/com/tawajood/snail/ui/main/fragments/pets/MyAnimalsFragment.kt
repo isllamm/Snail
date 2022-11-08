@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.tawajood.snail.R
@@ -77,7 +78,6 @@ class MyAnimalsFragment : Fragment(R.layout.fragment_my_animals) {
     private fun observeData() {
 
 
-
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.myPetsFlow.collectLatest {
                 parent.hideLoading()
@@ -88,13 +88,23 @@ class MyAnimalsFragment : Fragment(R.layout.fragment_my_animals) {
                     )
                     is Resource.Idle -> {}
                     is Resource.Loading -> {
-                        Log.d("islam", "observeData: "+"loading")
+                        Log.d("islam", "observeData: " + "loading")
                         parent.showLoading()
                     }
                     is Resource.Success -> {
 
                         pets = it.data!!.pets
-                        petsAdapter.pets = pets
+                        if (pets.isEmpty()) {
+                            binding.rvMyAnimals.isVisible = false
+                            binding.empty.isVisible = true
+                            binding.tvEmpty.isVisible = true
+                        } else {
+                            binding.rvMyAnimals.isVisible = true
+                            binding.empty.isVisible = false
+                            binding.tvEmpty.isVisible = false
+                            petsAdapter.pets = pets
+
+                        }
 
                     }
                 }

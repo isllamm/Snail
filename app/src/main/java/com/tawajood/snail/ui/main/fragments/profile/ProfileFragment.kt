@@ -66,10 +66,7 @@ class ProfileFragment : Fragment() {
             viewModel.profileFlow.collectLatest {
                 parent.hideLoading()
                 when (it) {
-                    is Resource.Error -> ToastUtils.showToast(
-                        requireContext(),
-                        it.message.toString()
-                    )
+                    is Resource.Error -> {}
                     is Resource.Idle -> {}
                     is Resource.Loading -> parent.showLoading()
                     is Resource.Success -> {

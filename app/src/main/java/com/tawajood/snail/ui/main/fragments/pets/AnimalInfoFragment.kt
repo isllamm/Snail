@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
@@ -54,7 +55,7 @@ class AnimalInfoFragment : Fragment(R.layout.fragment_animal_info) {
     }
 
     private fun setupVac() {
-        vaccinationsAdapter = VaccinationsAdapter(object : VaccinationsAdapter.OnItemClick{
+        vaccinationsAdapter = VaccinationsAdapter(object : VaccinationsAdapter.OnItemClick {
             override fun onItemClickListener(position: Int) {
 
             }
@@ -64,7 +65,7 @@ class AnimalInfoFragment : Fragment(R.layout.fragment_animal_info) {
     }
 
     private fun setupMed() {
-        medicineAdapter = MedicineAdapter(object : MedicineAdapter.OnItemClick{
+        medicineAdapter = MedicineAdapter(object : MedicineAdapter.OnItemClick {
             override fun onItemClickListener(position: Int) {
 
             }
@@ -74,12 +75,13 @@ class AnimalInfoFragment : Fragment(R.layout.fragment_animal_info) {
     }
 
     private fun setupPrevRec() {
-        previousReportsAdapter = PreviousReportsAdapter(object : PreviousReportsAdapter.OnItemClick{
-            override fun onItemClickListener(position: Int) {
+        previousReportsAdapter =
+            PreviousReportsAdapter(object : PreviousReportsAdapter.OnItemClick {
+                override fun onItemClickListener(position: Int) {
 
-            }
+                }
 
-        })
+            })
 
         binding.rvPreviousReports.adapter = previousReportsAdapter
     }
@@ -120,9 +122,38 @@ class AnimalInfoFragment : Fragment(R.layout.fragment_animal_info) {
                         binding.tvName.text = pet.name
 
                         consultants = pet.requests
-                        previousReportsAdapter.consultant = consultants
-                        medicineAdapter.consultant= consultants
-                        vaccinationsAdapter.petVaccinations = pet.vaccinations
+                        if (consultants.isEmpty()) {
+                            binding.rvPreviousReports.isVisible = false
+                            binding.rvVaccination.isVisible = false
+                            binding.empty.isVisible = true
+                            binding.i1.isVisible = false
+                            binding.tv1.isVisible = false
+                            binding.i2.isVisible = false
+                            binding.tv2.isVisible = false
+                        } else {
+                            binding.rvPreviousReports.isVisible = true
+                            binding.rvVaccination.isVisible = true
+                            binding.empty.isVisible = false
+                            binding.i1.isVisible = true
+                            binding.tv1.isVisible = true
+                            binding.i2.isVisible = true
+                            binding.tv2.isVisible = true
+                            previousReportsAdapter.consultant = consultants
+                            medicineAdapter.consultant = consultants
+                        }
+                        if (pet.vaccinations.isEmpty()) {
+                            binding.empty1.isVisible = true
+                            binding.rvVaccination.isVisible = false
+                            binding.i3.isVisible = false
+                            binding.tv3.isVisible = false
+                        } else {
+                            binding.empty1.isVisible = false
+                            binding.rvVaccination.isVisible = true
+                            binding.i3.isVisible = true
+                            binding.tv3.isVisible = true
+                            vaccinationsAdapter.petVaccinations = pet.vaccinations
+
+                        }
                         Glide.with(requireContext())
                             .load(pet.image)
                             .into(binding.imgIv)

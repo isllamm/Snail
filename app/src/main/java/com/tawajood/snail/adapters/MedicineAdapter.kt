@@ -37,7 +37,10 @@ class MedicineAdapter(private val onItemClick: OnItemClick) :
     ) {
         holder.binding.tvDate.text = consultant[position].created_at.substring(0, 10)
         holder.binding.tvNameClinic.text = consultant[position].clinic.name
-        holder.binding.descriptionEt.text = consultant[position].medicines[position].medicine
+        if (consultant[position].medicines.isNotEmpty()){
+            holder.binding.descriptionEt.text = consultant[position].medicines[position].medicine
+
+        }
 
         Glide.with(holder.itemView.context).load(consultant[position].clinic.image_clinic)
             .into(holder.binding.clicnicImg)
