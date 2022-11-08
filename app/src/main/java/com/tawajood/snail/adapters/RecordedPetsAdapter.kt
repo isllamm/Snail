@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.tawajood.snail.databinding.ItemAnimalBinding
@@ -48,11 +49,7 @@ class RecordedPetsAdapter(private val onItemClick: OnItemClick) :
         Glide.with(holder.itemView)
             .load(pets[position].image)
             .into(holder.binding.ivAnimal)
-        if (pets[position].isSelected) {
-
-        } else {
-
-        }
+        holder.binding.selected.isVisible = pets[position].isSelected
 
         holder.itemView.setOnClickListener {
             setSelected(position)

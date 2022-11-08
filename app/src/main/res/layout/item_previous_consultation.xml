@@ -54,7 +54,7 @@
             android:layout_marginTop="@dimen/_8sdp"
             android:text="@string/order_date"
             android:textColor="@color/brown"
-            android:textSize="@dimen/_14ssp"
+            android:textSize="@dimen/_12ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/card_date" />
 
@@ -65,7 +65,7 @@
             android:layout_marginStart="@dimen/_12sdp"
             android:text="15/3/2022"
             android:textColor="@color/brown"
-            android:textSize="@dimen/_14ssp"
+            android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="@+id/tv1"
             app:layout_constraintStart_toEndOf="@+id/tv1"
             app:layout_constraintTop_toTopOf="@+id/tv1" />
@@ -78,7 +78,7 @@
             android:layout_marginTop="@dimen/_8sdp"
             android:text="@string/clinic_name"
             android:textColor="@color/brown"
-            android:textSize="@dimen/_14ssp"
+            android:textSize="@dimen/_12ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv1" />
 
@@ -89,7 +89,7 @@
             android:layout_marginStart="@dimen/_12sdp"
             android:text="في بيتس "
             android:textColor="@color/brown"
-            android:textSize="@dimen/_14ssp"
+            android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="@+id/tv2"
             app:layout_constraintStart_toEndOf="@+id/tv2"
             app:layout_constraintTop_toTopOf="@+id/tv2" />
@@ -103,7 +103,7 @@
             android:layout_marginBottom="@dimen/_8sdp"
             android:text="@string/type_of_counseling2"
             android:textColor="@color/brown"
-            android:textSize="@dimen/_14ssp"
+            android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv2" />
@@ -115,7 +115,7 @@
             android:layout_marginStart="@dimen/_12sdp"
             android:text="منزلية"
             android:textColor="@color/brown"
-            android:textSize="@dimen/_14ssp"
+            android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="@+id/tv3"
             app:layout_constraintStart_toEndOf="@+id/tv3"
             app:layout_constraintTop_toTopOf="@+id/tv3" />
