@@ -33,7 +33,7 @@ class LoginFirstSheet : BottomSheetDialogFragment() {
         binding = FragmentLoginFirstSheetBinding.inflate(inflater)
         parent = requireActivity() as MainActivity
         onClick()
-
+        isCancelable = false
         return binding.root
     }
 
@@ -55,6 +55,9 @@ class LoginFirstSheet : BottomSheetDialogFragment() {
 
         binding.btnLogin.setOnClickListener {
             parent.logout()
+        }
+        binding.btnHome.setOnClickListener {
+            parent.navController.navigate(R.id.homeFragment)
         }
 
     }

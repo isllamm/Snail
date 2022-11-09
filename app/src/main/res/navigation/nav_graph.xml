@@ -344,4 +344,9 @@
         android:name="com.tawajood.snail.ui.main.fragments.search.FilterResultFragmentFragment"
         android:label="fragment_filter_result_fragment"
         tools:layout="@layout/fragment_filter_result_fragment" />
+    <dialog
+        android:id="@+id/homeSheetFragment"
+        android:name="com.tawajood.snail.ui.main.fragments.home.HomeSheetFragment"
+        android:label="fragment_home_sheet"
+        tools:layout="@layout/fragment_home_sheet" />
 </navigation>

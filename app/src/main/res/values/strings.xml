@@ -216,5 +216,6 @@
     <string name="no_consultations">no consultations</string>
     <string name="no_reports">no reports</string>
     <string name="stores">Stores</string>
+    <string name="go_to_home_screen">Go to Home Screen</string>
 
 </resources>

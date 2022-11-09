@@ -36,6 +36,7 @@ class MyConsultantsFragment : Fragment(R.layout.fragment_my_consultants) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentMyConsultantsBinding.bind(requireView())
         parent = requireActivity() as MainActivity
+        parent.checkLogin()
 
         setupNewConsultantsRec()
         setupUI()

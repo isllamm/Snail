@@ -236,10 +236,7 @@ class MakeReservationFragment : Fragment(R.layout.fragment_make_reservation) {
             ToastUtils.showToast(requireContext(), "الرجاء تفعيل GPS للحصول على العنوان")
             return false
         }
-        if (imagesFiles.isEmpty()) {
-            ToastUtils.showToast(requireContext(), "يحب اختيار صورة على الاقل و 4 صور على الاكثر")
 
-        }
 
         return true
     }

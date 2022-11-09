@@ -31,6 +31,9 @@ class ProfileFragment : Fragment() {
     ): View {
         binding = FragmentProfileBinding.inflate(inflater)
         parent = requireActivity() as MainActivity
+
+        parent.checkLogin()
+
         onClick()
         observeData()
         return binding.root

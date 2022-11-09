@@ -33,6 +33,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_home"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:backgroundTint="@color/light_beige"
+        android:text="@string/go_to_home_screen"
+        android:textAllCaps="false"
+        android:textColor="@color/brown"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/_8sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_login"
@@ -49,7 +69,6 @@
         android:textSize="@dimen/_12ssp"
         android:textStyle="bold"
         app:cornerRadius="@dimen/_8sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />

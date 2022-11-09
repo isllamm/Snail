@@ -206,5 +206,6 @@
     <string name="no_consultations">لا يوجد استشارات</string>
     <string name="no_reports">no reports</string>
     <string name="stores">المتاجر</string>
+    <string name="go_to_home_screen">الذهاب الى القائمة الرئيسية</string>
 
 </resources>
