@@ -62,13 +62,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private fun setupClinicsRecycler() {
         clinicsAdapter = ClinicsAdapter(object : ClinicsAdapter.OnItemClick {
             override fun onItemClickListener(position: Int) {
-                if (parent.checkLogin()) {
+
                     parent.navController.navigate(
                         R.id.clinicInfoFragment, bundleOf(
                             Constants.CLINIC to clinics[position].id
                         )
                     )
-                }
+
 
             }
 
@@ -80,13 +80,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         sliderAdapter = SliderAdapter(object : SliderAdapter.OnItemClick {
             override fun onItemClickListener(position: Int) {
-                if (parent.checkLogin()) {
+
                     parent.navController.navigate(
                         R.id.clinicInfoFragment, bundleOf(
                             Constants.CLINIC to clinics[position].id
                         )
                     )
-                }
+
 
             }
 
@@ -114,12 +114,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             parent.navController.navigate(R.id.action_homeFragment_to_searchSheet)
         }
         binding.searchIcon.setOnClickListener {
-            if (parent.checkLogin()){
+
                 parent.navController.navigate(
                     R.id.searchResultFragment,
                     bundleOf(Constants.CLINIC_NAME to binding.etSearch.text.toString())
                 )
-            }
+
 
         }
 

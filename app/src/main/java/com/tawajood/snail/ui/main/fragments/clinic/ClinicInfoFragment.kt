@@ -41,7 +41,7 @@ class ClinicInfoFragment : Fragment(R.layout.fragment_clinic_info) {
     private val viewModel: ClinicViewModel by viewModels()
     private lateinit var clinic: Clinic
     private var count by Delegates.notNull<Int>()
-    private var i:Int = 0
+    private var i: Int = 0
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -71,7 +71,7 @@ class ClinicInfoFragment : Fragment(R.layout.fragment_clinic_info) {
 
     private fun onClick() {
         binding.right.setOnClickListener {
-            if (i<count){
+            if (i < count) {
                 i += 1
                 binding.rvReviews.scrollToPosition(i)
 
@@ -80,7 +80,7 @@ class ClinicInfoFragment : Fragment(R.layout.fragment_clinic_info) {
 
         }
         binding.left.setOnClickListener {
-            if (i==count||i!=0){
+            if (i == count || i != 0) {
                 i -= 1
                 binding.rvReviews.scrollToPosition(i)
 
@@ -91,16 +91,20 @@ class ClinicInfoFragment : Fragment(R.layout.fragment_clinic_info) {
             parent.onBackPressed()
         }
         binding.btnConsultationRequest.setOnClickListener {
-            parent.navController.navigate(
-                R.id.makeReservationFragment,
-                bundleOf(Constants.CLINIC to clinicId)
-            )
+            if (parent.checkLogin()) {
+                parent.navController.navigate(
+                    R.id.makeReservationFragment,
+                    bundleOf(Constants.CLINIC to clinicId)
+                )
+            }
         }
         binding.btnReview.setOnClickListener {
-            parent.navController.navigate(
-                R.id.reviewSheetFragment,
-                bundleOf(Constants.REVIEW_CLINIC to clinicId)
-            )
+            if (parent.checkLogin()) {
+                parent.navController.navigate(
+                    R.id.reviewSheetFragment,
+                    bundleOf(Constants.REVIEW_CLINIC to clinicId)
+                )
+            }
         }
     }
 

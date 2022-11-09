@@ -1,6 +1,7 @@
 package com.tawajood.snail.ui.main.fragments.checkout
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.text.TextUtils
@@ -20,6 +21,15 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
 import com.google.android.gms.maps.model.LatLng
+import com.google.gson.Gson
+import com.myfatoorah.sdk.entity.executepayment.MFExecutePaymentRequest
+import com.myfatoorah.sdk.entity.paymentstatus.MFGetPaymentStatusResponse
+import com.myfatoorah.sdk.utils.MFAPILanguage
+import com.myfatoorah.sdk.utils.MFBaseURL
+import com.myfatoorah.sdk.utils.MFCountry
+import com.myfatoorah.sdk.utils.MFEnvironment
+import com.myfatoorah.sdk.views.MFResult
+import com.myfatoorah.sdk.views.MFSDK
 import com.tawajood.snail.R
 import com.tawajood.snail.adapters.CartAdapter
 import com.tawajood.snail.adapters.CheckoutItemsAdapter
@@ -31,9 +41,7 @@ import com.tawajood.snail.pojo.CartResponse
 import com.tawajood.snail.pojo.OrderBody
 import com.tawajood.snail.ui.main.MainActivity
 import com.tawajood.snail.ui.main.fragments.cart.CartViewModel
-import com.tawajood.snail.utils.Resource
-import com.tawajood.snail.utils.ToastUtils
-import com.tawajood.snail.utils.getAddressForTextView
+import com.tawajood.snail.utils.*
 import dagger.hilt.android.AndroidEntryPoint
 import io.nlopez.smartlocation.SmartLocation
 import kotlinx.coroutines.flow.collectLatest
@@ -53,6 +61,7 @@ class CheckoutFragment : Fragment(R.layout.fragment_checkout) {
     private var cartItems = mutableListOf<Cart>()
     private lateinit var cartResponse: CartResponse
     private var payment: String = "0"
+    private var total = 0f
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -74,6 +83,30 @@ class CheckoutFragment : Fragment(R.layout.fragment_checkout) {
         binding.rvCheckoutProducts.adapter = checkoutItemsAdapter
     }
 
+    private fun validate(): Boolean {
+        if (TextUtils.isEmpty(binding.usernameEt.text)) {
+            ToastUtils.showToast(requireContext(), "الاسم مطلوب")
+            return false
+        }
+        if (TextUtils.isEmpty(binding.phoneEt.text)) {
+            ToastUtils.showToast(requireContext(), "رقم الجوال مطلوب")
+
+            return false
+        }
+        if (TextUtils.isEmpty(binding.addressEt.text)) {
+            ToastUtils.showToast(requireContext(), "العنوان مطلوب")
+
+            return false
+        }
+
+        if (lat == null || lng == null) {
+            ToastUtils.showToast(requireContext(), "الرجاء تفعيل GPS للحصول على العنوان")
+            return false
+        }
+
+
+        return true
+    }
 
     private fun onClick() {
         binding.ivBack.setOnClickListener {
@@ -95,42 +128,31 @@ class CheckoutFragment : Fragment(R.layout.fragment_checkout) {
         }
 
         binding.btnCheckout.setOnClickListener {
-            if (validate()) {
-                viewModel.addOrder(
-                    OrderBody(
-                        PrefsHelper.getUserId().toString(),
-                        binding.usernameEt.text.toString(),
-                        binding.phoneEt.text.toString(),
-                        binding.ccp.selectedCountryCode.toString(),
-                        binding.addressEt.text.toString(),
-                        payment,
-                        lat!!.toFloat(),
-                        lng!!.toFloat()
-                    )
-                )
+            if (validate()){
+                checkOut()
+
             }
         }
     }
 
-    private fun validate(): Boolean {
-        if (TextUtils.isEmpty(binding.usernameEt.text)) {
-            ToastUtils.showToast(requireContext(), "التفاصيل االطلب مطلوب")
-            return false
-        }
-        if (TextUtils.isEmpty(binding.addressEt.text)) {
-            ToastUtils.showToast(requireContext(), "العنوان مطلوب")
+    private fun addOrder() {
 
-            return false
-        }
+        viewModel.addOrder(
+            OrderBody(
+                PrefsHelper.getUserId().toString(),
+                binding.usernameEt.text.toString(),
+                binding.phoneEt.text.toString(),
+                binding.ccp.selectedCountryCode.toString(),
+                binding.addressEt.text.toString(),
+                payment,
+                lat!!.toFloat(),
+                lng!!.toFloat()
+            )
+        )
 
-        if (lat == null || lng == null) {
-            ToastUtils.showToast(requireContext(), "الرجاء تفعيل GPS للحصول على العنوان")
-            return false
-        }
 
-
-        return true
     }
+
 
     private fun setupUI() {
         parent.showBottomNav(false)
@@ -156,6 +178,7 @@ class CheckoutFragment : Fragment(R.layout.fragment_checkout) {
 
                         checkoutItemsAdapter.cart = cartItems
 
+
                         if (PrefsHelper.getLanguage() == "ar") {
                             binding.tvTotal.text = cartResponse.finalTotal + " ريال "
                             binding.tvTotalPrice.text = cartResponse.total + " ريال "
@@ -168,7 +191,10 @@ class CheckoutFragment : Fragment(R.layout.fragment_checkout) {
                             binding.tvTaxPrice.text = cartResponse.tax + " RS "
                         }
 
+                        if (cartResponse.carts.isNotEmpty()){
+                            total = cartResponse.finalTotal.toFloat()
 
+                        }
                     }
                 }
             }
@@ -195,6 +221,35 @@ class CheckoutFragment : Fragment(R.layout.fragment_checkout) {
         }
     }
 
+    private fun checkOut() {
+        WebViewLocaleHelper(parent).implementWorkaround()
+        parent.showLoading()
+        val request = MFExecutePaymentRequest(2, total.toDouble())
+        MFSDK.executePayment(
+            parent,
+            request,
+            MFAPILanguage.EN,
+            onInvoiceCreated = {
+                Log.d("islam", "invoiceId: $it")
+            }
+        ) { _: String, result: MFResult<MFGetPaymentStatusResponse> ->
+            parent.hideLoading()
+            when (result) {
+                is MFResult.Success -> {
+                    Log.d("islam", "Response: " + Gson().toJson(result.response))
+                    addOrder()
+                }
+                is MFResult.Fail -> {
+                    ToastUtils.showToast(
+                        requireContext(),
+                        result.error.message.toString()
+                    )
+                    Log.d("islam", "Fail: " + Gson().toJson(result.error))
+                }
+                MFResult.Loading -> parent.showLoading()
+            }
+        }
+    }
 
     private val locationPermissionResult = registerForActivityResult(
         ActivityResultContracts.RequestPermission()

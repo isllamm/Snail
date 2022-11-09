@@ -48,13 +48,13 @@ class StoreFragment : Fragment(R.layout.fragment_store) {
     private fun setupRec() {
         categoriesAdapter = CategoriesAdapter(object : CategoriesAdapter.OnItemClick {
             override fun onItemClickListener(position: Int) {
-                if (parent.checkLogin()) {
+
                     parent.navController.navigate(
                         R.id.animalStoreFragment, bundleOf(
                             Constants.CAT_ID to cats[position].id
                         )
                     )
-                }
+
 
             }
 

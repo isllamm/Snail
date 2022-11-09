@@ -78,7 +78,10 @@ class ProductInfoFragment : Fragment(R.layout.fragment_product_info) {
         }
         binding.ivCart.setOnClickListener { parent.navController.navigate(R.id.cartFragment) }
         binding.btnAddToCart.setOnClickListener {
-            viewModel.addToCart(productId.toString(), binding.counter.text.toString())
+            if (parent.checkLogin()) {
+                viewModel.addToCart(productId.toString(), binding.counter.text.toString())
+
+            }
         }
     }
 

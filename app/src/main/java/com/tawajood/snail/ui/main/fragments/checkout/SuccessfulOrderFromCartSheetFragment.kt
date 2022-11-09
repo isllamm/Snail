@@ -32,7 +32,7 @@ class SuccessfulOrderFromCartSheetFragment : BottomSheetDialogFragment() {
         binding = FragmentSuccessfulOrderFromCartSheetBinding.inflate(inflater)
         parent = requireActivity() as MainActivity
         onClick()
-
+        isCancelable = false
         return binding.root
     }
 
