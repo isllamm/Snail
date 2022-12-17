@@ -20,7 +20,7 @@
     <string name="password_not_match">Passwords Not Match</string>
     <string name="phone_already_exists">Phone Already Exists</string>
     <string name="phone_num_problem">There is a problem with the phone number</string>
-    <string name="profile_updated_successfully">profile_updated_successfully</string>
+    <string name="profile_updated_successfully">profile updated successfully</string>
     <string name="password_updated_successfully">password_updated_successfully</string>
     <string name="choose_rate">Please Choose Rate</string>
     <array name="gender_types">

@@ -86,7 +86,6 @@ class AddNewAnimalFragment : Fragment() {
                     )
                 )
             }
-            Log.d("islam", "onClick: " + types[binding.typeSpinner.selectedItemPosition].id.toInt())
         }
         binding.cancelBtn.setOnClickListener {
             parent.onBackPressed()
