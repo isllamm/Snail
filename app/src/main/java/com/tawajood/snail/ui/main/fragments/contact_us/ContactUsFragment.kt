@@ -1,5 +1,6 @@
 package com.tawajood.snail.ui.main.fragments.contact_us
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -37,15 +38,31 @@ class ContactUsFragment : Fragment(R.layout.fragment_contact_us) {
     }
 
     private fun onClick() {
+
         binding.ivBack.setOnClickListener {
             parent.onBackPressed()
+        }
+
+        binding.tv3.setOnClickListener {
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.putExtra(Intent.EXTRA_EMAIL, contact.email)
+            intent.type = "message/rfc822"
+            startActivity(Intent.createChooser(intent, "Select email"))
+        }
+
+        binding.t2v3.setOnClickListener {
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.putExtra(Intent.EXTRA_EMAIL, contact.email)
+            intent.type = "message/rfc822"
+            startActivity(Intent.createChooser(intent, "Select email"))
         }
     }
 
     private fun setupUI() {
         parent.showBottomNav(false)
     }
-    private fun observeData(){
+
+    private fun observeData() {
         lifecycleScope.launchWhenStarted {
             viewModel.contactFlow.collectLatest {
                 parent.hideLoading()
@@ -60,7 +77,7 @@ class ContactUsFragment : Fragment(R.layout.fragment_contact_us) {
                     is Resource.Success -> {
                         contact = it.data!!
                         binding.tv3.text = contact.email
-                        binding.t2v3.text= contact.email
+                        binding.t2v3.text = contact.email
                     }
                 }
             }

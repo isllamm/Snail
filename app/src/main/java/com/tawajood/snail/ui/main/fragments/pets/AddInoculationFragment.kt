@@ -101,6 +101,9 @@ class AddInoculationFragment : Fragment(R.layout.fragment_add_inoculation) {
     private fun setupUI() {
         viewModel.getVaccinationTypes()
         parent.showBottomNav(false)
+        val sdf = SimpleDateFormat("yyyy/MM/dd")
+        val currentDate = sdf.format(Date())
+        binding.dateEt.setText(currentDate)
     }
 
     private fun observeData() {

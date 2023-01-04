@@ -207,5 +207,9 @@
     <string name="no_reports">no reports</string>
     <string name="stores">المتاجر</string>
     <string name="go_to_home_screen">الذهاب الى القائمة الرئيسية</string>
-
+    <string name="payment_method">طريقة الدفع</string>
+    <string-array name="Methods">
+        <item>دفع نقدا</item>
+        <item>بطاقة الائتمان</item>
+    </string-array>
 </resources>

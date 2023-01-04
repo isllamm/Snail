@@ -222,6 +222,11 @@ class MakeReservationFragment : Fragment(R.layout.fragment_make_reservation) {
             return false
         }
 
+        if (specializations.isEmpty()) {
+            ToastUtils.showToast(requireContext(), "لا يوجد تخصصات")
+
+            return false
+        }
         if (clinicDayId == null) {
             ToastUtils.showToast(requireContext(), "اختر اليوم والوقت")
 

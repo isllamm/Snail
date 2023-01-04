@@ -68,7 +68,7 @@ class ProductsFragment : Fragment(R.layout.fragment_products) {
 
     private fun setupUI() {
 
-        binding.tv.text = "المنتجات"
+        //binding.tv.text = "المنتجات"
         viewModel.getProducts(subCatId.toString())
         parent.showBottomNav(false)
     }

@@ -18,10 +18,9 @@
             android:id="@+id/iv_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_2sdp"
             android:textColor="@color/brown"
             android:textSize="@dimen/_12ssp"
-            android:text="3"
-            android:layout_marginEnd="@dimen/_2sdp"
             app:layout_constraintBottom_toBottomOf="@+id/textView15"
             app:layout_constraintEnd_toStartOf="@+id/textView15"
             app:layout_constraintTop_toTopOf="@+id/textView15" />
@@ -45,7 +44,6 @@
             android:layout_height="@dimen/_25sdp"
             android:background="@drawable/right_corner_radius"
             android:gravity="center"
-            android:text="50 ريال"
             android:textColor="@color/beige"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -73,11 +71,12 @@
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_120sdp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_12sdp"
             android:layout_marginTop="@dimen/_8sdp"
-            android:text="رويال كانين "
+            android:maxLines="2"
+            android:minLines="1"
             android:textColor="@color/brown"
             android:textSize="@dimen/_14ssp"
             app:layout_constraintStart_toEndOf="@+id/materialCardView5"
@@ -88,9 +87,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_12sdp"
-            android:text="طعام قطط "
             android:textColor="@color/brown"
             android:textSize="@dimen/_14ssp"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/materialCardView5"
             app:layout_constraintTop_toBottomOf="@+id/title" />
 

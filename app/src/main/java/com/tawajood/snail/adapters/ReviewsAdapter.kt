@@ -8,6 +8,8 @@ import com.bumptech.glide.Glide
 import com.tawajood.snail.databinding.ItemClinicBinding
 import com.tawajood.snail.databinding.ItemReviewBinding
 import com.tawajood.snail.pojo.Review
+import java.math.BigDecimal
+import java.math.RoundingMode
 
 class ReviewsAdapter : RecyclerView.Adapter<ReviewsAdapter.ReviewViewHolder>() {
     var reviews = mutableListOf<Review>()
@@ -28,8 +30,9 @@ class ReviewsAdapter : RecyclerView.Adapter<ReviewsAdapter.ReviewViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ReviewsAdapter.ReviewViewHolder, position: Int) {
+        val decimal = BigDecimal(reviews[position].rate.toDouble()).setScale(2, RoundingMode.HALF_EVEN)
         holder.binding.tvUsername.text = reviews[position].user.name
-        holder.binding.ratingBar.rating = reviews[position].rate.toFloat()
+        holder.binding.ratingBar.rating = decimal.toFloat()
         holder.binding.tvReview.text = reviews[position].comment
         Glide.with(holder.itemView)
             .load(reviews[position].user.image)

@@ -184,8 +184,8 @@ class MapFragment : Fragment(R.layout.fragment_map) {
         val options = MarkerOptions()
             .position(
                 LatLng(
-                    clinic.lat,
-                    clinic.lng
+                    clinic.lat!!,
+                    clinic.lng!!
                 )
             )
             .draggable(false)
@@ -205,8 +205,8 @@ class MapFragment : Fragment(R.layout.fragment_map) {
             if (pos != 0) {
                 getAddressForTextView(
                     requireContext(),
-                    clinics[pos-1].lat,
-                    clinics[pos-1].lng,
+                    clinics[pos-1].lat!!,
+                    clinics[pos-1].lng!!,
                     binding.addressTv
                 )
                 Glide.with(requireContext())

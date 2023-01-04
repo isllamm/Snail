@@ -132,20 +132,21 @@ class ClinicInfoFragment : Fragment(R.layout.fragment_clinic_info) {
                     is Resource.Success -> {
 
                         clinic = it.data!!.data!!.clinics[0]
-                        Log.d("islam", "observeData: " + clinic.name)
-                        Log.d(
-                            "islam",
-                            "observeData: " + clinic.specializations[0].specialization.name
-                        )
+
                         binding.tvClinicName.text = clinic.name
                         binding.ratingBar.rating = clinic.rating.toFloat()
                         binding.tvDescription.text = clinic.details
                         binding.tvAddress.text = clinic.address
                         binding.tvNum.text = clinic.registration_number
                         Glide.with(requireContext()).load(clinic.image).into(binding.clinicImg)
-                        specializationAdapter.specialization = clinic.specializations
-                        reviewsAdapter.reviews = clinic.recommendations
-                        count = clinic.recommendations.size
+                        if (clinic.specializations.isNotEmpty()) {
+                            specializationAdapter.specialization = clinic.specializations
+                        }
+                        if (clinic.recommendations.isNotEmpty()) {
+                            reviewsAdapter.reviews = clinic.recommendations
+                            count = clinic.recommendations.size
+                        }
+
                         //binding.tvSpecialties.text = clinic.specialization.specialization.name
                     }
                 }

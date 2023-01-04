@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
@@ -62,7 +63,7 @@ class CheckoutFragment : Fragment(R.layout.fragment_checkout) {
     private lateinit var cartResponse: CartResponse
     private var payment: String = "0"
     private var total = 0f
-
+    val methods: Array<String> = resources.getStringArray(R.array.Methods)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -128,8 +129,13 @@ class CheckoutFragment : Fragment(R.layout.fragment_checkout) {
         }
 
         binding.btnCheckout.setOnClickListener {
-            if (validate()){
-                checkOut()
+            if (validate()) {
+                if (binding.methodSpinner.selectedItemPosition == 0) {
+                    addOrder()
+                } else if (binding.methodSpinner.selectedItemPosition == 1) {
+                    checkOut()
+
+                }
 
             }
         }
@@ -155,7 +161,16 @@ class CheckoutFragment : Fragment(R.layout.fragment_checkout) {
 
 
     private fun setupUI() {
+        val adapter = ArrayAdapter(
+            requireContext(),
+            android.R.layout.simple_spinner_item, methods
+        )
+        binding.methodSpinner.adapter = adapter
+
+
         parent.showBottomNav(false)
+        binding.usernameEt.setText(PrefsHelper.getUsername())
+        binding.phoneEt.setText(PrefsHelper.getPhone())
     }
 
     private fun observeData() {
@@ -191,7 +206,7 @@ class CheckoutFragment : Fragment(R.layout.fragment_checkout) {
                             binding.tvTaxPrice.text = cartResponse.tax + " RS "
                         }
 
-                        if (cartResponse.carts.isNotEmpty()){
+                        if (cartResponse.carts.isNotEmpty()) {
                             total = cartResponse.finalTotal.toFloat()
 
                         }
