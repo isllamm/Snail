@@ -84,7 +84,7 @@ class PendingConsultationFragment : Fragment(R.layout.fragment_pending_consultat
                         binding.tvSpecialty.text = consultant.specialization
                         binding.tvNameClinic.text = consultant.clinic.name
 
-                        Glide.with(requireContext()).load(consultant.clinic.image)
+                        Glide.with(requireContext()).load(consultant.clinic.image_clinic)
                             .into(binding.clicnicImg)
 
                     }

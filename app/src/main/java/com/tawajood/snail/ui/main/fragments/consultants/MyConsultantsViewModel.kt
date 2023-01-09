@@ -66,7 +66,7 @@ constructor(
     fun cancelConsultantById(requestId: String) = viewModelScope.launch {
         try {
             _cancelConsultantFlow.emit(Resource.Loading())
-            val response = handleResponse(repository.getConsultantById(requestId))
+            val response = handleResponse(repository.cancelConsultant(requestId))
             if (response.status) {
                 _cancelConsultantFlow.emit(Resource.Success(response.data!!))
             } else {

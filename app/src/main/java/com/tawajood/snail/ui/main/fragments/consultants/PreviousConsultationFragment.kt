@@ -78,7 +78,7 @@ class PreviousConsultationFragment : Fragment(R.layout.fragment_previous_consult
                         binding.tvNameClinic.text = consultant.clinic.name
                         binding.descriptionEt.text = consultant.clinic_report
 
-                        Glide.with(requireContext()).load(consultant.clinic.image)
+                        Glide.with(requireContext()).load(consultant.clinic.image_clinic)
                             .into(binding.clicnicImg)
 
                     }

@@ -59,7 +59,7 @@ fun AddRequestBody.toMap(): Map<String, RequestBody> {
     addRequest["clinic_time_id"] =
         clinic_time_id.toString().toRequestBody("multipart/form-data".toMediaTypeOrNull())
     addRequest["address"] =
-        address.toRequestBody("multipart/form-data".toMediaTypeOrNull())
+        address!!.toRequestBody("multipart/form-data".toMediaTypeOrNull())
     addRequest["lat"] =
         lat.toString().toRequestBody("multipart/form-data".toMediaTypeOrNull())
     addRequest["lng"] =

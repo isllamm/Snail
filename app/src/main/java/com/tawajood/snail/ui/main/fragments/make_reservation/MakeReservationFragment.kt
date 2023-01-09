@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -156,6 +157,36 @@ class MakeReservationFragment : Fragment(R.layout.fragment_make_reservation) {
     }
 
     private fun onClick() {
+        binding.typeSpinner.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    when (types[position]) {
+
+                        types[0] -> {
+                            binding.imageView5.visibility = View.VISIBLE
+                            binding.tvHomeAddress.visibility = View.VISIBLE
+                            binding.textView5.visibility = View.VISIBLE
+                            binding.rlEt2.visibility = View.VISIBLE
+
+                        }
+                        types[1] -> {
+                            binding.imageView5.visibility = View.GONE
+                            binding.tvHomeAddress.visibility = View.GONE
+                            binding.textView5.visibility = View.GONE
+                            binding.rlEt2.visibility = View.GONE
+                        }
+                    }
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+                }
+
+            }
         binding.ivBack.setOnClickListener {
             parent.onBackPressed()
         }
@@ -192,8 +223,8 @@ class MakeReservationFragment : Fragment(R.layout.fragment_make_reservation) {
                         clinicDayId!!,
                         clinicTimeId!!,
                         binding.addressEt.text.toString(),
-                        lat!!,
-                        lng!!,
+                        lat,
+                        lng,
                     ),
                     ImagesBody(imagesFiles)
                 )
@@ -211,11 +242,11 @@ class MakeReservationFragment : Fragment(R.layout.fragment_make_reservation) {
             ToastUtils.showToast(requireContext(), "التفاصيل الاستشارة مطلوب")
             return false
         }
-        if (TextUtils.isEmpty(binding.addressEt.text)) {
+        /*if (TextUtils.isEmpty(binding.addressEt.text)) {
             ToastUtils.showToast(requireContext(), "العنوان مطلوب")
 
             return false
-        }
+        }*/
         if (petId == null) {
             ToastUtils.showToast(requireContext(), " الحيوان مطلوب")
 
@@ -237,10 +268,10 @@ class MakeReservationFragment : Fragment(R.layout.fragment_make_reservation) {
 
             return false
         }
-        if (lat == null || lng == null) {
-            ToastUtils.showToast(requireContext(), "الرجاء تفعيل GPS للحصول على العنوان")
-            return false
-        }
+/*if (lat == null || lng == null) {
+    ToastUtils.showToast(requireContext(), "الرجاء تفعيل GPS للحصول على العنوان")
+    return false
+}*/
 
 
         return true

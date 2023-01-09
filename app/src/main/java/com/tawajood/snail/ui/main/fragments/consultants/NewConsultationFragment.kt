@@ -83,7 +83,7 @@ class NewConsultationFragment : Fragment(R.layout.fragment_new_consultation) {
                         binding.tvSpecialty.text = consultant.specialization
                         binding.tvNameClinic.text = consultant.clinic.name
 
-                        Glide.with(requireContext()).load(consultant.clinic.image)
+                        Glide.with(requireContext()).load(consultant.clinic.image_clinic)
                             .into(binding.clinicImg)
 
                     }
